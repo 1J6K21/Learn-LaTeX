@@ -1,13 +1,15 @@
 \documentclass{article}
 \usepackage{amssymb}
+\usepackage{amsmath}
 \author{Jonathan Kalsky}
 \date{Jan 22 2026}
-\title{Lecture 2 Example}
+\title{Lecture 2 Examples}
+\linespread{1.5}
 
 \begin{document}
 \maketitle
 \vspace{1cm}
-\section*{“If a user is active, at least one network link will be available.”}
+\section*{Negate “If a user is active, at least one network link will be available.”}
 
 p : "A user is Active" \\
 q : "A network link will be available"\\
@@ -27,4 +29,32 @@ and $p \to q \equiv \lnot p \lor q(x)$\\
     \vspace{0.5cm}
     $\therefore$ if a user is active, and all newtwork links are not available.
 \end{center}
+
+\section*{Why $\forall  x \exists  y P(x, y) \neq \exists x \forall y P(x, y)$ ?}
+
+\begin{center}
+    
+    $\forall x \exists y (x + y = 0)$ is true\\
+    All x's have an additive inverse\\
+    \vspace{0.5cm}
+    $\exists x \forall y (x + y = 0)$ is false!\\
+    All y's are not the additive inverses of a single x
+\end{center}
+
+\vspace{1cm}
+
+\section*{The norm/convention}
+Negations only occur and are written immediately before predicates, and not before quantifiers.
+Quanitifers: $\forall \: or \: \exists$
+
+\vspace{1cm}
+\noindent Negate at the boundaries first:
+
+\begin{align*}
+    \lnot (\forall x \exists y (x \cdot y = 1))
+        &\equiv \exists x \lnot(\exists y (x \cdot y = 1)) \\
+        &\equiv \exists x \forall y \lnot(x \cdot y = 1) \\
+        &\equiv \exists x \forall y (x \cdot y \neq 1)
+\end{align*}
+
 \end{document}
