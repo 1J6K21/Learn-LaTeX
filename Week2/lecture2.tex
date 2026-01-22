@@ -1,0 +1,30 @@
+\documentclass{article}
+\usepackage{amssymb}
+\author{Jonathan Kalsky}
+\date{Jan 22 2026}
+\title{Lecture 2 Example}
+
+\begin{document}
+\maketitle
+\vspace{1cm}
+\section*{“If a user is active, at least one network link will be available.”}
+
+p : "A user is Active" \\
+q : "A network link will be available"\\
+
+\noindent Starting with: 
+$$
+p \to q
+$$
+and $p \to q \equiv \lnot p \lor q(x)$\\
+
+\noindent negation: \\
+\begin{center}
+    
+    $\lnot (p \to q)$ \\
+    \vspace{0.5cm}
+    $\lnot (p \to q) \equiv p \land \lnot q(x)$\\
+    \vspace{0.5cm}
+    $\therefore$ if a user is active, and all newtwork links are not available.
+\end{center}
+\end{document}
