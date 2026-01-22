@@ -1,0 +1,6 @@
+
+Build
+Command + Option + B 
+
+View 
+Command + Option + V

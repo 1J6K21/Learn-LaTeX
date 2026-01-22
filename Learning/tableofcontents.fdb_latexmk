@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1768373408.04397 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/tableofcontents.tex" "tableofcontents.pdf" "tableofcontents" 1768373408.28387 0
-  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/tableofcontents.tex" 1768373407.87113 267 ff1390fe74fc030290e3da7d03994ca4 ""
+["pdflatex"] 1768375301.83085 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/tableofcontents.tex" "tableofcontents.pdf" "tableofcontents" 1768375302.07866 0
+  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/tableofcontents.tex" 1768375301.64851 267 ff1390fe74fc030290e3da7d03994ca4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -26,9 +26,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768363960 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "tableofcontents.aux" 1768373408.26311 400 7908d435432c8892aa1c7e641bab44d8 "pdflatex"
-  "tableofcontents.tex" 1768373407.87113 267 ff1390fe74fc030290e3da7d03994ca4 ""
-  "tableofcontents.toc" 1768373408.26356 204 a6111941ecab274a28923b9bb37547e0 "pdflatex"
+  "tableofcontents.aux" 1768375302.06005 400 7908d435432c8892aa1c7e641bab44d8 "pdflatex"
+  "tableofcontents.tex" 1768375301.64851 267 ff1390fe74fc030290e3da7d03994ca4 ""
+  "tableofcontents.toc" 1768375302.06044 204 a6111941ecab274a28923b9bb37547e0 "pdflatex"
   (generated)
   "tableofcontents.aux"
   "tableofcontents.log"

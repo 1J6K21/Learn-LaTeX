@@ -1,0 +1,123 @@
+\documentclass{article}
+\title{Homework 1}
+\author{Jonathan Kalsky}
+\date{Jan. 21 2026}
+
+\begin{document}
+\maketitle
+\vspace{1cm}
+\tableofcontents
+\vspace{1cm}
+\hrulefill
+\vspace{1cm}
+
+%Question 1:
+\section{Write the truth table for $(p \land q) \land \lnot p$ :}
+
+\begin{center}
+    
+    \begin{tabular}{| c | c | c |}
+        \hline
+        p & q & $(p \land q) \land \lnot p$\\
+        \hline
+        T & T & F\\
+        T & F & F\\
+        F & T & F\\
+        F & F & F\\
+        \hline
+    \end{tabular}
+
+\end{center}
+
+%Question 2:
+% \vspace{0.5cm}
+% \bigskip
+\section{Write the truth table for $\lnot p \land q \lor r \land \lnot p$}
+
+$$
+\begin{array}{|c|c|c|c|}
+\hline
+p & q & r & \lnot p \land q \lor r \land \lnot p \\
+\hline
+T & T & F & F\\
+T & F & F & F\\
+F & T & F & T\\
+F & F & F & F\\
+T & T & T & F\\
+T & F & T & F\\
+F & T & T & T\\
+F & F & T & T\\
+\hline
+\end{array}
+$$
+
+%Question 3:
+\section{Write the truth table for $(p \to q) \land (q \to r)$}
+$$
+    \begin{array}{|c|c|c|c|}
+        \hline
+        p & q & r & (p \to q) \land (q \to r) \\
+        \hline
+        F & F & F & T \\
+        F & F & T & T\\
+        F & T & F & F\\
+        F & T & T & T\\
+        T & F & F & F\\
+        T & F & T & F\\
+        T & T & F & F\\
+        T & T & T & T\\
+        \hline
+    \end{array}
+$$
+
+%Question 4:
+\section{Write the truth table for: $p \to q \to r$}
+$$
+\begin{array}{|c|c|c|c|}
+    \hline
+    p & q & r & p \to q \to r\\
+    \hline
+    F & F & F & T \\
+    F & F & T & T\\
+    F & T & F & T\\
+    F & T & T & T\\
+    T & F & F & T\\
+    T & F & T & T\\
+    T & T & F & F\\
+    T & T & T & T\\
+    \hline
+\end{array}
+$$
+
+%Question 5:
+\newpage
+\noindent
+\section{Use the theorems of logical equivalence to prove the following logical equivalence: $(p \land \lnot q) \lor p \equiv p$}
+
+Distributive Law
+$$
+(p \land \lnot q) \lor p \equiv (p \lor p) \land (p \lor \lnot q)
+$$
+Idempotent Law
+$$
+(p \lor p) \equiv p
+$$
+Substitute
+$$
+(p \land \lnot q) \lor p \equiv p \land (p \lor \lnot q)
+$$
+Absorption Law
+$$
+p \land (p \lor \lnot q) \equiv p
+$$
+Finally
+$$
+(p \land \lnot q) \lor p \equiv p
+$$
+
+\section{Use the theorems of logical equivalence to prove the following logical equivalence: $p \land (\lnot q \lor p) \equiv p$}
+Absorption Law
+$$
+p \land (\lnot q \lor p) \equiv p
+$$
+\end{document}
