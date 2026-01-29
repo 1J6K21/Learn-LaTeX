@@ -1,9 +1,12 @@
 \documentclass{article}
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{week2.bib} 
+
 \author{Jonathan Kalsky}
 \date{Jan 22 2026}
-\title{Lecture 2 Examples}
+\title{Week 2 Predicate Logic}
 \linespread{1.5}
 
 \begin{document}
@@ -44,8 +47,12 @@ and $p \to q \equiv \lnot p \lor q(x)$\\
 \vspace{1cm}
 
 \section*{The norm/convention}
-Negations only occur and are written immediately before predicates, and not before quantifiers.
-Quanitifers: $\forall \: or \: \exists$
+\begin{itemize}
+    \item Negations only occur and are written immediately before predicates, and not before quantifiers.
+    Quanitifers: $\forall \: or \: \exists$.
+    \item They have the highest priority over anything else (they affect the proposition that comes right after).
+\end{itemize}
+
 
 \vspace{1cm}
 \noindent Negate at the boundaries first:
@@ -56,5 +63,9 @@ Quanitifers: $\forall \: or \: \exists$
         &\equiv \exists x \forall y \lnot(x \cdot y = 1) \\
         &\equiv \exists x \forall y (x \cdot y \neq 1)
 \end{align*}
+
+\section*{Bound/Free Variables}
+``A bound variable is restricted by a quantifier (\(\forall \) or \(\exists \)) within an expression, making its value determined by the context (e.g., \(\forall xP(x)\)). A free variable is not constrained by a quantifier, allowing it to take any value within its domain. Bound variables act as placeholders, while free variables often depend on external definitions. "
+\cite{fiveable2025freebound}
 
 \end{document}
