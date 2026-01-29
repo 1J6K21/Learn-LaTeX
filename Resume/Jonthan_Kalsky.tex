@@ -1,0 +1,223 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez - modified by Jonathan Kalsky
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.75 in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.5in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Jonathan Kalsky} \\ \vspace{1pt}
+    \small 408-507-8388 $|$ \href{mailto:jonathan.kalsky@gmail.com}{\underline{Jonathan.kalsky@gmail.com}} $|$ 
+    \href{hwww.linkedin.com/in/jonathan-kalsky}{\underline{linkedin.com/in/jonathan-kalsky}} $|$
+    \href{https://github.com/1J6K21}{\underline{github.com/1J6K21}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Texas A\&M University}{College Station, TX}
+      {Bachelor of Science in Computer Science}{Aug. 2025 -- May 2029}
+  \resumeSubHeadingListEnd
+
+%-----------Biography-----------
+\section{Biography}
+\resumeSubHeadingListStart
+\resumeSubheading{Software Engineering}{Dean's Honor Roll}{}{}
+\resumeItem{Software Engineering student passionate about building reliable, user-facing applications supported by modern cloud and AI-enabled systems.  -  Seeking a 2026 internship to deepen my exposure to frontend development, cloud infrastructure, and large-scale systems.}
+\resumeSubHeadingListEnd
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  \resumeSubheading
+    {Aggie Course Explorer - Web Development}{October 2025 - Present}
+    {Texas A\&M University}{React, JavaScript/TypeScript, Python}
+    \resumeItemListStart
+      \resumeItem{Building components for aggieclasses.com, designed as tools for students filtering and exploring registration options}
+      \resumeItem{Integrated parsing and visual graphing logic to represent course prerequisite relationships, utilized across components}
+      \resumeItem{Reasoned through data flow, storage placement, and API boundaries to balance latency, payload size, and client-side complexity}
+      \resumeItem{Accelerated backend validation by customizing CLI to simulate the integration step}
+  \resumeItemListEnd
+  
+    \resumeSubheading
+      {Hackathon Applications}{Oct. 2025 - Present}
+      {Texas A\&M University}{JavaScript, Python, React, AI-Accelerated}
+      \resumeItemListStart
+        \resumeItem{Collaborated with new teammates to rapidly build and demo MVPs under tight hackathon timelines}
+        \resumeItem{Leveraged libraries, APIs, MCP servers, and AI agents to deliver MVPs across multiple competition tracks}
+        \resumeItem{Won awards across hackathons for various tracks; Deployed projects and published on GitHub}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+
+    \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{PhotosTool - Software Developer } $|$ \emph{iOS App, Swift, OpenAI, Firebase}}{June 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Building an iOS  lightweight photoediting app, powered by AI image generation, featuring masking tools and a structured JSON-based context editor}
+            \resumeItem{Implemented local user-data aggregation, client-side querying, Firebase and OpenAI API integrations to complete final image transformations and handle media feeds}
+            \resumeItem{\textbf{In progress:} Designing a user preference embedding system to model interest as vector representations, and retrieve related content using a similarity search}
+          \resumeItemListEnd
+
+          \resumeProjectHeading
+          {\textbf{Base4Good Hackathon - Software Developer} $|$ \emph{Web App, AI-Written Software}}{April 2025}
+          \resumeItemListStart
+            \resumeItem{Researched, and collected go-to market data to strategically build a digit-classifying ML model by sampling}
+            \resumeItem{Designed a mental math practice UI, and integrated this trained classifier for hand-drawn input}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {\textbf{Apple Swift Student Challenge - Software Developer} $|$ \emph{iOS App, Swift, Data Collection, ML}}{February 2025}
+          \resumeItemListStart
+            \resumeItem{Researched, and collected go-to market data to strategically build a digit-classifying ML model by sampling}
+            \resumeItem{Designed a mental math practice UI, and integrated this trained classifier for hand-drawn input}
+          \resumeItemListEnd
+  
+          \resumeProjectHeading
+      {\textbf{TimeWize - iOS Application} $|$ \emph{Swift, Firebase}}{Nov. 2023 - Nov. 2024}
+      \resumeItemListStart
+        \resumeItem{Founded and published a service-hour tracking iOS app for organizations}
+        \resumeItem{Designed backend data pipelines using Firebase (authentication, real-time database, cloud storage)}
+        \resumeItem{Applied agile development practices in a team,  while researching user needs and market fit}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Swift, Java, Python, TypeScript/JavaScript, C++, Shell Commands, HTML, CSS, C\#, R, LaTeX} \\
+     \textbf{Developer Tools}{: GitHub, Google Workspaces,  Jira/Trello, Linux/Unix, Microsoft, React, Office, VSCode, Xcode, IntelliJ IDEs, Jupyter, Kaggle} \\
+     \textbf{Awards}{: \underline{Tidal Hack}: 2nd Place in beginner-team track(unofficial), \underline{Datathon}: 1st Place best use of ElevenLabs, 2nd Place in video-game-agent Reinforcement Learning
+}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
