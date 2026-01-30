@@ -1,19 +1,21 @@
 # Fdb version 4
-["biber proofs"] 0 "proofs.bcf" "proofs.bbl" "proofs" 1769551704.23092 0
+["biber proofs"] 0 "proofs.bcf" "proofs.bbl" "proofs" 1769726828.2029 0
   "proofs.bcf" 0 -1 0 "pdflatex"
   "week2.bib" 0 -1 0 ""
   (generated)
   "proofs.bbl"
   "proofs.blg"
   (rewritten before read)
-["pdflatex"] 1769551703.6873 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week3 - Proofs/proofs.tex" "proofs.pdf" "proofs" 1769551704.23119 0
-  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week3 - Proofs/proofs.tex" 1769551703.51198 308 9331489d3540474a5b62d2cca18169be ""
+["pdflatex"] 1769726827.61431 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week3 - Proofs/proofs.tex" "proofs.pdf" "proofs" 1769726828.20317 0
+  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week3 - Proofs/proofs.tex" 1769726827.38482 814 d819aafd9d7d46a2982231bcc8e80a1e ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1246382020 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1246382020 928 2dc8d444221b7a635bb58038579b861a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1246382020 908 2921f8a10601f252058503cc6570e581 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1246382020 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1246382020 940 228d6584342e91276bf566bcf9716b83 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1136768653 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -28,9 +30,11 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty" 1734129479 7984 7dbb9280f03c0a315425f1b4f35d43ee ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/infwarerr/infwarerr.sty" 1575499628 8356 7bbb2c2373aa810be568c29e333da8ed ""
   "/usr/local/texlive/2025/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty" 1701727651 17865 1a9bd36b4f98178fa551aca822290953 ""
@@ -71,10 +75,10 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768363960 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "proofs.aux" 1769551704.12862 125 055898b75b0ce4e9eb75e223e63ad997 "pdflatex"
+  "proofs.aux" 1769726828.10195 125 055898b75b0ce4e9eb75e223e63ad997 "pdflatex"
   "proofs.bbl" 0 -1 0 "biber proofs"
-  "proofs.run.xml" 1769551704.13015 2320 87f9f409b8e168d45563cdc59c081a24 "pdflatex"
-  "proofs.tex" 1769551703.51198 308 9331489d3540474a5b62d2cca18169be ""
+  "proofs.run.xml" 1769726828.10322 2320 87f9f409b8e168d45563cdc59c081a24 "pdflatex"
+  "proofs.tex" 1769726827.38482 814 d819aafd9d7d46a2982231bcc8e80a1e ""
   (generated)
   "proofs.aux"
   "proofs.bcf"
