@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amssymb}
+\usepackage{amsfonts}
 \usepackage{amsmath}
 \usepackage[style=authoryear,backend=biber]{biblatex}
 \addbibresource{week2.bib} 
@@ -13,7 +14,7 @@
 \maketitle
 \vspace{1cm}
 
-\section*{Ex 1}
+\section*{Inference}
 Rules of Inference deduce new true statements and conclusions from premises.
 
 one standard rule: show premise, show how premises connect, and show how premises connect to conclusion
@@ -27,4 +28,32 @@ Hypothetical sylloogism - chain together two conditional statements
 Disjunctive syllogism - conclude one alternative is true when you know at least one of two things must be true and one of them is false.
 
 Critical Row - $p \to q \:is\:T\:and\:q\:is\:T$
+
+\section*{Definitions}
+\begin{itemize}
+    \item Prime Numbers\\
+    A prime integer cannot be factored by an integer that is not itself or one
+    \begin{center}    
+        if n is prime $\Longleftrightarrow$ $(n>1) \land (\forall r,s \in \mathbb{Z}^+, (n=rs) \to (r=1 \land s=n)\lor(s=1 \land r=n))$
+        Thus, a prime integer is greater than one, and is factorized by 2 variables; and for all instances those are 1 and itself.
+    \end{center}
+    \item Composite Numbers\\
+    A composite number is factored by 2 integers that are not 1 and itself
+    \begin{center}
+        if n is composite $\Longleftrightarrow$ $(n>1)\land (\forall r,s \in \mathbb{Z^+}, (n=rs) \to (1<r<n)\land(1<s<n))$
+        Thus, a composite number is facotred by 2 integers that are both $\in$ (1,n)
+    \end{center}
+    \item Even Numbers
+    \begin{center}
+    n is even $\Longleftrightarrow$ $\exists k\in\mathbb{Z} | (n = 2k)$\\
+    Thus, there exists an integer k that is half of n
+    \end{center}
+    \item Odd Numbers
+    \begin{center}
+    n is odd $\Longleftrightarrow$ $\exists k \in \mathbb{Z} | (n=2k+1)$\\
+    Thus, there exists a k integer such that it is -1 of an even integer
+    \end{center}
+
+\end{itemize}
+
 \end{document}
