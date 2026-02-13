@@ -1,0 +1,59 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage[style=authoryear,backend=biber]{biblatex}
+\addbibresource{week2.bib} 
+
+\author{Jonathan Kalsky}
+\date{Feb. 10 2026}
+\title{Week 5 Sets}
+\linespread{1.5}
+
+\begin{document}
+\maketitle
+\vspace{1cm}
+
+\section*{Sets}
+
+%left align titles pls
+\begin{itemize}
+    \item[\textbf{Set}]
+    \item Set $S = \{...\} $, empty set $\emptyset$, singleton $\{a\}$ 
+    \item Super set, means parent set
+    \item[\textbf{Subset}]
+    \item A proper subset A, $(\subset)$ does not equal its superset B
+    \item cannot equal: $\subset$ can equal: $\subseteq$
+    \item[\textbf{Power Set}]
+    \item The power set of a set S is the set of all subsets of S. Notation: $P(S)$
+    \item Power set of empty set ($P(\emptyset)$) is $\{\emptyset\} or \{\{\}\}$
+    \item[\textbf{cardinality}]
+    \item all powersets will have a minimum cardinality of 1 bc it could be empty (not for all subsets which can have $\{\}$)
+
+\end{itemize}
+
+Idempotent = same in latin
+
+
+$|S| = cardinality of s, |P(s)| = 2^n$
+
+like binary of whats included where 000 => empty set
+
+Union U is the elements in both sets $\cup$  A or B
+interesection $\cap$ is A and B
+
+B - A = B and not A
+$A\complement = U - A$ universe without A. also written $\overline{A}$
+
+Cartesian product of sets A and B is the set of all ordered pairs (a, b) where a is in set A and b is in set B
+
+$A \times B = \{(a,b) | (a \in A) \land (b \in B)\}$
+
+the order in which the sets are multiplied matters. because if the sets are (1) and (2), then (1,2) is not (2,1) in other words, (a,b) is unique of (b,a)
+result amount of elements is the product of the amount of elements in both sets. Like iterate through A for each B = AxB
+A relation R from A to B is a subset of AxB. It is like a filter subset via lambda
+
+A is the domain of R and B is the co-domain of R
+
+Fucntions vs. Relations ... TBC
+\end{document}
