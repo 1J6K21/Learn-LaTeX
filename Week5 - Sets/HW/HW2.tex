@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\author{Jonathan Kalsky}
+\date{Feb. 13 2026}
+\title{Homework 2}
+\linespread{1.5}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\vspace{1cm}
+
+%Section 1.6
+\section{Section 1.6}
+\section*{Question 14}
+\subsection*{a)}
+p = "In the class"\\
+q = "Owns a red convertible"\\
+r = "Got a speeding ticket"\\
+$\forall x(q(x) \to r(x))$ premise\\
+$p(x) \land q(x)$ Premise\\
+$q(x)$ Simplification\\
+$r(x)$ Modus ponens\\
+Due to linda, there is at least one person who has gotten a speeding ticket in this class
+
+\subsection*{b)}
+p = "Taken a course in discrete mathematics"\\
+q = "Can take a course in algorithms"\\
+$\forall x (p(x) \to q(x))$\\
+$p(M) \land p(A) \land p(R) \land p(V) \land p(K)$ Premise\\
+$q(M) \land q(A) \land q(R) \land q(V) \land q(K)$ Modus Ponens\\
+Because all 5 took discrete math, this implies all 5 are eligible for algorithms
+
+\subsection*{c)}
+p = "produced by John Sayles"\\
+q = "Is wonderful"\\
+$\forall x (p(x) \to q(x))$\\
+$p(Coal)$ Premise\\
+$q(Coal)$ Modus Ponens\\
+Because the movie about coal miners is produced by John Sayles, the movie is wonderful; thus, there is a wonderful movie about coal miners.
+
+\subsection*{d)}
+
+p = "Been to France"\\
+q = "Visited the Lovre"\\
+$\forall x (p(x) \to q(x))$\\
+$p(x)$ Premise\\
+$q(x)$ Modus Ponens\\
+
+\section*{Question 24}
+The error is on step 3, because you cannot simplify $P(c) \lor Q(c)$ to $P(c)$
+
+\section*{FRQ}
+p = "There is an undeclared variable"\\
+q = "There is a syntax error in the first five lines"\\
+r = "There is a missing semicolon"\\
+s = "Variable name is misspelled"\\
+$q \to (r \lor s)$\\
+$p \lor q$\\
+$\lnot r $ Premise \\
+$\lnot s $ Premise \\
+$\lnot (r \lor s) \to \lnot q = (\lnot r \land \lnot s) \to \lnot q$ Modus Tollens\\
+$\lnot q$\\
+Given there is no missing semicolon or misspelled variable name, there is not a syntax error in the first 5 lines.
+
+\section{Section 1.7}
+
+\section*{Question 18}
+
+$\forall m,n,k \in \mathbb{Z}, mn = 2k \iff$mn is even. By definition.\\
+$(m = 2k \land n = 2k + 1)\lor(m = 2k + 1 \land n = 2k) \to mn = (2(k(2k+1))) \lor (2(k(2k)))$ Through association, mn is even by definition.\\
+$mn \in \mathbb{Z}$ under multiplication since $k \in \mathbb{Z}$.\\
+Therefore, if m or n are even integers, mn is even.
+
+\section*{Question 20}
+p = "n is an integer"
+q = "is even"
+\section*{a) By contraposition}
+$p(n) \land q(3n+2) \to q(n)$ Premise\\
+$\lnot q(n) \to \lnot p(n) \lor \lnot q(3n+2)$ Contraposition\\
+(3n + 2) = (3n + 2(1)) Identity\\
+2(1) is even by definition. Even + Even = Even, Odd + Even = Odd\\
+Since: 2k + 2k = 2(2k) and (2k + 1) + (2k) = 2(2k) + 1\\
+By the same reduction,
+3n + 2 = 2(n+1) + n = n\\
+$\lnot q(n) \equiv \lnot q(3n+2)$ By definition of even\\
+This makes the condition true, and since the contrapositive is true, the original is true.
+
+
+
+\section*{b) By contradiction}
+$p(n) \land q(3n+2) \to q(n)$ Premise\\
+Assume $\lnot q(n)$ By Contradiction\\
+3n+2 = 3(2k+1) + 2 = 6k + 5 = 2(3k + 2) + 1\\
+This implies $\lnot q(3n+2)$ which contradicts the premise
+
+
+\section*{Question 34}
+
+if rational x was equivalent to rational x/2, it could be written as $x = \frac{p}{q}$ and $x/2 = \frac{p}{q/2}$, where q is just another integer.\\
+Then, 3x-1 can also be written as $\frac{3p}{q} -1 = \frac{3p-q}{q} $\\
+x can take on any real number, so with different combinations of p and q,\\
+x is rational $\equiv$ x/2 is rational $\equiv$ 3x-1 is rational\\
+
+\section*{FRQ}
+
+Prove: $x \in \mathbb{Z^+} \to (x = 2k \iff 7x+4 = 2k | k \in \mathbb{Z^+})$\\
+7x+4 = 2(3x+2) + x\\
+This implies 7x+4 is only a multiple of 2 if x is also a multiple of 2, where x is a positive integer.
+
+\section*{FRQ}
+R = "The square root of any irrational number is irrational."
+\section*{a)}
+$\lnot R =$ "The square root of any irrational number is rational."
+\section*{b)}
+prove: $\sqrt{irrational} = irrational$\\
+Assume opposite: $\sqrt{irrational} = rational$\\
+$\sqrt{irrational} = \frac{p}{q}$ Definition of a rational number\\
+$irrational = (\frac{p}{q})^2$\\
+$p,q \in \mathbb{Z}$, so $p/q$ is likely to be rational, which is a contradiction.\\
+By contradiction R is true, "The square root of any irrational number is irrational."
+
+\section{Section 2.1}
+\section*{Question 46}
+\section*{Question 48}
+\section{Section 2.2}
+\section*{Question 20}
+
+\end{document}
