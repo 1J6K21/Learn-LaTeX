@@ -1,7 +1,9 @@
 # Fdb version 4
-["pdflatex"] 1771065459.91124 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week5 - Sets/HW/HW2.tex" "HW2.pdf" "HW2" 1771065460.22141 0
-  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week5 - Sets/HW/HW2.tex" 1771065459.42417 4365 ff58d96db8e17be73f6c3f4d5495e5b4 ""
+["pdflatex"] 1771110200.79082 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week5 - Sets/HW/HW2.tex" "HW2.pdf" "HW2" 1771110201.09851 0
+  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/Week5 - Sets/HW/HW2.tex" 1771110200.60649 5052 2033e05e2c783ae4c213e510537c994a ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1246382020 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -34,6 +36,7 @@
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
+  "/usr/local/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1359763108 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1359763108 13829 94730e64147574077f8ecfea9bb69af4 ""
   "/usr/local/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd" 1359763108 961 6518c6525a34feb5e8250ffa91731cff ""
@@ -50,9 +53,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768363960 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "HW2.aux" 1771065460.19333 428 663bd6696da74ddc0de484f34f0ccd81 "pdflatex"
-  "HW2.tex" 1771065459.42417 4365 ff58d96db8e17be73f6c3f4d5495e5b4 ""
-  "HW2.toc" 1771065460.1937 232 5d5d91215ecc949b40ae1cced58d69a0 "pdflatex"
+  "HW2.aux" 1771110201.06671 428 104dfea20a8a2f965bc51ae52937a181 "pdflatex"
+  "HW2.tex" 1771110200.60649 5052 2033e05e2c783ae4c213e510537c994a ""
+  "HW2.toc" 1771110201.06702 232 7aa6884ddaacff81c405ddc868329a17 "pdflatex"
   (generated)
   "HW2.aux"
   "HW2.log"
