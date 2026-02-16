@@ -1,11 +1,12 @@
-\documentclass[8pt,landscape]{extarticle}
+\documentclass[10pt,landscape]{extarticle}
 \usepackage[utf8]{inputenc}
-\usepackage[margin=0.3in]{geometry}
+\usepackage[margin=0.4in]{geometry}
 \usepackage{multicol}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{nopageno}
+\usepackage{amsmath}
 
 % Compact list settings
 \setlist{nosep, leftmargin=*}
@@ -13,233 +14,347 @@
 
 % Compact section titles
 \titleformat{\section}
-  {\normalfont\bfseries\uppercase}{\thesection}{1em}{}
-\titlespacing*{\section}{0pt}{1ex plus 1ex minus .2ex}{0.5ex plus .2ex}
+  {\normalfont\large\bfseries\uppercase}{\thesection}{1em}{}
+\titlespacing*{\section}{0pt}{2ex plus 1ex minus .2ex}{0.8ex plus .2ex}
 
 \titleformat{\subsection}
   {\normalfont\bfseries}{\thesubsection}{1em}{}
-\titlespacing*{\subsection}{0pt}{0.5ex plus 1ex minus .2ex}{0.2ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1ex plus 1ex minus .2ex}{0.5ex plus .2ex}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{0pt}
+\setlength{\parskip}{2pt}
+\setlength{\columnsep}{20pt}
 
 \begin{document}
 
-\begin{multicols*}{4}
+\begin{multicols*}{3}
 
 \begin{center}
-    \textbf{\large GEOLOGY EXAM 1 CHEAT SHEET}
+    \textbf{\Large GEOLOGY EXAM 1: COMPREHENSIVE GUIDE}
 \end{center}
 
 \section{Introduction to Geology}
-\subsection{Basics}
+\subsection{Basics of Geology}
 \begin{itemize}
-    \item \textbf{Geology}: Science of Earth processes, composition, structure, history.
-    \item \textbf{Physical Geology}: Materials \& processes.
-    \item \textbf{Historical Geology}: Origin \& development through time.
-    \item \textbf{Uniformitarianism}: "The present is the key to the past." Processes today (erosion, volcanism) operated in the past.
-    \item \textbf{Scientific Method}: Observation $\rightarrow$ Hypothesis (testable) $\rightarrow$ Theory (well-tested). Data supports/disproves hypotheses.
+    \item \textbf{Geology}: The science of Earth's processes, composition, structure, and history. Interdisciplinary (Chem, Phys, Bio).
+    \item \textbf{Physical Geology}: Study of Earth materials and internal/surface processes.
+    \item \textbf{Historical Geology}: Study of Earth's origin and development through time.
+    \item \textbf{Why Study?}: Resource dependence (minerals, energy, water), Hazards, Environmental health.
 \end{itemize}
 
-\subsection{Origin of Earth}
+\subsection{Scientific Principles}
 \begin{itemize}
-    \item \textbf{Big Bang}: 13.7 billion years ago (Universe formation).
-    \item \textbf{Nebular Theory}: Solar system formed from rotating cloud (solar nebula).
-    \item \textbf{Solar System Age}: 4.6 billion years.
-    \item \textbf{Earth Formation}: 4.6 billion years ago. Accretion of planetesimals.
-    \item \textbf{Differentiation}: Melting caused dense Fe/Ni to sink (Core), lighter mix to float (Crust/Mantle).
+    \item \textbf{Uniformitarianism}: "The present is the key to the past." Processes operating today (erosion, volcanism, gravity) operated in the past.
+    \item \textbf{Scientific Method}: 
+        \begin{enumerate}
+            \item \textbf{Observation}: Data collection.
+            \item \textbf{Hypothesis}: Tentative, testable explanation.
+            \item \textbf{Theory}: Well-tested, widely accepted view (e.g., Plate Tectonics).
+        \end{enumerate}
+    \item \textbf{System}: Group of interacting parts (e.g., Earth System).
+        \begin{itemize}
+            \item \textbf{Open System}: Energy/matter flow in/out.
+            \item \textbf{Feedback Mechanisms}: +/- loops.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Geology \& Society (Facts)}
+\begin{itemize}
+    \item \textbf{Resource Usage}: Each American uses ~3.5 million lbs of minerals/metals/fuels in a lifetime.
+    \item \textbf{Population Bomb}: Exponential growth ($N = N_0 e^{kt}$ - you don't need to memorize the formula but know it's exponential).
+    \item \textbf{Carrying Capacity}: Max population Earth can support without degradation.
+    \item \textbf{Env. Disasters}:
+        \begin{itemize}
+            \item \textbf{BP Deepwater Horizon (2010)}: Largest marine oil spill. 152 days.
+            \item \textbf{Tohoku Earthquake (2011)}: Mag 9.1. Waves up to 133 ft, 435 mph. Moved Japan 8 ft. Shifted Earth axis 10 inches. Increased rotation speed (1.8 microseconds/day).
+        \end{itemize}
+\end{itemize}
+
+\section{Origins \& Time}
+\subsection{Origin of the Universe \& Solar System}
+\begin{itemize}
+    \item \textbf{Big Bang}: ~13.7 Billion years ago (estimated 10-15 Ga). All matter/energy expanded from a point.
+    \item \textbf{Nebular Theory}: Solar system evolved from a rotating cloud of gas/dust (Solar Nebula).
+        \begin{itemize}
+            \item Collapse $\rightarrow$ Spinning Disk $\rightarrow$ Proto-Sun $\rightarrow$ Planetesimals.
+        \end{itemize}
+    \item \textbf{Age of Earth/Solar System}: 4.6 Billion Years (4.6 Ga).
+\end{itemize}
+
+\subsection{Early Earth Evolution}
+\begin{itemize}
+    \item \textbf{Formation}: Accretion of high-velocity debris.
+    \item \textbf{Molten Earth}: Heat from impacts and radioactive decay caused melting.
+    \item \textbf{Differentiation}: Separation by density.
+        \begin{itemize}
+            \item \textbf{Iron/Nickel} sank to center (Core).
+            \item \textbf{Lighter rock} floated (Crust/Mantle).
+            \item \textbf{Gases} escaped to form primitive atmosphere (Outgassing).
+        \end{itemize}
 \end{itemize}
 
 \subsection{Geologic Time}
 \begin{itemize}
-    \item Scale: Eons $\rightarrow$ Eras $\rightarrow$ Periods $\rightarrow$ Epochs.
-    \item \textbf{Human Appearance}: Very recent (last few mins of "Earth Year").
+    \item \textbf{Scale}: Eons $\rightarrow$ Eras $\rightarrow$ Periods $\rightarrow$ Epochs.
+    \item \textbf{Precambrian}: Hadean, Archean, Proterozoic (88\% of Earth history).
+    \item \textbf{Phanerozoic}: "Visible Life" (Paleozoic, Mesozoic, Cenozoic).
+    \item \textbf{Analogy}: If Earth history = 1 year, Humans appear at 11:49 PM on Dec 31st.
 \end{itemize}
 
-\section{Earth Systems \& Structure}
-\subsection{Spheres}
+\section{Earth's Structure}
+\subsection{Compositional Layers (Chemistry)}
 \begin{itemize}
-    \item \textbf{Geosphere}: Solid Earth (Crust, Mantle, Core).
-    \item \textbf{Hydrosphere}: Water (Oceans, rivers).
-    \item \textbf{Atmosphere}: Gases. \textbf{Biosphere}: Life.
-\end{itemize}
-
-\subsection{Internal Structure (Composition)}
-\begin{itemize}
-    \item \textbf{Crust}: Rocky outer skin.
+    \item \textbf{Crust}: Thin, rocky outer skin.
         \begin{itemize}
-            \item \textbf{Oceanic}: Thin ($\sim$7km), Denser (3.0 g/cm$^3$), Basaltic (Mafic).
-            \item \textbf{Continental}: Thick (35-70km), Less Dense (2.7 g/cm$^3$), Granitic (Felsic).
+            \item \textbf{Oceanic}: Thin (~7 km), Denser (3.0 g/cm$^3$), Basaltic (Mafic). Young (<180 Ma).
+            \item \textbf{Continental}: Thick (35-70 km), Less Dense (2.7 g/cm$^3$), Granitic (Felsic). Old.
         \end{itemize}
-    \item \textbf{Mantle}: Solid rocky shell (Peridotite). More dense than crust.
-    \item \textbf{Core}: Iron-Nickel alloy.
-        \begin{itemize}
-            \item \textbf{Outer Core}: Liquid (generates Magnetic Field). S-waves cannot pass.
-            \item \textbf{Inner Core}: Solid (due to immense pressure).
-        \end{itemize}
+    \item \textbf{Mantle}: Solid, rocky shell. 82\% of Earth's volume. \textbf{Peridotite} (Ultramafic).
+    \item \textbf{Core}: Iron-Nickel alloy. Very dense.
 \end{itemize}
 
-\subsection{Properties vs Composition}
+\subsection{Physical Layers (Properties)}
 \begin{itemize}
-    \item \textbf{Lithosphere}: Rigid outer layer (Crust + Upper Mantle). Forms tectonic plates.
-    \item \textbf{Asthenosphere}: Weak, ductile layer below lithosphere (Upper Mantle). Allows plates to move.
+    \item \textbf{Lithosphere}: Crust + Uppermost Mantle. Cool, rigid, brittle. Forms Tectonic Plates.
+    \item \textbf{Asthenosphere}: Weak, ductile (plastic) layer in upper mantle. Allows plates to move.
+    \item \textbf{Mesosphere}: Lower mantle. Solid, strong.
+    \item \textbf{Outer Core}: \textbf{Liquid} Fe-Ni. Generates Earth's \textbf{Magnetic Field}.
+    \item \textbf{Inner Core}: \textbf{Solid} Fe-Ni. Immense pressure prevents melting despite high temps.
+\end{itemize}
+
+\subsection{Seismic Evidence}
+\begin{itemize}
+    \item \textbf{P-Waves}: Primary, Push-pull (compressional). Travel through solids, liquids, gases. Fastest.
+    \item \textbf{S-Waves}: Secondary, Shear. Travel ONLY through solids. Stopped by Outer Core (proving it's liquid).
 \end{itemize}
 
 \section{Plate Tectonics}
-\subsection{Key Concepts}
+\subsection{Development of the Theory}
 \begin{itemize}
-    \item \textbf{Hypothesis}: Continental Drift (Wegener) $\rightarrow$ Plate Tectonics (1960s).
-    \item \textbf{Driving Force}: Convection in mantle (ridge push, slab pull).
-    \item \textbf{Rate}: $\sim$3 cm/year (fingerprint growth speed).
+    \item \textbf{Continental Drift (1915)}: Alfred Wegener. Pangaea. Rejected due to lack of mechanism.
+    \item \textbf{Plate Tectonics (1960s)}: Unified theory. Lithosphere broken into plates moving on asthenosphere.
+    \item \textbf{Driving Forces}:
+        \begin{itemize}
+            \item \textbf{Slab Pull}: Main driver. Cold, dense slab sinks.
+            \item \textbf{Ridge Push}: Gravity slides plate off high ridge.
+            \item \textbf{Mantle Convection}: Heat transfer.
+        \end{itemize}
+    \item \textbf{Plate Rate}: Average ~3 cm/year (fingerprint growth). North American plate is relatively slow.
 \end{itemize}
 
-\subsection{Boundaries}
+\subsection{Plate Boundaries}
 \begin{itemize}
-    \item \textbf{Divergent} (Move apart):
+    \item \textbf{Divergent} ($\leftarrow \rightarrow$): Plates move apart. New crust created.
         \begin{itemize}
-            \item Mid-Ocean Ridges (Seafloor spreading). New crust created.
-            \item Rift Valleys (e.g., East Africa, Mt. Kilimanjaro).
-            \item Decompression melting.
-            \item Example: Iceland, Mid-Atlantic Ridge.
+            \item \textbf{Features}: Mid-Ocean Ridges (seafloor spreading), Rift Valleys.
+            \item \textbf{Melting}: Decompression Melting.
+            \item \textbf{Examples}: Mid-Atlantic Ridge, East African Rift, Iceland.
         \end{itemize}
-    \item \textbf{Convergent} (Move together):
+    \item \textbf{Convergent} ($\rightarrow \leftarrow$): Plates move together. Crust recycled/destroyed.
         \begin{itemize}
-            \item \textbf{Ocean-Cont}: Subduction. Volcanic Arc (e.g., Cascades, Andes). Trench.
-            \item \textbf{Ocean-Ocean}: Subduction. Island Arc (e.g., Japan, Aleutians). Trench.
-            \item \textbf{Cont-Cont}: Collision. Mountain Belt (e.g., Himalayas). No subduction/volcanism.
-            \item Oceanic lithosphere sinks at trenches.
+            \item \textbf{Ocean-Continent}: Subduction. Trench + Continental Volcanic Arc (e.g., Andes, Cascades).
+            \item \textbf{Ocean-Ocean}: Subduction. Trench + Volcanic Island Arc (e.g., Japan, Aleutians).
+            \item \textbf{Continent-Continent}: Collision. No subduction. Huge Mountains (e.g., Himalayas).
+            \item \textbf{Melting}: Flux Melting (Water from slab lowers melting point).
         \end{itemize}
-    \item \textbf{Transform} (Slide past):
+    \item \textbf{Transform} ($\uparrow \downarrow$): Plates slide past. No production/destruction.
         \begin{itemize}
-            \item No crust created/destroyed.
-            \item Example: San Andreas Fault.
+            \item \textbf{Features}: Faults, Earthquakes. No volcanoes.
+            \item \textbf{Example}: San Andreas Fault.
         \end{itemize}
 \end{itemize}
 
-\subsection{Evidence}
+\subsection{Evidence for Plate Tectonics}
 \begin{itemize}
-    \item \textbf{Hot Spots}: Stationary mantle plumes. Plate moves over them creating track (e.g., Hawaii). Shows direction of plate motion.
-    \item \textbf{Paleomagnetism}: Earth's field reverses. Recorded in oceanic crust. Symmetric stripes at ridges prove seafloor spreading.
-    \item \textbf{Declination}: Angle to pole. \textbf{Inclination}: Angle to horizontal (latitude).
+    \item \textbf{Paleomagnetism}: Iron minerals (Magnetite) align with magnetic field at \textbf{Curie Point} (~585$^\circ$C / 1800$^\circ$F).
+    \item \textbf{Magnetic Reversals}: Symmetric "bar code" stripes of normal/reversed polarity on seafloor. Proves seafloor spreading.
+    \item \textbf{Seafloor Age}: Youngest at ridges, oldest at trenches. Atlantic ocean doesn't exist >200 Ma.
+    \item \textbf{Hot Spots}: Stationary mantle plumes (intraplate). Plate moves over them.
+        \begin{itemize}
+            \item Example: Hawaii. Chain shows direction of plate motion.
+        \end{itemize}
+    \item \textbf{GPS}: Direct measurement of motion.
 \end{itemize}
 
 \section{Minerals}
 \subsection{Definition}
 \begin{itemize}
-    \item Naturally occurring, Inorganic, Solid, Ordered internal structure, Definite chemical composition.
-    \item \textbf{Rock}: Aggregate of minerals.
+    \item \textbf{Criteria}: 1) Naturally occurring, 2) Inorganic, 3) Solid, 4) Ordered crystalline structure, 5) Definite chemical composition.
+    \item \textbf{Rock}: Solid aggregate of minerals.
+    \item \textbf{Atom Basics}: Protons (+), Neutrons (0), Electrons (-). Bonding occurs to satisfy shells.
 \end{itemize}
 
-\subsection{Formation}
+\subsection{Chemical Bonding}
 \begin{itemize}
-    \item Crystallization from magma.
-    \item Precipitation from water.
-    \item Weathering (secondary minerals).
-    \item Metamorphism (heat/pressure).
-    \item Open space allows good crystal faces.
+    \item \textbf{Ionic}: Transfer of electrons. Electrostatic attraction (e.g., Halite NaCl). Soluble.
+    \item \textbf{Covalent}: Sharing of electrons. Strongest bond (e.g., Diamond).
+    \item \textbf{Metallic}: Electrons drift freely ("sea of electrons"). Conductive, malleable (e.g., Gold, Copper).
+    \item \textbf{Van der Waals}: Weak residual forces between sheets (e.g., Graphite).
 \end{itemize}
 
-\subsection{Properties}
+\subsection{Physical Properties}
 \begin{itemize}
-    \item \textbf{Color}: Variable (impurities). Unreliable for Quartz.
-    \item \textbf{Shape}: Determined by crystal structure (e.g., Quartz pyramid).
-    \item \textbf{Polymorphs}: Same composition, different structure (Diamond vs Graphite). Diamond=High P, Graphite=Low P.
-\end{itemize}
-
-\subsection{Classes}
-\begin{itemize}
-    \item \textbf{Silicates}: Most common (SiO$_4$ tetrahedron).
+    \item \textbf{Lustre}: Appearance in light (Metallic vs Non-metallic).
+    \item \textbf{Color}: Diagnostic for some, unreliable for others (e.g., Quartz varies due to impurities).
+    \item \textbf{Streak}: Color of powdered mineral (Streak plate).
+    \item \textbf{Hardness}: Resistance to scratching (Mohs Scale).
         \begin{itemize}
-            \item \textbf{Felsic (Light)}: Quartz, Feldspar, Muscovite. Low density, low melt temp. Continental.
-            \item \textbf{Mafic (Dark)}: Olivine, Pyroxene, Biotite, Amphibole. High Fe/Mg, high density, high melt temp. Oceanic/Mantle.
+            \item 1 (Softest): Talc. 2.5: Fingerprint. 10 (Hardest): Diamond.
         \end{itemize}
-    \item \textbf{Non-Silicates}: Carbonates, Halides, Oxides, Native elements.
-    \item \textbf{Economic}: Less abundant, specific uses. \textbf{Rock-forming}: Abundant.
+    \item \textbf{Cleavage vs Fracture}: Breaking along planes of weakness (Cleavage) vs random (Fracture/Conchoidal).
+    \item \textbf{Specific Gravity}: Density ratio.
+    \item \textbf{Special Properties}: 
+        \begin{itemize}
+            \item \textbf{Calcite}: Reacts with HCl (fizzes).
+            \item \textbf{Magnetite}: Magnetic.
+            \item \textbf{Halite}: Salty taste.
+        \end{itemize}
+    \item \textbf{Polymorphs}: Same composition, different structure/properties. (Diamond [High P] vs Graphite [Low P] - both Carbon).
+\end{itemize}
+
+\subsection{Mineral Groups}
+\begin{itemize}
+    \item \textbf{Silicates}: Most common group (>90\% of crust). Based on Silicon-Oxygen Tetrahedron (SiO$_4^{4-}$).
+        \begin{itemize}
+            \item \textbf{Mafic (Dark)}: Rich in Fe, Mg. High density, high melt temp. (Olivine, Pyroxene, Amphibole, Biotite).
+            \item \textbf{Felsic (Light)}: Rich in Si, Al, K, Na. Low density, low melt temp. (Quartz, Feldspar, Muscovite).
+        \end{itemize}
+    \item \textbf{Non-Silicates}:
+        \begin{itemize}
+            \item \textbf{Carbonates}: Calcite, Dolomite (Limestone, Marble).
+            \item \textbf{Halides}: Halite (Salt), Fluorite.
+            \item \textbf{Oxides}: Hematite, Magnetite (Ores).
+            \item \textbf{Sulfides}: Galena, Pyrite (Ores).
+            \item \textbf{Native Elements}: Gold, Copper, Sulfur.
+        \end{itemize}
+    \item \textbf{Rock-Forming} (Abundant) vs \textbf{Economic} (Valuable).
 \end{itemize}
 
 \section{Magma \& Igneous Rocks}
-\subsection{Magma Formation (Melting)}
+\subsection{Magma Components}
 \begin{itemize}
-    \item \textbf{Decompression}: P drops as rock rises (Divergent, Hot Spots).
-    \item \textbf{Volatile (Flux)}: Water lowers melting point (Subduction).
-    \item \textbf{Heat Transfer}: Rising magma melts crust (Continental rifts/Hot spots).
+    \item \textbf{Melt}: Liquid portion.
+    \item \textbf{Solids}: Crystallized minerals.
+    \item \textbf{Volatiles}: Gases (H$_2$O, CO$_2$, SO$_2$) dissolved in melt. Escape at surface.
 \end{itemize}
 
-\subsection{Properties}
+\subsection{Generation of Magma (Melting)}
 \begin{itemize}
-    \item \textbf{Viscosity}: Resistance to flow.
+    \item \textbf{Geothermal Gradient}: Temp increases w/ depth (~25$^\circ$C/km). Rock in mantle is solid (hot but high P).
+    \item \textbf{Decompression Melting}: Pressure drops as rock rises, lowering melting point. (Divergent boundaries, Hot Spots).
+    \item \textbf{Flux (Volatile) Melting}: Water released from subducting slab lowers melting point of mantle wedge. (Subduction zones).
+    \item \textbf{Heat Transfer}: Rising magma melts surrounding crustal rock.
+\end{itemize}
+
+\subsection{Evolution of Magma}
+\begin{itemize}
+    \item \textbf{Differentiation}: Separation of components.
+    \item \textbf{Crystal Settling}: Early formed crystals (heavy) sink.
+    \item \textbf{Assimilation}: Melting surrounding host rock.
+    \item \textbf{Magma Mixing}: Two bodies join.
+    \item \textbf{Bowen's Reaction Series}: Predictable order of crystallization.
         \begin{itemize}
-            \item High Temp $\rightarrow$ Low Viscosity.
-            \item High Silica (Felsic) $\rightarrow$ High Viscosity.
-            \item Low Silica (Mafic) $\rightarrow$ Low Viscosity.
+            \item \textbf{Discontinuous}: Olivine (High T) $\rightarrow$ Pyroxene $\rightarrow$ Amphibole $\rightarrow$ Biotite.
+            \item \textbf{Continuous}: Ca-rich Plagioclase $\rightarrow$ Na-rich Plagioclase.
+            \item \textbf{Last to Crystallize (Low T)}: K-Feldspar, Muscovite, Quartz.
         \end{itemize}
-    \item \textbf{Rising}: Magma rises because it is less dense than surrounding rock and under pressure.
 \end{itemize}
 
-\subsection{Textures (Cooling Rate)}
+\subsection{Igneous Classifications}
 \begin{itemize}
-    \item \textbf{Aphanitic} (Fine): Fast cooling (Extrusive/Volcanic).
-    \item \textbf{Phaneritic} (Coarse): Slow cooling (Intrusive/Plutonic).
-    \item \textbf{Porphyritic}: Two stages (Slow then Fast). Phenocrysts (large) in matrix.
-    \item \textbf{Glassy}: Very fast cooling (Obsidian).
-    \item \textbf{Pyroclastic}: Explosive fragments (Tuffs).
-    \item \textbf{Vesicular}: Gas bubbles (Pumice/Scoria).
+    \item \textbf{Intrusive (Plutonic)}: Cools slowly underground. Large crystals.
+    \item \textbf{Extrusive (Volcanic)}: Cools quickly on surface. Small crystals.
 \end{itemize}
 
-\subsection{Composition}
+\subsection{Intrusive Structures (Plutons)}
 \begin{itemize}
-    \item \textbf{Felsic}: High Si, Na, K. Granite (Intr) / Rhyolite (Extr).
-    \item \textbf{Intermediate}: Andesite (Extr) / Diorite (Intr).
-    \item \textbf{Mafic}: High Fe, Mg, Ca. Basalt (Extr) / Gabbro (Intr).
-    \item \textbf{Ultramafic}: Peridotite (Mantle).
+    \item \textbf{Dikes:} cut across layers (Vertically)
+    \item \textbf{Sills:} cut through layers (Horizontally)
+    \item \textbf{Batholith:} Deep-seated magma chambers that cool slowly underground.  (Huge)
+    \item \textbf{Laccolith:} Smaller version that looks like a dome.
 \end{itemize}
 
-\section{Volcanoes}
-\subsection{Types}
+\subsection{Textures (Crystal Size)}
 \begin{itemize}
-    \item \textbf{Shield}: Broad, gentle slopes. Fluid basalt. Effusive. (Mauna Loa).
-    \item \textbf{Stratovolcano (Composite)}: Large, cone-shaped. Andesite/Rhyolite. Explosive. (Mt. Rainer, Fuji).
-    \item \textbf{Cinder Cone}: Small, steep. Pyroclastic ejecta.
-    \item \textbf{Caldera}: Collapsed summit (Crater Lake).
+    \item \textbf{Phaneritic}: Coarse-grained (Visible). Slow cooling (Intrusive).
+    \item \textbf{Aphanitic}: Fine-grained (Microscopic). Fast cooling (Extrusive).
+    \item \textbf{Porphyritic}: Large crystals (Phenocrysts) in fine matrix (Groundmass). Two-stage cooling, and the result of slow cooling followed by a sudden increase in the cooling rate..
+    \item \textbf{Glassy}: No crystals (Obsidian). Instant cooling.
+    \item \textbf{Vesicular}: Holes from gas bubbles (Pumice, Scoria).
+    \item \textbf{Pyroclastic}: Fragmented rock/ash (Tuff).
 \end{itemize}
 
-\subsection{Hazards}
+\subsection{Compositions}
 \begin{itemize}
-    \item \textbf{Lahars}: Mudflows (Ash + Water). Flow far, follow rivers. Can occur without eruption.
-    \item \textbf{Pyroclastic Flows}: Hot gas/ash avalanche. Very fast (>100 km/h), deadly.
-    \item \textbf{Lava Flows}: Destroys property, usually slow enough to escape (except fluid basalt).
-    \item \textbf{Ash}: Buries landscape, engine failure, respiratory issues.
-    \item \textbf{Gas}: SO$_2$, CO$_2$. Can suffocate.
+    \item \textbf{Felsic} (Granitic): High Silica (>65\%). Light color. High Viscosity.
+        \begin{itemize}
+            \item Intrusive: \textbf{Granite}. Extrusive: \textbf{Rhyolite}.
+        \end{itemize}
+    \item \textbf{Intermediate} (Andesitic): Moderate Silica. Gray color.
+        \begin{itemize}
+            \item Intrusive: \textbf{Diorite}. Extrusive: \textbf{Andesite}.
+        \end{itemize}
+    \item \textbf{Mafic} (Basaltic): Low Silica. High Fe/Mg. Dark color. Low Viscosity.
+        \begin{itemize}
+            \item Intrusive: \textbf{Gabbro}. Extrusive: \textbf{Basalt}.
+        \end{itemize}
+    \item \textbf{Ultramafic}: Very low Silica. Green (Olivine). Mantle rock.
+        \begin{itemize}
+            \item Intrusive: \textbf{Peridotite}.
+        \end{itemize}
 \end{itemize}
 
-\subsection{Eruption Styles}
+\section{Volcanoes \& Hazards}
+\subsection{Viscosity \& Eruptions}
 \begin{itemize}
-    \item \textbf{Effusive}: Low viscosity (Basalt). Pahoehoe (ropy), A'a (jagged).
-    \item \textbf{Explosive}: High viscosity (Felsic/Intermediate). Trapped gas builds pressure.
-    \item \textbf{Flood Basalts}: Massive flows, low viscosity, fissures (Columbia River).
+    \item \textbf{Viscosity}: Resistance to flow. Controls explosivity.
+        \begin{itemize}
+            \item \textbf{High Viscosity}: High Silica (Felsic), Low Temp. Gas trapped $\rightarrow$ \textbf{Explosive}.
+            \item \textbf{Low Viscosity}: Low Silica (Mafic), High Temp. Gas escapes $\rightarrow$ \textbf{Effusive}.
+            \item \textbf{Simplified Rule:} Subduction/Explosive $\rightarrow$ Stratovolcanoes. Hotspots $\rightarrow$ Shield/Effusive.
+        \end{itemize}
 \end{itemize}
 
-\subsection{Tectonic Settings}
+\subsection{Volcano Types}
 \begin{itemize}
-    \item \textbf{Ring of Fire}: Subduction zones (Convergent). Most volcanoes here.
-    \item \textbf{Mid-Ocean Ridges}: Divergent. Most lava production (underwater).
-    \item \textbf{Hot Spots}: Intra-plate (Hawaii, Yellowstone).
+    \item \textbf{Shield Volcano}: Broad, slight dome. Fluid Basaltic lava. Liquid flows. (e.g., Mauna Loa, Hawaii).
+    \item \textbf{Cinder Cone}: Small, steep. Built from ejected lava fragments (scoria). Short-lived. (e.g., Paricutin).
+    \item \textbf{Composite Cone (Stratovolcano)}: Large, classic cone. Interbedded lava/pyroclastics. Violent. Ring of Fire. (e.g., Mt. Rainier, St. Helens, Fuji).
+    \item \textbf{Caldera}: Large collapse depression (>1 km). (e.g., Crater Lake, Yellowstone).
+    \item \textbf{Flood Basalts}: Massive volume of fluid lava from fissures. (e.g., Columbia River Basalts).
 \end{itemize}
 
-\section{Rock Cycle}
+\subsection{Volcanic Hazards}
 \begin{itemize}
-    \item \textbf{Igneous}: Melt $\rightarrow$ Cool/Crystallize.
-    \item \textbf{Sedimentary}: Weathering $\rightarrow$ Sediment $\rightarrow$ Lithification.
-    \item \textbf{Metamorphic}: Heat/Pressure $\rightarrow$ Solid state change.
-    \item Any rock can become any other rock given the right process.
+    \item \textbf{Pyroclastic Flow}: Superheated gas/ash avalanche. >100 km/h. Most deadly.
+    \item \textbf{Lahars}: Volcanic mudflows (Ash + Water). Concrete-like. Can occur without eruption (rain/melt). Major threat to valleys.
+    \item \textbf{Ejecta / Tephra}: Ash (fine), Lapilli (gravel), Blocks (hard), Bombs (molten-streamlined).
+    \item \textbf{Lava Flows}: Property damage, usually slow. Pahoehoe (ropy, hotter, less viscous), A'a (jagged, otherwise same compistion).
+    \item \textbf{Gas}: H$_2$O, CO$_2$, SO$_2$. CO$_2$ is denser than air, collects in lows (Lake Nyos).
 \end{itemize}
 
-\section{Ocean Floor Features}
+\subsection{Monitoring \& Status}
 \begin{itemize}
-    \item \textbf{Continental Margin}: Shelf (flooded extension), Slope (drop-off), Rise (sediment wedge).
-    \item \textbf{Abyssal Plain}: Flat deep ocean floor.
-    \item \textbf{Trench}: Deepest parts, at subduction zones.
-    \item \textbf{Seamounts}: Underwater volcanoes (Hot spots/Ridges).
+    \item \textbf{Active}: Erupting or recent. \textbf{Dormant}: Sleeping, capable. \textbf{Extinct}: No magma source.
+    \item \textbf{Signals}: Earthquakes (magma movement), Ground deformation (inflation), Gas emission changes.
+\end{itemize}
+
+\section{Ocean Floor}
+\begin{itemize}
+    \item \textbf{Bathymetry}: Mapping ocean depth (Sonar).
+    \item \textbf{Continental Margin}: Transition from land to deep sea.
+        \begin{itemize}
+            \item \textbf{Shelf}: Flooded continent, gentle slope.
+            \item \textbf{Slope}: Steep drop-off.
+            \item \textbf{Rise}: Sediment accumulation.
+        \end{itemize}
+    \item \textbf{Deep Ocean Basin}:
+        \begin{itemize}
+            \item \textbf{Abyssal Plain}: Flat, sediment covered.
+            \item \textbf{Trenches}: Deepest points (subduction).
+            \item \textbf{Seamounts}: Submerged volcanoes.
+        \end{itemize}
+    \item \textbf{Mid-Ocean Ridge}: Longest topo feature. Rift valley in center.
 \end{itemize}
 
 \end{multicols*}
