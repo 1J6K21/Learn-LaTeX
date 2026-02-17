@@ -21,15 +21,17 @@ p = "In the class"\\
 q = "Owns a red convertible"\\
 r = "Got a speeding ticket"\\
 $\forall x(q(x) \to r(x))$ premise\\
-$p(x) \land q(x)$ Premise\\
-$q(x)$ Simplification\\
-$r(x)$ Modus ponens\\
-Due to linda, there is at least one person who has gotten a speeding ticket in this class
+$q(Linda) \to r(Linda)$ Linda follows this premise\\
+$p(Linda) \land q(Linda)$ Premise\\
+$q(Linda)$ Simplification\\
+$r(Linda)$ Modus ponens\\
+Due to Linda, there is at least one person who has gotten a speeding ticket in this class
 
 \subsection*{b)}
 p = "Taken a course in discrete mathematics"\\
 q = "Can take a course in algorithms"\\
 $\forall x (p(x) \to q(x))$\\
+$p(M) \rightarrow q(M)$, $p(R) \rightarrow q(R)$, $p(V) \rightarrow q(V)$, $p(K) \rightarrow q(K)$ Universaly True \\
 $p(M) \land p(A) \land p(R) \land p(V) \land p(K)$ Premise\\
 $q(M) \land q(A) \land q(R) \land q(V) \land q(K)$ Modus Ponens\\
 Because all 5 took discrete math, this implies all 5 are eligible for algorithms
@@ -39,16 +41,19 @@ p = "produced by John Sayles"\\
 q = "Is wonderful"\\
 $\forall x (p(x) \to q(x))$\\
 $p(Coal)$ Premise\\
+$p(coal) \to q(Coal)$ Universal Application\\
 $q(Coal)$ Modus Ponens\\
 Because the movie about coal miners is produced by John Sayles, the movie is wonderful; thus, there is a wonderful movie about coal miners.
 
 \subsection*{d)}
 
 p = "Been to France"\\
-q = "Visited the Lovre"\\
+q = "Visited the Louvre"\\
 $\forall x (p(x) \to q(x))$\\
-$p(x)$ Premise\\
-$q(x)$ Modus Ponens\\
+$p(S)$ Premise\\
+$p(S) \to q(S)$ Universal Application\\
+$q(S)$ Modus Ponens\\
+Given there is someone who has been to France in the class, someone visited the Louvre.
 
 \section*{Question 24}
 The error is on step 3, because you cannot simplify $P(c) \lor Q(c)$ to $P(c)$
@@ -58,51 +63,55 @@ p = "There is an undeclared variable"\\
 q = "There is a syntax error in the first five lines"\\
 r = "There is a missing semicolon"\\
 s = "Variable name is misspelled"\\
-$q \to (r \lor s)$\\
-$p \lor q$\\
+$q \to (r \lor s)$ Premise\\
+$p \lor q$ Premise\\
 $\lnot r $ Premise \\
 $\lnot s $ Premise \\
-$\lnot (r \lor s) \to \lnot q = (\lnot r \land \lnot s) \to \lnot q$ Modus Tollens\\
+$\lnot (r \lor s) \to \lnot q \equiv (\lnot r \land \lnot s) \to \lnot q$ Modus Tollens\\
 $\lnot q$\\
-Given there is no missing semicolon or misspelled variable name, there is not a syntax error in the first 5 lines.
+$p$ Disjunctive Syllogism\\
+Given there is no missing semicolon or misspelled variable name, there is not a syntax error in the first 5 lines. This then also concludes that there is an undeclared variable.
 
 \section{Section 1.7}
 
 \section*{Question 18}
 
-$\forall m,n,k \in \mathbb{Z}, mn = 2k \iff$mn is even. By definition.\\
-$(m = 2k \land n = 2k + 1)\lor(m = 2k + 1 \land n = 2k) \to mn = (2(k(2k+1))) \lor (2(k(2k)))$ Through association, mn is even by definition.\\
-$mn \in \mathbb{Z}$ under multiplication since $k \in \mathbb{Z}$.\\
+$\forall m,n,k \in \mathbb{Z}( mn = 2k \iff$mn is even) By definition.\\
+Additionally, if m is even or n is even $\forall a,b \in \mathbb{Z},$\\
+$(m = 2a \land n = 2b + 1)\lor(m = 2b + 1 \land n = 2a) \to mn = 2(a(2b+1))$\\ Through association, mn is even by definition.\\
+$mn \in \mathbb{Z}$ because $k \in \mathbb{Z}$, multiplication is closed under $\mathbb{Z}$\\
 Therefore, if m or n are even integers, mn is even.
 
 \section*{Question 20}
 p = "n is an integer"
 q = "is even"
 \section*{a) By contraposition}
-$p(n) \land q(3n+2) \to q(n)$ Premise\\
+$p(n) \land q(3n+2) \to q(n)$ To Prove\\
 $\lnot q(n) \to \lnot p(n) \lor \lnot q(3n+2)$ Contraposition\\
-(3n + 2) = (3n + 2(1)) Identity\\
-2(1) is even by definition. Even + Even = Even, Odd + Even = Odd\\
-Since: 2k + 2k = 2(2k) and (2k + 1) + (2k) = 2(2k) + 1\\
-By the same reduction,
-3n + 2 = 2(n+1) + n = n\\
-$\lnot q(n) \equiv \lnot q(3n+2)$ By definition of even\\
-This makes the condition true, and since the contrapositive is true, the original is true.
+Addition and multiplication is closed under the set of integers so $p(n)$\\
+Now prove: $\lnot q(n) \to \lnot q(3n+2)$ Logical Reduction\\
+If q(n), n can be written in the form of 2k+1 such that k is an integer\\
+$\lnot q(2k+1) \to \lnot q(3(2k+1)+2 = 2(3k+2) + 1)$\\
+This relationship is tautological\\
+Through contraposition, we can prove the statement is true.
 
 
 
 \section*{b) By contradiction}
-$p(n) \land q(3n+2) \to q(n)$ Premise\\
+$p(n) \land q(3n+2) \to q(n)$ To Prove\\
 Assume $\lnot q(n)$ By Contradiction\\
+n can be written as 2k + 1  such that k is an integer\\
 3n+2 = 3(2k+1) + 2 = 6k + 5 = 2(3k + 2) + 1\\
-This implies $\lnot q(3n+2)$ which contradicts the premise
+This implies $\lnot q(3n+2)$ which contradicts the premise and assumption of q(3n+2)
 
 
 \section*{Question 34}
 
-if rational x was equivalent to rational x/2, it could be written as $x = \frac{p}{q}$ and $x/2 = \frac{p}{q/2}$, where q is just another integer.\\
-Then, 3x-1 can also be written as $\frac{3p}{q} -1 = \frac{3p-q}{q} $\\
-x can take on any real number, so with different combinations of p and q,\\
+x is rational $\iff x = \frac{p}{q} \mid p,q \in \mathbb{Z}, q \neq 0, gcd(p,q)=1 $ \\
+x/2 = $\frac{2p_x}{q_x}$, keeping the gcd the same, p and q as integers, and q $\neq 0$ \\
+3x-1 = $\frac{3p_x}{q_x} - 1$\\
+This remains rational because a rational - 1 equals the whole + fractions inverse(which is rational).\\
+If x is rational, all 3 are valid rational expressions\\
 x is rational $\equiv$ x/2 is rational $\equiv$ 3x-1 is rational\\
 
 \section*{FRQ}
@@ -120,16 +129,16 @@ prove: $\sqrt{irrational} = irrational$\\
 Assume opposite: $\sqrt{irrational} = rational$\\
 $\sqrt{irrational} = \frac{p}{q}$ Definition of a rational number\\
 $irrational = (\frac{p}{q})^2$\\
-$p,q \in \mathbb{Z}$, so $(\frac{p}{q})^2$ is likely to be rational, which is a contradiction.\\
-By contradiction R is true, "The square root of any irrational number is irrational."
+This expresses an irrational number as a rational by definition which is a contradiction. Therefore, the square root of an irrational number is irrational.
 
 \section{Section 2.1} 
 
 \section*{Question 46}
-Use proofs?\\
-Multiplication of sets is not commutative:
 If A = $(a_1, a_2)$ and B = $(b_1,b_2)$\\
-AxB is a set of $a_1$ and $a_2$ with all combinations of B, in that order.
+AxB is a set of $a_1$ and $a_2$ with all combinations of B, in that order.\\
+Switching the order of AxB implies that the element pairs of the product set will not be the same\\
+Multiplication of sets is not commutative\\
+This fails to equate AxB and BxA under equivalence of sets by definition.\\
 Therefore the order of multiplication matters, and the resulting set is not necessarily equivalent if switched. (AxB) ×(C x D) and A x (B x C) ×D are not the same.
 
 \section*{Question 48}
@@ -138,6 +147,7 @@ A, B, and C are nonempty sets $\mid$ Premise\\
 $A\times B = \{(a,b)\} | a\in A \land b \in B \mid$ Cartesian Product\\
 $A\times C = \{(a,c)\} | a\in A \land c \in C \mid$ Cartesian Product\\
 $\forall a,b,c ( (a,b) = (a,c) \to b = c) \to B = C \mid$ Definition of Set Equality\\
+All elements of B are in C, and all elements of C are in B, shown by the equality when taking the cartesian product with A.
 
 \section{Section 2.2}
 \section*{Question 20}
@@ -148,7 +158,7 @@ r = "element in C"\\
 $(A\cup B \cup C) = (A\cup B) \cup C \mid$ Association Law\\
 $(p \lor q) \lor r \mid$ Written as propositions\\
 $(p \lor q) \to (p \lor q) \lor r \mid$ Tautological\\
-Therefore $(A\cup B) \equiv (A\cup B \cup C)$
+Therefore $(A\cup B) \subseteq (A\cup B \cup C)$ because all elements of $(A\cup B \cup C)$ are in $(A\cup B) \cup C$
 
 \section*{b)}
 % (A ∩B ∩C) ⊆ (A ∩B)
@@ -158,7 +168,7 @@ $x \in A \land x \in B \land x \in C \to x \in A \land x \in B \mid$ Simplificat
 $\therefore A \cap B \cap C \subseteq A \cap B$
 \section*{c)}
 % (A−B)−C ⊆ A−C.
-$(A - B) - C \equiv (A - C) - B\mid$ Commutative Law\\
+$(A - B) - C \equiv (A - C) - B\mid$ Associative and Commutative Law\\
 $(A - C) - B\equiv \{\forall x(x\in (A - C) \land (A - C) - B)\}\mid$ Equivalence of a set intersection\\
 $\forall x(x\in (A - C) \land (A - C) - B) \to \forall x(x \in (A-C))$\\
 All elements of this set have to be in A-C, thus it is a subset of A-C, therefore\\
