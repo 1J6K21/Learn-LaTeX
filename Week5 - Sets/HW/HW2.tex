@@ -5,7 +5,7 @@
 
 \author{Jonathan Kalsky}
 \date{Feb. 13 2026}
-\title{Homework 2}
+\title{\normalsize CSCE 222\\ \Large Homework 2}
 \linespread{1.5}
 
 \begin{document}
@@ -133,17 +133,51 @@ AxB is a set of $a_1$ and $a_2$ with all combinations of B, in that order.
 Therefore the order of multiplication matters, and the resulting set is not necessarily equivalent if switched. (AxB) ×(C x D) and A x (B x C) ×D are not the same.
 
 \section*{Question 48}
-Prove or disprove that if A, B, and C are nonempty sets and A × B = A × C, then B = C.\\
-A, B, and C are nonempty sets | Given\\
 Prove $A \times B = A \times C \to B = C$\\
-$A\times B = \{(a,b)\} | a\in A \land b \in B$\\
-$A\times C = \{(a,c)\} | a\in A \land c \in C$\\
-$\forall a,b,c ( (a,b) = (a,c) \to b = c) \to B = C$\\
-
-
-
+A, B, and C are nonempty sets $\mid$ Premise\\
+$A\times B = \{(a,b)\} | a\in A \land b \in B \mid$ Cartesian Product\\
+$A\times C = \{(a,c)\} | a\in A \land c \in C \mid$ Cartesian Product\\
+$\forall a,b,c ( (a,b) = (a,c) \to b = c) \to B = C \mid$ Definition of Set Equality\\
 
 \section{Section 2.2}
 \section*{Question 20}
+\section*{a)}
+p = "element in A"
+q = "element in B"
+r = "element in C"\\
+$(A\cup B \cup C) = (A\cup B) \cup C \mid$ Association Law\\
+$(p \lor q) \lor r \mid$ Written as propositions\\
+$(p \lor q) \to (p \lor q) \lor r \mid$ Tautological\\
+Therefore $(A\cup B) \equiv (A\cup B \cup C)$
+
+\section*{b)}
+% (A ∩B ∩C) ⊆ (A ∩B)
+$A \cap B \cap C \equiv (A \cap B) \cap C \mid$ Association Law\\
+$x \in (A \cap B \cap C)) \iff x \in A \land x \in B \land x \in C \mid$ Meaning of Intersection\\
+$x \in A \land x \in B \land x \in C \to x \in A \land x \in B \mid$ Simplification\\
+$\therefore A \cap B \cap C \subseteq A \cap B$
+\section*{c)}
+% (A−B)−C ⊆ A−C.
+$(A - B) - C \equiv (A - C) - B\mid$ Commutative Law\\
+$(A - C) - B\equiv \{\forall x(x\in (A - C) \land (A - C) - B)\}\mid$ Equivalence of a set intersection\\
+$\forall x(x\in (A - C) \land (A - C) - B) \to \forall x(x \in (A-C))$\\
+All elements of this set have to be in A-C, thus it is a subset of A-C, therefore\\
+$(A - B) - C  \subseteq A-C$
+
+\section*{d)}
+% (A−C) ∩(C−B) = ∅.
+$\forall x(x \in (A-C) \to x \notin C) \mid$ Definition of set subtraction\\
+$\forall x(x \in (C-B) \to x \in C) \mid$ Definition of set subtraction\\
+$\forall x\lnot ((x\in (A-C)) \land (x \in (C-B))) \to (A-C) \cap (C-B) = \emptyset \mid$ Since by definition of interesection, for all elements there are no elements existing in both sets, the resulting set is empty by definition of an empty set.
+
+
+\section*{e)}
+%  (B−A) ∪(C−A)= (B ∪C)−A.
+$(B-A) \cup (C-A) \equiv \{x \in B | x \notin A\} \cup \{x\in C | x \notin A\}\mid$Definition of Set Difference\\
+$\equiv \{x \in B \cup C | x \notin A\}\mid$ Definition of Set Union\\
+$\equiv (B \cup C)\cap A^c \mid$ Definition of a Complement\\
+$\equiv (B \cup C) - A \mid$ Definition of Set Difference\\
+$\therefore (B-A) \cup (C-A) \equiv (B \cup C)-A$
+
 
 \end{document}
