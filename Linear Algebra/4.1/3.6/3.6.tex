@@ -1,0 +1,293 @@
+\documentclass{beamer}
+\usepackage{amsmath, amssymb}
+\usepackage{lscape}
+\usepackage{graphicx}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Row Space and Column Space (Big Picture)}
+
+Think of a matrix $A$ as a machine:
+\[
+A : \mathbb{R}^n \to \mathbb{R}^m
+\]
+
+Two natural questions:
+\begin{itemize}
+    \item What can its rows build?
+    \item What can its columns build?
+\end{itemize}
+
+These give us:
+\begin{itemize}
+    \item Row Space
+    \item Column Space
+\end{itemize}
+
+Both are just spans of vectors.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Row Space}
+
+If $A$ is $m \times n$, each row is a vector in $\mathbb{R}^n$.
+
+Row Space = all linear combinations of the rows.
+
+Example:
+\[
+A =
+\begin{pmatrix}
+1 & 2 & -3 \\
+1 & 1 & 1
+\end{pmatrix}
+\]
+
+Row space:
+\[
+\text{Span}\{(1,2,-3), (1,1,1)\}
+\]
+
+So it's all vectors of the form:
+\[
+\alpha(1,2,-3) + \beta(1,1,1)
+\]
+
+Geometrically:
+A plane (or line) inside $\mathbb{R}^3$.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Column Space}
+
+Columns live in $\mathbb{R}^m$.
+
+Column Space = all linear combinations of the columns.
+
+Same matrix:
+\[
+A =
+\begin{pmatrix}
+1 & 2 & -3 \\
+1 & 1 & 1
+\end{pmatrix}
+\]
+
+Columns:
+\[
+\begin{pmatrix}1\\1\end{pmatrix},
+\begin{pmatrix}2\\1\end{pmatrix},
+\begin{pmatrix}-3\\1\end{pmatrix}
+\]
+
+Column space:
+\[
+\text{Span of those 3 vectors}
+\]
+
+Geometrically:
+All outputs $Ax$ can ever produce.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Very Important Interpretation}
+
+\[
+Ax = b
+\]
+
+This equation is solvable iff:
+
+\[
+b \in \text{Column Space of } A
+\]
+
+Translation:
+The system is consistent exactly when $b$ is buildable
+from the columns.
+
+Columns = building blocks of outputs.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Row Operations Do NOT Change Row Space}
+
+If you row reduce a matrix:
+
+\[
+A \to U
+\]
+
+The row space stays the same.
+
+Why?
+
+Because row operations are just recombining rows.
+
+So:
+\begin{itemize}
+    \item Reduce to RREF
+    \item Nonzero rows form a basis
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Rank (Super Important)}
+
+Rank = dimension of the row space.
+
+How to compute it?
+
+\begin{itemize}
+    \item Row reduce
+    \item Count nonzero rows
+\end{itemize}
+
+Example result:
+If RREF has 2 nonzero rows,
+\[
+\text{rank}(A) = 2
+\]
+
+Rank = number of independent constraints.
+Rank = number of pivots.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Column Space and Rank}
+
+Fact:
+Row space and column space have the SAME dimension.
+
+So:
+\[
+\dim(\text{Row Space}) = \dim(\text{Column Space})
+\]
+
+That number is the rank.
+
+But careful:
+
+Row reducing changes the column space!
+
+So:
+\begin{itemize}
+    \item Use RREF to find pivot columns
+    \item Go back to ORIGINAL matrix
+    \item Those pivot columns form basis
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Null Space}
+
+Null space = all solutions of:
+
+\[
+Ax = 0
+\]
+
+These are inputs that get crushed to zero.
+
+Geometrically:
+Directions that disappear under the transformation.
+
+If there are free variables,
+null space has dimension $> 0$.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Rank-Nullity Theorem}
+
+For $A$ with $n$ columns:
+
+\[
+\text{rank}(A) + \text{nullity}(A) = n
+\]
+
+Interpretation:
+
+\begin{itemize}
+    \item Rank = number of pivot variables
+    \item Nullity = number of free variables
+    \item Total variables = pivots + free
+\end{itemize}
+
+It’s just counting.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{When Is $Ax=b$ Unique?}
+
+If columns are:
+\begin{itemize}
+    \item Independent → at most one solution
+    \item Span $\mathbb{R}^m$ → solution exists for all $b$
+\end{itemize}
+
+If square matrix:
+
+Unique solution for every $b$
+iff
+\[
+A \text{ is invertible}
+\]
+
+iff
+\[
+\text{rank}(A) = n
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Big Geometric Picture}
+
+Matrix as transformation:
+
+\[
+A : \mathbb{R}^n \to \mathbb{R}^m
+\]
+
+\begin{itemize}
+    \item Column space = output space
+    \item Null space = inputs that collapse to zero
+    \item Rank = how many dimensions survive
+    \item Nullity = how many dimensions collapse
+\end{itemize}
+
+Rank + Nullity = total input dimensions.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+\frametitle{Final Intuition}
+
+Think in CS terms:
+
+\begin{itemize}
+    \item Columns = features
+    \item Rank = number of independent features
+    \item Null space = redundant directions
+    \item Row reduction = simplifying constraints
+\end{itemize}
+
+Row space = constraints.
+Column space = outputs.
+Null space = invisible inputs.
+Rank = surviving dimensions.
+\end{frame}
+
+%------------------------------------------------
+\end{document}

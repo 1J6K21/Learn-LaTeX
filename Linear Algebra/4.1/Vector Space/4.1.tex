@@ -1,0 +1,164 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+
+\title{Section 4.1: Vector Spaces}
+\author{}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+%------------------------------------------------
+
+\begin{frame}{What Is a Vector?}
+Before this chapter:
+
+\[
+\begin{bmatrix}1 \\ 2 \\ 3\end{bmatrix}
+\]
+
+was a vector.
+
+Now:
+
+A \textbf{vector} is just an object we can:
+\begin{itemize}
+    \item Add
+    \item Multiply by a number
+\end{itemize}
+
+If those operations behave nicely → it's a vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{What Is a Vector Space?}
+A vector space is a set $V$ where:
+
+\begin{itemize}
+    \item You can add vectors: $u + v$
+    \item You can scale vectors: $c v$
+    \item You stay inside the set (closure)
+    \item There is a zero vector
+    \item Every vector has a negative
+\end{itemize}
+
+If it behaves like $\mathbb{R}^n$, it's a vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Example 1: $\mathbb{R}^2$}
+Vectors look like:
+
+\[
+\begin{bmatrix}x \\ y\end{bmatrix}
+\]
+
+Add:
+\[
+\begin{bmatrix}1 \\ 2\end{bmatrix}
++
+\begin{bmatrix}3 \\ 4\end{bmatrix}
+=
+\begin{bmatrix}4 \\ 6\end{bmatrix}
+\]
+
+Scale:
+\[
+2 \begin{bmatrix}1 \\ 2\end{bmatrix}
+=
+\begin{bmatrix}2 \\ 4\end{bmatrix}
+\]
+
+Always stays in $\mathbb{R}^2$ → Vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Example 2: Polynomials}
+Consider all polynomials of degree $\le 2$:
+
+\[
+a + bx + cx^2
+\]
+
+Example:
+\[
+1 + 2x + 3x^2
+\]
+
+Add two polynomials → still degree $\le 2$
+
+Multiply by a number → still degree $\le 2$
+
+So this is ALSO a vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Non-Example}
+Set of vectors in $\mathbb{R}^2$ with only positive entries:
+
+\[
+\begin{bmatrix}1 \\ 1\end{bmatrix}
+\]
+
+But:
+
+\[
+-1 \cdot
+\begin{bmatrix}1 \\ 1\end{bmatrix}
+=
+\begin{bmatrix}-1 \\ -1\end{bmatrix}
+\]
+
+Not in the set.
+
+Fails closure → NOT a vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{Why This Matters}
+Now we can treat:
+
+\begin{itemize}
+    \item Vectors
+    \item Polynomials
+    \item Matrices
+    \item Functions
+\end{itemize}
+
+all the same way.
+
+All the ideas from Chapter 3 (span, independence, basis)
+will work in ANY vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}{The Big Idea}
+A vector space is:
+
+\[
+\text{A set where linear combinations make sense.}
+\]
+
+If you can do:
+
+\[
+c_1 v_1 + c_2 v_2 + \dots + c_k v_k
+\]
+
+and stay inside the set,
+
+you are in a vector space.
+\end{frame}
+
+%------------------------------------------------
+
+\end{document}

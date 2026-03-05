@@ -1,0 +1,591 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath, amssymb}
+
+\title{Matrix Representations of Linear Transformations}
+\subtitle{Calm, Clear, and Actually Understandable}
+\author{MATH 304 -- Rewritten for Sanity}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{First: Breathe. This Is Not Magic.}
+You are not bad at math.  
+
+You were shown symbols without meaning.
+
+Today we fix that.
+
+\bigskip
+
+Core idea of this lecture:
+
+\[
+\textbf{Every linear transformation is just a matrix in disguise.}
+\]
+
+\bigskip
+
+If you understand:
+\begin{itemize}
+\item what a basis is,
+\item what coordinates mean,
+\item and what columns represent,
+\end{itemize}
+
+then this entire topic collapses into a pattern.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (1/3)}
+\begin{columns}[t]
+\column{0.48\textwidth}
+\textbf{Definition: Linear Transformation}
+
+A map \( L: V \to W \) is linear if
+
+\[
+L(\alpha v_1 + \beta v_2)
+=
+\alpha L(v_1) + \beta L(v_2)
+\]
+
+for:
+\begin{itemize}
+\item vectors \(v_1, v_2 \in V\)
+\item scalars \(\alpha, \beta \in \mathbb{R}\)
+\end{itemize}
+
+\bigskip
+
+\textbf{Standard Basis in \( \mathbb{R}^n \)}
+
+\[
+e_1 =
+\begin{pmatrix}
+1\\0\\\vdots\\0
+\end{pmatrix},
+\quad
+e_2 =
+\begin{pmatrix}
+0\\1\\\vdots\\0
+\end{pmatrix}
+\]
+
+\column{0.48\textwidth}
+\textbf{Big Theorem (Standard Case)}
+
+If \(L: \mathbb{R}^n \to \mathbb{R}^m\) is linear,
+
+then there exists an \(m \times n\) matrix \(A\) such that:
+
+\[
+L(x) = Ax
+\]
+
+Columns of \(A\) are:
+
+\[
+a_j = L(e_j)
+\]
+
+\bigskip
+
+\textbf{Translation:}
+
+To find the matrix:
+
+\begin{enumerate}
+\item Plug in each basis vector.
+\item Those outputs become columns.
+\end{enumerate}
+
+That is it.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (2/3)}
+\begin{columns}[t]
+\column{0.48\textwidth}
+\textbf{Coordinates Relative to a Basis}
+
+If \(E = \{v_1, \dots, v_n\}\),
+
+and
+
+\[
+v = x_1 v_1 + \dots + x_n v_n
+\]
+
+then
+
+\[
+[v]_E =
+\begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}
+\]
+
+These numbers are just weights.
+
+\column{0.48\textwidth}
+\textbf{Matrix Relative to Bases}
+
+If
+\[
+L: V \to W
+\]
+
+with bases
+\[
+E = \{v_1,\dots,v_n\},\quad
+F = \{w_1,\dots,w_m\}
+\]
+
+then
+
+\[
+[L(v)]_F = A [v]_E
+\]
+
+Columns of \(A\):
+
+\[
+a_j = [L(v_j)]_F
+\]
+
+\textbf{Pattern:}
+
+Input basis $\rightarrow$ apply $L$ $\rightarrow$ rewrite in output basis.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (3/3)}
+\begin{columns}[t]
+\column{0.48\textwidth}
+\textbf{Change of Basis Trick}
+
+If \(F\) is not standard,
+
+let
+
+\[
+B = (b_1,\dots,b_m)
+\]
+
+Then:
+
+\[
+a_j = B^{-1} L(v_j)
+\]
+
+\bigskip
+
+\textbf{Row Reduction Shortcut}
+
+The RREF of
+
+\[
+(b_1,\dots,b_m \mid L(v_1),\dots,L(v_n))
+\]
+
+becomes
+
+\[
+(I \mid A)
+\]
+
+\column{0.48\textwidth}
+\textbf{Polynomial Case}
+
+Derivative map:
+
+\[
+D(p) = p'
+\]
+
+To build matrix:
+
+\begin{enumerate}
+\item Differentiate each basis polynomial.
+\item Rewrite result in output basis.
+\item Those coordinate vectors form columns.
+\end{enumerate}
+
+\bigskip
+
+Everything follows this recipe.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why This Works (Intuition)}
+A linear transformation respects addition and scaling.
+
+So if
+
+\[
+x = x_1 e_1 + \dots + x_n e_n
+\]
+
+then linearity forces:
+
+\[
+L(x) = x_1 L(e_1) + \dots + x_n L(e_n)
+\]
+
+\bigskip
+
+That means:
+
+\[
+L(x) = (L(e_1) \ \dots \ L(e_n))
+\begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}
+\]
+
+\bigskip
+
+That matrix is \(A\).
+
+This is not a coincidence.
+
+It is unavoidable.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example 1 (Part 1)}
+Let
+
+\[
+L: \mathbb{R}^3 \to \mathbb{R}^2
+\]
+
+\[
+L(x) = (x_1 + x_2,\ x_2 + x_3)
+\]
+
+Define:
+
+\[
+x =
+\begin{pmatrix}
+x_1\\
+x_2\\
+x_3
+\end{pmatrix}
+\]
+
+Goal: Find matrix \(A\) so \(L(x)=Ax\).
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example 1 (Part 2)}
+Standard basis in \( \mathbb{R}^3 \):
+
+\[
+e_1 =
+\begin{pmatrix}1\\0\\0\end{pmatrix},
+e_2 =
+\begin{pmatrix}0\\1\\0\end{pmatrix},
+e_3 =
+\begin{pmatrix}0\\0\\1\end{pmatrix}
+\]
+
+Compute:
+
+\[
+L(e_1) = (1,0)
+\]
+
+\[
+L(e_2) = (1,1)
+\]
+
+\[
+L(e_3) = (0,1)
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example 1 (Final)}
+Columns are outputs:
+
+\[
+A =
+\begin{pmatrix}
+1 & 1 & 0\\
+0 & 1 & 1
+\end{pmatrix}
+\]
+
+WHY?
+
+Because:
+
+\[
+Ax =
+x_1
+\begin{pmatrix}1\\0\end{pmatrix}
++
+x_2
+\begin{pmatrix}1\\1\end{pmatrix}
++
+x_3
+\begin{pmatrix}0\\1\end{pmatrix}
+\]
+
+which equals
+
+\[
+(x_1 + x_2,\ x_2 + x_3)
+\]
+
+It matches perfectly.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Polynomial Example (Part 1)}
+Let
+
+\[
+D: P_2 \to P_1
+\]
+
+\[
+D(p) = p'
+\]
+
+Basis:
+
+\[
+E = [x^2, x, 1]
+\]
+
+\[
+F = [x, 1]
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Polynomial Example (Part 2)}
+Differentiate basis elements:
+
+\[
+D(x^2) = 2x
+\]
+
+Rewrite:
+
+\[
+2x = 2\cdot x + 0\cdot 1
+\]
+
+So
+
+\[
+[D(x^2)]_F =
+\begin{pmatrix}
+2\\0
+\end{pmatrix}
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Polynomial Example (Part 3)}
+\[
+D(x) = 1 = 0\cdot x + 1\cdot 1
+\]
+
+\[
+[D(x)]_F =
+\begin{pmatrix}
+0\\1
+\end{pmatrix}
+\]
+
+\[
+D(1)=0
+\]
+
+\[
+[D(1)]_F =
+\begin{pmatrix}
+0\\0
+\end{pmatrix}
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Polynomial Example (Final)}
+Matrix:
+
+\[
+A =
+\begin{pmatrix}
+2 & 0 & 0\\
+0 & 1 & 0
+\end{pmatrix}
+\]
+
+If
+
+\[
+p(x)=ax^2+bx+c
+\]
+
+then
+
+\[
+[p]_E =
+\begin{pmatrix}
+a\\b\\c
+\end{pmatrix}
+\]
+
+\[
+[D(p)]_F =
+A
+\begin{pmatrix}
+a\\b\\c
+\end{pmatrix}
+=
+\begin{pmatrix}
+2a\\b
+\end{pmatrix}
+\]
+
+Which means
+
+\[
+D(p)=2ax+b
+\]
+
+It works exactly as expected.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Homework Survival Mindset}
+Every problem reduces to:
+
+\begin{enumerate}
+\item Identify input basis.
+\item Apply transformation to each basis vector.
+\item Rewrite outputs in output basis.
+\item Those coordinate vectors are columns.
+\end{enumerate}
+
+If change of basis appears:
+
+\[
+a_j = B^{-1}L(v_j)
+\]
+
+\bigskip
+
+There is no hidden trick.
+
+Only repeated pattern.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Deep WHY)}
+Let
+
+\[
+L: \mathbb{R}^2 \to \mathbb{R}^2
+\]
+
+\[
+L(x_1,x_2) = (2x_1 - x_2,\ 3x_2)
+\]
+
+Step 1:
+
+\[
+L(e_1)=(2,0)
+\]
+
+\[
+L(e_2)=(-1,3)
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Solution)}
+Matrix:
+
+\[
+A=
+\begin{pmatrix}
+2 & -1\\
+0 & 3
+\end{pmatrix}
+\]
+
+WHY this works:
+
+\[
+Ax=
+x_1
+\begin{pmatrix}2\\0\end{pmatrix}
++
+x_2
+\begin{pmatrix}-1\\3\end{pmatrix}
+\]
+
+\[
+=
+(2x_1-x_2,\ 3x_2)
+\]
+
+Same structure again.
+
+Different numbers.
+
+Same pattern.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Final Words}
+This topic is not advanced.
+
+It is repetitive.
+
+\bigskip
+
+Linear transformation
+=
+Matrix
++
+Choice of basis.
+
+\bigskip
+
+You were overwhelmed by notation.
+
+But the structure is simple.
+
+And you can absolutely do this.
+\end{frame}
+
+\end{document}

@@ -1,0 +1,376 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{physics}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlength{\columnsep}{0.25in}
+
+\begin{document}
+\begin{multicols}{2}
+
+\section*{ENGR/PHYS 216 -- Complete Formula \& Concept Cheat Sheet}
+\hrule
+\vspace{0.3em}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 1 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 1: Vectors \& Motion in 1D/2D}
+
+\subsection*{Vector Basics}
+
+\textbf{Magnitude:}
+\[
+|\vec{A}| = \sqrt{A_x^2 + A_y^2 + A_z^2}
+\]
+
+\textbf{Unit Vector:}
+\[
+\hat{A} = \frac{\vec{A}}{|\vec{A}|}
+\]
+
+\textbf{Dot Product:}
+\[
+\vec{A}\cdot\vec{B} = A_xB_x + A_yB_y + A_zB_z = |\vec{A}||\vec{B}|\cos\theta
+\]
+Shortcut: zero $\Rightarrow$ perpendicular.
+
+\textbf{Cross Product:}
+\[
+\vec{A}\times\vec{B} =
+\begin{vmatrix}
+\hat{i} & \hat{j} & \hat{k}\\
+A_x & A_y & A_z\\
+B_x & B_y & B_z
+\end{vmatrix}
+\]
+Magnitude:
+\[
+|\vec{A}\times\vec{B}| = |\vec{A}||\vec{B}|\sin\theta
+\]
+
+Right-hand rule determines direction.
+
+\subsection*{Kinematics (Constant Acceleration)}
+
+\[
+v = v_0 + at
+\]
+\[
+x = x_0 + v_0 t + \frac{1}{2}at^2
+\]
+\[
+v^2 = v_0^2 + 2a(x-x_0)
+\]
+
+Trick: If no time given, use third equation.
+
+\subsection*{Projectile Motion}
+
+Horizontal:
+\[
+x = v_0\cos\theta \, t
+\]
+
+Vertical:
+\[
+y = v_0\sin\theta \, t - \frac{1}{2}gt^2
+\]
+
+Time of flight:
+\[
+T = \frac{2v_0\sin\theta}{g}
+\]
+
+Range:
+\[
+R = \frac{v_0^2\sin(2\theta)}{g}
+\]
+
+Max height:
+\[
+H = \frac{v_0^2\sin^2\theta}{2g}
+\]
+
+Shortcut: Maximum range at $45^\circ$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 2: Newton's Laws \& Forces}
+
+\subsection*{Newton's Laws}
+
+1. Inertia  
+2. $\sum \vec{F} = m\vec{a}$  
+3. Action = $-$Reaction  
+
+Always draw FBD.
+
+\subsection*{Common Forces}
+
+Weight:
+\[
+W = mg
+\]
+
+Normal: perpendicular to surface.
+
+Friction:
+\[
+f_s \le \mu_s N
+\]
+\[
+f_k = \mu_k N
+\]
+
+Incline shortcuts:
+\[
+mg\sin\theta \text{ parallel}
+\]
+\[
+mg\cos\theta \text{ perpendicular}
+\]
+
+Tension: same in massless rope.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 3: Work \& Energy}
+
+\subsection*{Work}
+
+\[
+W = \vec{F}\cdot\vec{d} = Fd\cos\theta
+\]
+
+Area under $F$ vs $x$ graph.
+
+\subsection*{Kinetic Energy}
+
+\[
+K = \frac{1}{2}mv^2
+\]
+
+\subsection*{Work-Energy Theorem}
+
+\[
+W_{net} = \Delta K
+\]
+
+\subsection*{Potential Energy}
+
+Gravitational:
+\[
+U = mgh
+\]
+
+Spring:
+\[
+U = \frac{1}{2}kx^2
+\]
+
+\subsection*{Energy Conservation}
+
+\[
+K_i + U_i = K_f + U_f
+\]
+
+Shortcut: If conservative forces only, use energy.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 4 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 4: Momentum \& Collisions}
+
+\subsection*{Momentum}
+
+\[
+\vec{p} = m\vec{v}
+\]
+
+\subsection*{Impulse}
+
+\[
+\vec{J} = \vec{F}\Delta t = \Delta \vec{p}
+\]
+
+Area under force-time graph.
+
+\subsection*{Conservation of Momentum}
+
+\[
+\sum \vec{p}_i = \sum \vec{p}_f
+\]
+
+\subsection*{Elastic Collisions}
+
+Momentum conserved  
+Kinetic energy conserved  
+
+1D shortcut:
+\[
+v_{1f} = \frac{(m_1-m_2)}{m_1+m_2}v_{1i} + \frac{2m_2}{m_1+m_2}v_{2i}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 5 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 5: Rotational Motion}
+
+\subsection*{Angular Kinematics}
+
+\[
+\omega = \omega_0 + \alpha t
+\]
+\[
+\theta = \omega_0 t + \frac{1}{2}\alpha t^2
+\]
+\[
+\omega^2 = \omega_0^2 + 2\alpha\theta
+\]
+
+Analogy: $x \leftrightarrow \theta$, $v \leftrightarrow \omega$, $a \leftrightarrow \alpha$
+
+\subsection*{Tangential \& Radial Acceleration}
+
+\[
+a_t = r\alpha
+\]
+\[
+a_r = \frac{v^2}{r} = r\omega^2
+\]
+
+\subsection*{Torque}
+
+\[
+\tau = rF\sin\theta
+\]
+\[
+\tau = I\alpha
+\]
+
+\subsection*{Moment of Inertia (Common)}
+
+Point mass:
+\[
+I = mr^2
+\]
+
+Solid disk:
+\[
+I = \frac{1}{2}MR^2
+\]
+
+Rod (center):
+\[
+I = \frac{1}{12}ML^2
+\]
+
+Parallel axis:
+\[
+I = I_{cm} + Md^2
+\]
+
+\subsection*{Rotational Energy}
+
+\[
+K = \frac{1}{2}I\omega^2
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 6 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 6: Angular Momentum}
+
+\subsection*{Definition}
+
+\[
+\vec{L} = \vec{r}\times\vec{p}
+\]
+
+Rigid body:
+\[
+L = I\omega
+\]
+
+\subsection*{Conservation}
+
+If $\sum\tau_{ext}=0$:
+\[
+L_i = L_f
+\]
+
+Trick: Skater pulling arms in increases $\omega$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% LECTURE 7 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Lecture 7: Oscillations}
+
+\subsection*{Hooke's Law}
+
+\[
+F = -kx
+\]
+
+\subsection*{Simple Harmonic Motion}
+
+\[
+x(t) = A\cos(\omega t + \phi)
+\]
+
+\[
+\omega = \sqrt{\frac{k}{m}}
+\]
+
+\[
+T = 2\pi\sqrt{\frac{m}{k}}
+\]
+
+Velocity:
+\[
+v = -A\omega\sin(\omega t + \phi)
+\]
+
+Acceleration:
+\[
+a = -\omega^2 x
+\]
+
+\subsection*{Pendulum (Small Angle)}
+
+\[
+\omega = \sqrt{\frac{g}{L}}
+\]
+
+\[
+T = 2\pi\sqrt{\frac{L}{g}}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Universal Problem-Solving Strategy}
+
+1. Draw diagram  
+2. Choose coordinate system  
+3. Write known equations  
+4. Identify conserved quantities  
+5. Solve algebraically before plugging numbers  
+
+\vfill
+\hrule
+\centerline{All Core Definitions, Theorems, Formulas, Shortcuts Included}
+
+\end{multicols}
+\end{document}

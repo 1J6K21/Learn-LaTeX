@@ -1,0 +1,357 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb,physics}
+\usepackage{siunitx}
+\usepackage{enumitem}
+\setlength{\columnsep}{0.4in}
+\setlist[itemize]{noitemsep, topsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt}
+
+\begin{document}
+\begin{multicols}{2}
+
+\section*{ENGR/PHYS 216 – Exam-Ready Master Sheet}
+\textbf{Uncertainty, Statistics, Propagation of Error}
+
+%====================================================
+\section*{1. Core Definitions}
+
+\textbf{Accuracy:} Closeness to true value.
+
+\textbf{Precision:} Repeatability (spread).
+
+\textbf{True Error:}
+\[
+E_t = x_{\text{reported}} - x_{\text{true}}
+\]
+
+\textbf{Fractional (Relative) Error:}
+\[
+\frac{E_t}{x_{\text{true}}}
+\]
+
+\textbf{Percent Error:}
+\[
+\%E = \frac{E_t}{x_{\text{true}}} \times 100\%
+\]
+
+\textbf{Systematic Error:}
+\begin{itemize}
+\item Bias, reproducible
+\item Not reduced by averaging
+\item Must identify/correct
+\end{itemize}
+
+\textbf{Random Error:}
+\begin{itemize}
+\item Scatter
+\item Reduced by averaging
+\item Assumed independent unless stated
+\end{itemize}
+
+%====================================================
+\section*{2. Population vs Sample}
+
+\textbf{Population mean:}
+\[
+\mu = \frac{1}{N}\sum_{i=1}^{N} x_i
+\]
+
+\textbf{Sample mean (best estimate):}
+\[
+\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
+\]
+
+\textbf{Population variance:}
+\[
+\sigma^2 = \frac{1}{N}\sum (x_i - \mu)^2
+\]
+
+\textbf{Sample variance:}
+\[
+s^2 = \frac{1}{n-1}\sum (x_i - \bar{x})^2
+\]
+
+\textbf{Why $n-1$?} One degree of freedom lost estimating $\bar{x}$.
+
+\textbf{Standard deviation:}
+\[
+s = \sqrt{s^2}
+\]
+
+\textbf{Standard Error of Mean (SEM):}
+\[
+\boxed{SE = \frac{s}{\sqrt{n}}}
+\]
+
+\textbf{Interpretation:}
+\begin{itemize}
+\item $s$ → spread of measurements
+\item $SE$ → uncertainty in mean
+\item Increasing $n$ decreases $SE$
+\end{itemize}
+
+%====================================================
+\section*{3. Reporting Rules (Significant Figures)}
+
+\begin{itemize}
+\item Uncertainty → 1 sig fig (2 if leading 1)
+\item Round value to same decimal place as uncertainty
+\item Example: $62.7 \pm 0.8$
+\item Final digit aligns with uncertainty
+\end{itemize}
+
+%====================================================
+\section*{4. Single Measurement Uncertainty}
+
+If instrument resolution = $\Delta$:
+\[
+\delta x \approx \Delta
+\]
+
+Example: ruler tick = 1/8 in → uncertainty = 1/8 in.
+
+\textbf{Magnitude-dependent instruments:} Check manufacturer specs.
+
+%====================================================
+\section*{5. Propagation of Uncertainty}
+
+\subsection*{A. One Variable}
+
+If:
+\[
+Q = f(x)
+\]
+
+\[
+\boxed{\delta Q = \left| \frac{dQ}{dx} \right| \delta x}
+\]
+
+\textbf{Linear approximation — valid when:}
+\[
+\delta x \ll x
+\]
+
+%--------------------------------
+\subsection*{Special Cases}
+
+\textbf{1. Constant times measurement}
+
+If $Q = Bx$, $B$ exact:
+\[
+\delta Q = |B| \delta x
+\]
+
+\[
+\frac{\delta Q}{Q} = \frac{\delta x}{x}
+\]
+
+\textbf{2. Power rule}
+
+If $Q = x^n$:
+\[
+\delta Q = |n x^{n-1}| \delta x
+\]
+
+\[
+\boxed{\frac{\delta Q}{Q} = |n|\frac{\delta x}{x}}
+\]
+
+Shortcut: exponent multiplies fractional uncertainty.
+
+%--------------------------------
+\subsection*{Trig Functions (CRITICAL EDGE CASE)}
+
+If:
+\[
+Q = \cos(\theta)
+\]
+
+\[
+\delta Q = |-\sin\theta| \delta\theta
+\]
+
+\textbf{IMPORTANT:} $\theta$ MUST be in radians.
+
+Conversion:
+\[
+\delta\theta_{\text{rad}} = \delta\theta_{\text{deg}} \cdot \frac{\pi}{180}
+\]
+
+Common mistake: forgetting conversion.
+
+\textbf{Check magnitude:}
+\[
+|\delta Q| \ll |Q|
+\]
+
+If not → linear approximation breaking.
+
+%--------------------------------
+\subsection*{Logarithms}
+
+If:
+\[
+B = 10\log\left(\frac{I}{I_0}\right)
+\]
+
+\[
+\frac{dB}{dI} = \frac{10}{I\ln 10}
+\]
+
+\[
+\boxed{\delta B = \frac{10}{I\ln 10}\delta I}
+\]
+
+Logs → fractional error structure.
+
+%====================================================
+\section*{6. Multiple Variables}
+
+If:
+\[
+q = f(x,y,z,...)
+\]
+
+Assuming independent random errors:
+
+\[
+\boxed{
+\delta q = \sqrt{
+\left(\frac{\partial q}{\partial x}\delta x\right)^2 +
+\left(\frac{\partial q}{\partial y}\delta y\right)^2 +
+\cdots
+}}
+\]
+
+This is RSS (root sum squares).
+
+\textbf{Upper bound check:}
+\[
+\delta q \le \left|\frac{\partial q}{\partial x}\right|\delta x + ...
+\]
+
+Use to sanity-check.
+
+%====================================================
+\section*{7. Sums and Differences}
+
+If:
+\[
+Q = a + b - c
+\]
+
+\[
+\boxed{\delta Q = \sqrt{(\delta a)^2 + (\delta b)^2 + (\delta c)^2}}
+\]
+
+Errors ADD IN QUADRATURE.
+
+Upper bound:
+\[
+\delta Q \le \delta a + \delta b + \delta c
+\]
+
+Never larger than arithmetic sum.
+
+%====================================================
+\section*{8. Products and Quotients}
+
+If:
+\[
+Q = \frac{abc}{xyz}
+\]
+
+Fractional errors add in quadrature:
+
+\[
+\boxed{
+\left(\frac{\delta Q}{Q}\right)^2 =
+\left(\frac{\delta a}{a}\right)^2 +
+\left(\frac{\delta b}{b}\right)^2 +
+\left(\frac{\delta c}{c}\right)^2 +
+\left(\frac{\delta x}{x}\right)^2 +
+\left(\frac{\delta y}{y}\right)^2 +
+\left(\frac{\delta z}{z}\right)^2
+}
+\]
+
+Shortcut:
+\[
+\frac{\delta Q}{Q} = \sqrt{\sum (\text{fractional errors})^2}
+\]
+
+%====================================================
+\section*{9. Powers of Multiple Variables}
+
+If:
+\[
+Q = x^a y^b
+\]
+
+\[
+\boxed{
+\frac{\delta Q}{Q} =
+\sqrt{
+\left(a\frac{\delta x}{x}\right)^2 +
+\left(b\frac{\delta y}{y}\right)^2
+}
+}
+\]
+
+This is the most common exam formula.
+
+%====================================================
+\section*{10. Sanity Checks (ALWAYS DO)}
+
+\begin{itemize}
+\item Units match between $Q$ and $\delta Q$
+\item $\delta Q \ll Q$
+\item $\delta Q$ ≤ sum of input uncertainties
+\item Significant figures consistent
+\item Radians used in trig derivatives
+\item Constants (like $\pi$, 5, etc.) treated exact unless stated
+\end{itemize}
+
+%====================================================
+\section*{11. Histogram Rules}
+
+\begin{itemize}
+\item Plot data FIRST
+\item 6–15 bins recommended
+\item $\sqrt{n}$ bins estimate
+\item Equal width bins
+\item Each point in exactly one bin
+\end{itemize}
+
+%====================================================
+\section*{12. Conceptual Patterns (Memory Shortcuts)}
+
+\begin{itemize}
+\item Add/Subtract → absolute errors combine
+\item Multiply/Divide → fractional errors combine
+\item Power → exponent multiplies fractional error
+\item Trig/log → derivative structure
+\item More measurements → smaller $SE$
+\item Systematic errors do NOT average out
+\end{itemize}
+
+%====================================================
+\section*{13. Final Answer Format}
+
+\[
+Q = (\text{value} \pm \delta Q)\text{ units}
+\]
+
+Example:
+\[
+x = 62.7 \pm 0.8 \text{ cm}
+\]
+
+State clearly what uncertainty represents (SE unless stated otherwise).
+
+%====================================================
+
+\end{multicols}
+\end{document}

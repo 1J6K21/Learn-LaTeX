@@ -1,0 +1,502 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{Madrid}
+\usepackage{amsmath, amssymb}
+
+\title{Functions -- Finally Made Simple}
+\subtitle{CSCE 222: Discrete Structures for Computing}
+\author{}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{First: Breathe. This Is Not Hard.}
+You are not confused because this is hard.  
+
+You are confused because it was presented without structure.
+
+Today we:
+\begin{itemize}
+\item Slow everything down.
+\item Define every symbol the first time we use it.
+\item Show why every condition exists.
+\item Connect everything together.
+\end{itemize}
+
+Functions are just:
+\[
+\textbf{Disciplined input-output rules.}
+\]
+
+That's it.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 1): Core Definition}
+\begin{columns}
+\column{0.5\textwidth}
+\textbf{Function Definition}
+
+A function $f$ from set $A$ to set $B$ is:
+
+\[
+f : A \to B
+\]
+
+Such that:
+
+\[
+\forall a \in A, \exists! \, b \in B
+\text{ where } f(a) = b
+\]
+
+\column{0.5\textwidth}
+\textbf{What Every Symbol Means}
+
+$A$ = domain (inputs)
+
+$B$ = codomain (allowed outputs)
+
+$a$ = element of $A$
+
+$b$ = element of $B$
+
+$\exists!$ = \emph{exactly one}
+
+If ``exactly one'' did not exist:
+
+One input could map to two outputs.
+
+Then it would not be predictable.
+
+Not a function.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 2): Terminology}
+\begin{columns}
+\column{0.5\textwidth}
+For $f : A \to B$ and $f(a)=b$
+
+\textbf{Domain}: $A$
+
+\textbf{Codomain}: $B$
+
+\textbf{Image of $a$}: $b$
+
+\textbf{Preimage of $b$}: all $a$ such that $f(a)=b$
+
+\column{0.5\textwidth}
+\textbf{Range}
+
+Range = all actual outputs.
+
+\[
+\text{Range} = \{ f(a) \mid a \in A \}
+\]
+
+Codomain = allowed outputs.
+
+Range = actual outputs.
+
+They are NOT always equal.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 3): Function Equality}
+\begin{columns}
+\column{0.5\textwidth}
+Given:
+
+\[
+F: X \to Y
+\]
+\[
+G: X \to Y
+\]
+
+\[
+F = G \iff F(x)=G(x)
+\quad \forall x \in X
+\]
+
+\column{0.5\textwidth}
+Meaning:
+
+Same domain.
+
+Same codomain.
+
+Same output for every input.
+
+If even ONE input differs:
+
+Functions are not equal.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 4): One-to-One}
+\begin{columns}
+\column{0.5\textwidth}
+$F$ is one-to-one (injective) iff:
+
+\[
+F(x_1)=F(x_2) \Rightarrow x_1=x_2
+\]
+
+Equivalent:
+
+\[
+x_1 \ne x_2 \Rightarrow F(x_1)\ne F(x_2)
+\]
+
+\column{0.5\textwidth}
+Why this matters:
+
+Different inputs give different outputs.
+
+If two inputs share output:
+
+Not injective.
+
+Think: No collapsing.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 5): Onto}
+\begin{columns}
+\column{0.5\textwidth}
+$F$ is onto (surjective) iff:
+
+\[
+\forall y \in Y,
+\exists x \in X
+\text{ such that } F(x)=y
+\]
+
+\column{0.5\textwidth}
+Meaning:
+
+Every element in codomain is used.
+
+If one $y$ never appears:
+
+Not onto.
+
+Think: No unused outputs.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 6): Bijection and Inverse}
+\begin{columns}
+\column{0.5\textwidth}
+Bijection:
+
+One-to-one AND onto.
+
+\[
+F: X \to Y
+\]
+
+If bijective, then inverse exists:
+
+\[
+F^{-1}: Y \to X
+\]
+
+\column{0.5\textwidth}
+Inverse condition:
+
+\[
+F^{-1}(F(x)) = x
+\]
+
+Inverse only exists if:
+
+No collapsing AND no unused outputs.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 7): Floor and Ceiling}
+\begin{columns}
+\column{0.5\textwidth}
+For real $x$:
+
+\[
+\lfloor x \rfloor
+\]
+
+Largest integer $\le x$
+
+\[
+\lceil x \rceil
+\]
+
+Smallest integer $\ge x$
+
+\column{0.5\textwidth}
+Example:
+
+$x = 3.2$
+
+\[
+\lfloor 3.2 \rfloor = 3
+\]
+\[
+\lceil 3.2 \rceil = 4
+\]
+
+Important for counting objects.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Now Let’s Build Intuition}
+A function is just:
+
+\[
+\text{Machine: input } \to \text{ output}
+\]
+
+The rule:
+
+\[
+f(x) = x^2
+\]
+
+Means:
+
+Take input $x$.
+
+Multiply it by itself.
+
+Return result.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example: Is This a Function?}
+Let:
+
+\[
+A = \{3,5,7\}
+\]
+\[
+B = \{2,4\}
+\]
+
+Relation:
+
+\[
+R = \{(3,2),(3,4),(7,2)\}
+\]
+
+Why not a function?
+
+Input 3 maps to TWO outputs.
+
+Violates ``exactly one''.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{One-to-One Example}
+Let:
+
+\[
+f(x)=x^2, \quad f:\mathbb{Z}\to\mathbb{Z}
+\]
+
+Test injective:
+
+\[
+f(4)=16
+\]
+\[
+f(-4)=16
+\]
+
+Two different inputs.
+
+Same output.
+
+Therefore:
+
+Not one-to-one.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Onto Example}
+Same function:
+
+\[
+f(x)=x^2, \quad f:\mathbb{Z}\to\mathbb{Z}
+\]
+
+Is it onto?
+
+Is there $x$ such that:
+
+\[
+f(x)=2?
+\]
+
+No integer squared gives 2.
+
+So not onto.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Inverse Example (Step 1)}
+Let:
+
+\[
+F(x)=4x-5
+\]
+
+Step 1: Replace $F(x)$ with $y$:
+
+\[
+y=4x-5
+\]
+
+Goal: Solve for $x$.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Inverse Example (Step 2)}
+Solve:
+
+\[
+y=4x-5
+\]
+
+Add 5:
+
+\[
+y+5=4x
+\]
+
+Divide by 4:
+
+\[
+x=\frac{y+5}{4}
+\]
+
+So:
+
+\[
+F^{-1}(y)=\frac{y+5}{4}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why Floor and Ceiling Matter}
+Example:
+
+100 bits.
+
+1 byte = 8 bits.
+
+\[
+\frac{100}{8}=12.5
+\]
+
+You cannot store half a byte.
+
+So:
+
+\[
+\lceil 12.5 \rceil = 13
+\]
+
+Ceiling because we must round up.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Homework Survival Strategy}
+Every problem asks one of four things:
+
+\begin{itemize}
+\item Is it a function?
+\item Is it injective?
+\item Is it onto?
+\item Does inverse exist?
+\end{itemize}
+
+Translate the problem into definitions.
+
+Then apply logic slowly.
+
+No tricks. Just definitions.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Deep Why)}
+Let:
+
+\[
+f: \mathbb{R} \to \mathbb{R}
+\]
+\[
+f(x)=3x+2
+\]
+
+Injective?
+
+Assume:
+
+\[
+f(x_1)=f(x_2)
+\]
+
+\[
+3x_1+2=3x_2+2
+\]
+
+Subtract 2:
+
+\[
+3x_1=3x_2
+\]
+
+Divide 3:
+
+\[
+x_1=x_2
+\]
+
+Therefore injective.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Final Perspective}
+Functions are:
+
+Structured mappings.
+
+Injective = no collapsing.
+
+Onto = no unused outputs.
+
+Bijection = perfect matching.
+
+Inverse = undo button.
+
+This is pattern recognition.
+
+Not chaos.
+
+You absolutely can do this.
+\end{frame}
+
+\end{document}

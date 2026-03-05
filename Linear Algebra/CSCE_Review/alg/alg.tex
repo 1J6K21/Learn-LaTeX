@@ -1,0 +1,527 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+
+\title{Algorithms \& Complexity \\ (Finally Made Simple)}
+\author{CSCE 222 Rewrite}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{First: Breathe. This Is Not Magic.}
+You are not bad at this. The slides were.
+
+\bigskip
+
+Today we will:
+\begin{itemize}
+\item Strip everything to patterns.
+\item Define every symbol the first time it appears.
+\item Connect algorithms $\rightarrow$ counting $\rightarrow$ growth.
+\item Show why it is actually simple.
+\end{itemize}
+
+\bigskip
+
+Core idea of the entire lecture:
+
+\[
+\textbf{How fast does work grow as input size } n \textbf{ grows?}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 1): Core Definitions}
+\begin{columns}[t]
+\column{0.5\textwidth}
+
+\textbf{Algorithm}
+
+Finite sequence of well-defined steps that:
+\begin{itemize}
+\item Takes \textbf{input}
+\item Produces \textbf{output}
+\end{itemize}
+
+Properties:
+\begin{itemize}
+\item Input
+\item Output
+\item Definiteness
+\item Correctness
+\item Finiteness
+\item Effectiveness
+\item Generality
+\end{itemize}
+
+\column{0.5\textwidth}
+
+\textbf{Time Complexity}
+
+Number of operations executed.
+
+\textbf{Space Complexity}
+
+Memory used.
+
+\textbf{Input Size:} $n$
+
+$n$ = number of elements in list.
+
+\textbf{Asymptotic Analysis}
+
+Study behavior as $n \to \infty$.
+
+Ignore:
+\begin{itemize}
+\item Constants
+\item Lower-order terms
+\end{itemize}
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 2): Big-O, Big-$\Omega$, Big-$\Theta$}
+\begin{columns}[t]
+\column{0.5\textwidth}
+
+\textbf{Big-O}
+
+$f(n)$ is $O(g(n))$ if
+
+\[
+\exists C>0,\, k>0 \text{ such that }
+\]
+
+\[
+f(n) \le C g(n) \text{ for all } n>k
+\]
+
+Upper bound.
+
+\bigskip
+
+\textbf{Big-$\Omega$}
+
+\[
+f(n) \ge C g(n)
+\]
+
+Lower bound.
+
+\column{0.5\textwidth}
+
+\textbf{Big-$\Theta$}
+
+$f(n)$ is $\Theta(g(n))$ if:
+
+\[
+f(n) \text{ is } O(g(n))
+\]
+and
+\[
+f(n) \text{ is } \Omega(g(n))
+\]
+
+Tight bound.
+
+\bigskip
+
+Dominant term rule:
+
+Polynomial:
+\[
+a_n n^n + \dots \Rightarrow O(n^n)
+\]
+
+Highest degree dominates.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (Part 3): Common Growth Rates}
+\begin{columns}[t]
+\column{0.5\textwidth}
+
+$O(1)$ Constant
+
+$O(\log n)$ Logarithmic
+
+$O(n)$ Linear
+
+$O(n^2)$ Quadratic
+
+\column{0.5\textwidth}
+
+$O(n^b)$ Polynomial
+
+$O(b^n)$ Exponential
+
+\bigskip
+
+Search:
+\begin{itemize}
+\item Linear: $O(n)$
+\item Binary: $O(\log n)$
+\end{itemize}
+
+Sorting:
+\begin{itemize}
+\item Bubble: $O(n^2)$
+\item Insertion: $O(n^2)$
+\end{itemize}
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{What Is Really Happening?}
+Everything in this lecture reduces to:
+
+\[
+\textbf{Count operations as a function of } n.
+\]
+
+Where:
+\begin{itemize}
+\item $n$ = number of elements
+\item Operation = assignment, comparison, addition
+\end{itemize}
+
+We assume:
+\[
+\text{Each operation takes 1 unit time}
+\]
+
+Why?  
+
+Because constants do not matter asymptotically.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Maximum Finding: Why It Is $O(n)$}
+Input:
+\[
+a_0, a_1, \dots, a_{n-1}
+\]
+
+Where:
+\begin{itemize}
+\item $a_i$ = element at index $i$
+\item $n$ = total elements
+\end{itemize}
+
+Loop runs from $i=1$ to $n-1$.
+
+Number of comparisons:
+\[
+n-1
+\]
+
+Therefore:
+\[
+T(n) = c_1 n + c_2
+\]
+
+So:
+\[
+O(n)
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Linear Search: Pattern}
+While loop:
+\[
+i < n \land x \ne a_i
+\]
+
+Worst case:
+\begin{itemize}
+\item Check every element
+\item $n$ comparisons
+\end{itemize}
+
+Thus:
+\[
+T(n) = an + b
+\]
+
+So:
+\[
+O(n)
+\]
+
+Pattern:
+\[
+\text{One full pass } \Rightarrow O(n)
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Binary Search: Why It Is $O(\log n)$}
+Each step halves search space.
+
+If size is $n$:
+
+After 1 step:
+\[
+n/2
+\]
+
+After 2 steps:
+\[
+n/4
+\]
+
+After $k$ steps:
+\[
+\frac{n}{2^k}
+\]
+
+Stop when:
+\[
+\frac{n}{2^k} = 1
+\]
+
+Solve:
+\[
+2^k = n
+\Rightarrow k = \log_2 n
+\]
+
+That is the entire reason.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Bubble and Insertion: Why $O(n^2)$}
+Outer loop runs $n$ times.
+
+Inner loop runs about $n$ times.
+
+Total operations:
+\[
+n \times n = n^2
+\]
+
+More precisely:
+\[
+\frac{n(n-1)}{2}
+\]
+
+But asymptotically:
+\[
+O(n^2)
+\]
+
+Pattern:
+\[
+\text{Nested loops over } n \Rightarrow O(n^2)
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Big-O Definition (Fully Unpacked)}
+Definition:
+
+\[
+f(n) \le C g(n) \text{ for all } n>k
+\]
+
+Variables:
+
+\begin{itemize}
+\item $f(n)$ = actual runtime
+\item $g(n)$ = comparison function
+\item $C$ = constant multiplier
+\item $k$ = threshold input size
+\end{itemize}
+
+Why $C$?
+
+Allows scaling difference.
+
+Without $C$:
+\[
+4n^2 \not\le n^2
+\]
+
+Why $k$?
+
+Small $n$ can behave irregularly.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Constructing Witness Constants (Example)}
+Show:
+\[
+f(n) = 4n^2 + 1000n + 904
+\]
+is $O(n^2)$.
+
+We want:
+\[
+f(n) \le C n^2
+\]
+
+For $n \ge 1$:
+
+\[
+1000n \le 1000n^2
+\]
+\[
+904 \le 904n^2
+\]
+
+So:
+\[
+f(n) \le (4+1000+904)n^2
+\]
+
+\[
+C=1908,\quad k=1
+\]
+
+Witnesses constructed.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why $n^2$ Is NOT $O(n)$}
+Assume:
+\[
+n^2 \le Cn
+\]
+
+Divide by $n$:
+\[
+n \le C
+\]
+
+But $n$ grows without bound.
+
+Eventually:
+\[
+n > C
+\]
+
+Contradiction.
+
+Therefore:
+\[
+n^2 \notin O(n)
+\]
+
+Growth rate matters.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Big-$\Omega$ and Big-$\Theta$ Intuition}
+Big-$\Omega$:
+
+\[
+f(n) \ge C g(n)
+\]
+
+Lower bound.
+
+Big-$\Theta$:
+
+Both:
+\[
+C_1 g(n) \le f(n) \le C_2 g(n)
+\]
+
+Meaning:
+
+$f(n)$ grows at the same rate as $g(n)$.
+
+Example:
+
+\[
+4n^2 + 3n \in \Theta(n^2)
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Homework Survival Strategy}
+When you see a function:
+
+Step 1: Identify dominant term.
+
+Step 2: Ignore constants.
+
+Step 3: Ignore lower-order terms.
+
+\bigskip
+
+When you see loops:
+
+\begin{itemize}
+\item One loop over $n$ $\Rightarrow O(n)$
+\item Nested loops $\Rightarrow O(n^2)$
+\item Halving each time $\Rightarrow O(\log n)$
+\end{itemize}
+
+That covers 90\% of test questions.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Deep Why)}
+Find Big-O of:
+
+\[
+f(n) = 9n^2 + 8n\log n
+\]
+
+Compare growth:
+
+\[
+n^2 \text{ vs } n\log n
+\]
+
+Since:
+\[
+\frac{n^2}{n\log n} = \frac{n}{\log n} \to \infty
+\]
+
+$n^2$ grows faster.
+
+So:
+\[
+O(n^2)
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Final Perspective}
+This entire lecture reduces to:
+
+\[
+\textbf{How many times does the work repeat?}
+\]
+
+Count repetition pattern.
+
+Match to growth pattern.
+
+Ignore noise.
+
+\bigskip
+
+You are not lost.
+
+You were just given too much noise.
+
+Now you see the structure.
+\end{frame}
+
+%------------------------------------------------
+\end{document}

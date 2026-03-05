@@ -1,0 +1,196 @@
+\documentclass[landscape]{beamer}
+
+% Packages for math and layout
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{listings}
+
+% Theme settings
+\usetheme{Madrid}
+\usecolortheme{whale}
+
+% Custom commands for "definitions like code"
+\newcommand{\variable}[2]{\texttt{#1} \ensuremath{\leftarrow} #2}
+
+\title{Algorithms \& Complexity: The Ultimate Level-Up}
+\subtitle{Don't Panic! We're abstracting the complexity away.}
+\author{Your CS Tutor}
+\date{CSCE 222 Survival Guide}
+
+\begin{document}
+
+% --- SLIDE 1: INTRO ---
+\begin{frame}
+    \titlepage
+    \begin{center}
+        [cite_start]\textbf{Deep breath.} You aren't "lost," the map was just drawn badly. [cite: 1] \\
+        Think of this as a strategy guide for a boss fight you've already started. \\
+        We're going to break down the professor's "boss moves" into simple patterns.
+    \end{center}
+\end{frame}
+
+% --- SLIDE 2: CHEAT SHEET PART 1 ---
+\begin{frame}{The "Save File" Cheat Sheet (Part 1)}
+    \begin{multicols}{2}
+        [cite_start]\textbf{Core Definitions} [cite: 119-122]
+        \begin{itemize}
+            \item \textbf{Algorithm}: Finite steps to solve a problem.
+            \item \textbf{Time Complexity}: Counting steps as input size ($n$) grows.
+            \item \textbf{Space Complexity}: Memory used.
+        \end{itemize}
+        
+        \columnbreak
+        
+        [cite_start]\textbf{Big-O Hierarchy} [cite: 72]
+        \begin{itemize}
+            \item $O(1)$ (Constant)
+            \item $O(\log n)$ (Binary Search)
+            \item $O(n)$ (Linear Search)
+            \item $O(n \log n)$ (Fast Sorts)
+            \item $O(n^2)$ (Bubble/Insertion Sort)
+            \item $O(2^n)$ (Exponential)
+        \end{itemize}
+    \end{multicols}
+    \begin{tcolorbox}[colback=blue!5,colframe=blue!75,title=Pro-Tip]
+        In the long run (as $n \to \infty$), only the "biggest" term matters. [cite_start]Ignore the small fry and constants! [cite: 46, 47]
+    \end{tcolorbox}
+\end{frame}
+
+% --- SLIDE 3: CHEAT SHEET PART 2 ---
+\begin{frame}{The "Save File" Cheat Sheet (Part 2)}
+    \begin{multicols}{2}
+        [cite_start]\textbf{Formal Growth Rules} [cite: 73]
+        \begin{itemize}
+            \item \textbf{Sum Rule}: $O(f + g) = \max(O(f), O(g))$
+            \item \textbf{Product Rule}: $O(f \cdot g) = O(f) \cdot O(g)$
+            \item \textbf{Polynomials}: $a_n x^n + \dots + a_0$ is $O(x^n)$
+        \end{itemize}
+        
+        \columnbreak
+        
+        [cite_start]\textbf{The Witness Formula} [cite: 49]
+        \begin{itemize}
+            \item $|f(x)| \le C |g(x)|$
+            \item For all $x > k$
+            \item $C$ = Scale Factor
+            \item $k$ = Starting Point
+        \end{itemize}
+    \end{multicols}
+    \textbf{Logarithm Trick}: $2^3 = 8 \iff \log_2(8) = 3$. [cite_start]It's just asking: "How many times do I cut this in half to reach 1?" [cite: 243, 254]
+\end{frame}
+
+% --- SLIDE 4: INTUITION ---
+\begin{frame}{The Vibe: Why do we care about $n$?}
+    \begin{itemize}
+        [cite_start]\item Imagine you're scrolling TikTok. [cite: 123]
+        \item If you have 10 videos, any algorithm is fast.
+        \item If you have 10 billion, a "bad" algorithm (like checking every single one twice) will make your phone explode.
+        [cite_start]\item \textbf{Asymptotic Analysis}: We only care about how the algorithm handles the 10 billion, not the 10. [cite: 46]
+    \end{itemize}
+    \end{frame}
+
+% --- SLIDE 5: DEFINITION UNPACKED ---
+\begin{frame}{Big-O: The Mathematical "Safety Net"}
+    Definition: $f(x)$ is $O(g(x))$ if $|f(x)| [cite_start]\le C |g(x)|$ for $x > k$. [cite: 49]
+    \vspace{0.5em}
+    \textbf{Structural Breakdown:}
+    \begin{itemize}
+        \item \variable{f(x)}{Your algorithm's messy real-world runtime.}
+        \item \variable{g(x)}{A clean, simple function (like $x^2$) we use to "box it in."}
+        \item \variable{C}{The "Amplifier." It stretches $g(x)$ so it stays on top.}
+        \item \variable{k}{The "Threshold." Small inputs don't count; we only care after this point.}
+    \end{itemize}
+    \textit{What breaks without $C$?} If $f(x) = 2x$ and $g(x) = x$, $f$ is always bigger. $C$ (let's say $C=3$) fixes this: $2x \le 3x$.
+\end{frame}
+
+% --- SLIDE 6: EXAMPLE CONSTRUCTION ---
+\begin{frame}{Witness Construction: $f(x) = x^2 + 2x + 1$ is $O(x^2)$}
+    [cite_start]\textbf{The Goal:} Find $C$ and $k$ where $x^2 + 2x + 1 \le C \cdot x^2$. [cite: 53]
+    \vspace{0.5em}
+    \textbf{The Logic:}
+    \begin{enumerate}
+        \item Let's pick $k=1$ (assume $x \ge 1$).
+        \item If $x \ge 1$, then $x^2 \ge x$ and $x^2 \ge 1$.
+        \item Replace smaller terms with $x^2$:
+        \[ x^2 + 2x + 1 \le x^2 + 2(x^2) + 1(x^2) \]
+        \[ x^2 + 2x + 1 \le 4x^2 \]
+    \end{enumerate}
+    \textbf{Result:} $C = 4$, $k = 1$. [cite_start]We have proven $x^2 + 2x + 1$ is $O(x^2)$. [cite: 54]
+\end{frame}
+
+% --- SLIDE 7: ALGORITHM BREAKDOWN 1 ---
+\begin{frame}{Linear Search: The "Check Every Box" Method}
+    [cite_start]\textbf{Algorithm:} Checking a list for $x$. [cite: 191]
+    \begin{itemize}
+        \item \variable{i}{Current index (starts at 0).}
+        \item \variable{n}{Total number of items in the list.}
+        \item \variable{a_i}{The item at the current spot.}
+    \end{itemize}
+    \textbf{The Why:}
+    In the worst case, $x$ is the last item or not there at all. [cite_start]You do $n$ comparisons. [cite: 216]
+    \textbf{Complexity:} $O(n)$. It grows exactly as the list grows.
+\end{frame}
+
+% --- SLIDE 8: ALGORITHM BREAKDOWN 2 ---
+\begin{frame}{Binary Search: The "Work Smarter" Method}
+    [cite_start]\textbf{Requirement:} The list MUST be sorted. [cite: 231]
+    \textbf{The Concept:}
+    1. [cite_start]Check the middle. [cite: 223]
+    2. Too high? [cite_start]Delete the right half. [cite: 225]
+    3. Too low? Delete the left half.
+    \textbf{The Math:}
+    Each step cuts the work in half. If you have $n=8$ items:
+    $8 \to 4 \to 2 \to 1$ (3 steps).
+    [cite_start]Note that $2^3 = 8$, so $\log_2(8) = 3$. [cite: 254, 255]
+    \textbf{Complexity:} $O(\log n)$. This is the "Gold Standard" for searching.
+\end{frame}
+
+% --- SLIDE 9: SORTING - BUBBLE SORT ---
+\begin{frame}{Bubble Sort: The "Heavy Sinks" Analogy}
+    \textbf{The Logic:} Compare neighbors. [cite_start]If they are out of order, swap them. [cite: 268]
+    \textbf{Pattern:}
+    \begin{itemize}
+        [cite_start]\item After Pass 1, the largest item "sinks" to the end. [cite: 316]
+        [cite_start]\item After Pass 2, the next largest is set. [cite: 317]
+    \end{itemize}
+    \textbf{The Why of $O(n^2)$:}
+    You have $n$ items, and you have to pass through them roughly $n$ times.
+    [cite_start]$n \cdot n = n^2$. [cite: 331]
+\end{frame}
+
+% --- SLIDE 10: EXTRA EXAMPLE 1 ---
+\begin{frame}{Deep Dive: $f(n) = 8n^3 - 6n^2 + 23$}
+    [cite_start]\textbf{Problem:} Find the Big-O. [cite: 61]
+    \textbf{Step 1 (Identify the Boss):} The highest power is $n^3$. [cite_start]We suspect $O(n^3)$. [cite: 65]
+    \textbf{Step 2 (Construction):}
+    Set $k=1$. For $n \ge 1$:
+    \[ 8n^3 - 6n^2 + 23 \le 8n^3 + 6n^3 + 23n^3 \]
+    [cite_start]\textit{(We use absolute values for the coefficients)} [cite: 50]
+    \[ 8n^3 + 6n^3 + 23n^3 = 37n^3 \]
+    \textbf{Conclusion:} $C=37, k=1$. [cite_start]It's $O(n^3)$. [cite: 66, 67]
+\end{frame}
+
+% --- SLIDE 11: EXTRA EXAMPLE 2 ---
+\begin{frame}{The "Trick" Question: $n^2$ vs $O(n)$}
+    [cite_start]\textbf{Question:} Is $n^2 = O(n)$? [cite: 68]
+    \textbf{Solution by Contradiction:}
+    1. Assume it's true: $n^2 \le C \cdot n$.
+    2. Divide both sides by $n$: $n \le C$.
+    3. \textbf{The Breakdown:} $C$ is a constant (like 100). But $n$ grows to infinity.
+    4. Eventually, $n$ will be 101, 1000, 1,000,000...
+    5. [cite_start]$1,000,000 \le 100$ is FALSE. [cite: 69]
+    \textbf{Verdict:} $n^2$ grows too fast to be boxed in by $n$.
+\end{frame}
+
+% --- SLIDE 12: HOMEWORK MINDSET ---
+\begin{frame}{Homework Survival Guide}
+    \begin{itemize}
+        \item \textbf{Don't overthink}: If you see a polynomial, pick the highest power. [cite_start]That's your Big-O. [cite: 52]
+        \item \textbf{Constants are ghosts}: $1000n$ and $n$ are both $O(n)$. [cite_start]The $1000$ doesn't change the "shape" of the growth. [cite: 46]
+        [cite_start]\item \textbf{Loops = Multiplication}: A loop inside a loop usually means $n \cdot n = n^2$. [cite: 324-326]
+        \item \textbf{You got this}: This isn't about being a math genius; it's about spotting which function grows faster.
+    \end{itemize}
+\end{frame}
+
+\end{document}

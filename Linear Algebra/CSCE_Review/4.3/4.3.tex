@@ -1,0 +1,474 @@
+\documentclass[landscape]{beamer}
+\usetheme{default}
+\usepackage{amsmath, amssymb}
+\setbeamertemplate{navigation symbols}{}
+
+\title{4.3 Similarity \\ Linear Algebra Made Human}
+\author{MATH 304 Rewritten for Clarity}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\centering
+\Large
+Take a breath.
+
+Different bases do NOT change the transformation.
+
+They only change the camera angle.
+
+Today: We learn how matrices change when the basis changes.
+
+And why it is actually simple.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (1/4)}
+\begin{columns}
+
+\column{0.5\textwidth}
+\textbf{Linear Operator}
+
+$L: V \to V$
+
+\textbf{Meaning:}
+\begin{itemize}
+\item $V$ = vector space
+\item $L$ takes vectors in $V$
+\item Outputs vectors in same $V$
+\end{itemize}
+
+\textbf{Key Idea:}
+Matrix depends on basis.
+
+\column{0.5\textwidth}
+
+\textbf{Matrix Representation}
+
+If $E=\{v_1,\dots,v_n\}$
+
+Then matrix $A$ satisfies:
+
+\[
+A[x]_E = [L(x)]_E
+\]
+
+\textbf{Symbols:}
+\begin{itemize}
+\item $[x]_E$ = coordinate vector
+\item $A$ = matrix in basis $E$
+\end{itemize}
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (2/4)}
+\begin{columns}
+
+\column{0.5\textwidth}
+\textbf{Transition Matrix}
+
+Let $E=\{v_i\}$
+
+Let $F=\{w_i\}$
+
+$S$ = transition matrix
+from $F$ to $E$
+
+\[
+[x]_E = S[x]_F
+\]
+
+\textbf{Purpose of $S$:}
+
+Changes coordinate systems.
+
+\column{0.5\textwidth}
+
+\textbf{Inverse Transition}
+
+\[
+[x]_F = S^{-1}[x]_E
+\]
+
+If $S$ did not exist:
+
+We could not translate
+between coordinate systems.
+
+It is the translator.
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (3/4)}
+\begin{columns}
+
+\column{0.5\textwidth}
+\textbf{Similarity Formula}
+
+If:
+\begin{itemize}
+\item $A$ = matrix of $L$ in $E$
+\item $B$ = matrix of $L$ in $F$
+\item $S$ = transition $F \to E$
+\end{itemize}
+
+Then:
+
+\[
+B = S^{-1} A S
+\]
+
+\column{0.5\textwidth}
+
+\textbf{Meaning of each piece}
+
+$S$ = move from $F$ to $E$
+
+$A$ = apply transformation
+
+$S^{-1}$ = move back to $F$
+
+Without $S^{-1}$:
+
+Result would stay in wrong coordinates.
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cheat Sheet (4/4)}
+\begin{columns}
+
+\column{0.5\textwidth}
+\textbf{Definition: Similar Matrices}
+
+$A$ and $B$ are similar if
+
+\[
+B = S^{-1} A S
+\]
+
+for some invertible $S$.
+
+\textbf{Invertible =}
+$\det(S) \neq 0$
+
+\column{0.5\textwidth}
+
+\textbf{Core Fact}
+
+If $A$ and $B$ represent
+the same operator
+in different bases,
+
+then they are similar.
+
+Similarity = same transformation,
+different viewpoint.
+
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Big Picture Intuition}
+Think basketball replay.
+
+Same play.
+
+Different camera angle.
+
+The play did NOT change.
+
+Only perspective changed.
+
+Matrix $A$ and $B$:
+
+Same transformation.
+
+Different coordinate lens.
+
+Similarity = changing cameras.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Theorem (Unpacked)}
+Let:
+
+\begin{itemize}
+\item $E=\{v_1,\dots,v_n\}$
+\item $F=\{w_1,\dots,w_n\}$
+\item $L:V\to V$
+\item $S$ = transition from $F$ to $E$
+\item $A$ = matrix of $L$ in $E$
+\item $B$ = matrix of $L$ in $F$
+\end{itemize}
+
+Then:
+
+\[
+B = S^{-1}AS
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why Each Symbol Exists}
+$S$:
+
+Converts $F$-coordinates to $E$.
+
+If removed:
+$A$ cannot act correctly.
+
+$A$:
+
+Applies transformation in $E$.
+
+If removed:
+No transformation happens.
+
+$S^{-1}$:
+
+Returns answer to $F$ basis.
+
+If removed:
+Output stuck in wrong system.
+
+Each symbol has a job.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example: $\mathbb{R}^2$ (Part 1)}
+Given:
+
+\[
+A=\begin{pmatrix}
+2 & 0\\
+1 & 1
+\end{pmatrix}
+\]
+
+New basis:
+
+\[
+u_1=\begin{pmatrix}1\\1\end{pmatrix},\;
+u_2=\begin{pmatrix}-1\\1\end{pmatrix}
+\]
+
+Transition matrix:
+
+\[
+U=(u_1\;u_2)
+=
+\begin{pmatrix}
+1 & -1\\
+1 & 1
+\end{pmatrix}
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Example (Part 2)}
+Compute determinant:
+
+\[
+\det(U)=1(1)-(-1)(1)=2
+\]
+
+So invertible.
+
+\[
+U^{-1}
+=
+\frac{1}{2}
+\begin{pmatrix}
+1 & 1\\
+-1 & 1
+\end{pmatrix}
+\]
+
+We can now compute:
+
+\[
+B=U^{-1}AU
+\]
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{What Just Happened?}
+Step 1: Convert new basis to standard.
+
+Step 2: Apply $A$.
+
+Step 3: Convert back.
+
+That is literally it.
+
+It looks scary.
+
+But it is just
+translate → act → translate back.
+
+Like switching game engines,
+running physics,
+then switching back.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Differentiation Example}
+Operator: $D$
+
+$D(p)=p'$
+
+Basis 1:
+
+$[1,x,x^2]$
+
+Matrix:
+
+\[
+B=
+\begin{pmatrix}
+0&1&0\\
+0&0&2\\
+0&0&0
+\end{pmatrix}
+\]
+
+Why?
+
+$D(1)=0$
+
+$D(x)=1$
+
+$D(x^2)=2x$
+
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Same Operator, New Basis}
+New basis:
+
+$[1,2x,4x^2-2]$
+
+Matrix becomes:
+
+\[
+A=
+\begin{pmatrix}
+0&2&0\\
+0&0&4\\
+0&0&0
+\end{pmatrix}
+\]
+
+Different matrix.
+
+Same differentiation.
+
+Just different coordinate scaling.
+
+Same TikTok.
+Different filter.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Homework Survival Rule}
+If homework says:
+
+"Find matrix in new basis"
+
+You ALWAYS:
+
+1. Build transition matrix.
+2. Compute inverse.
+3. Use $S^{-1}AS$.
+
+Or:
+
+Express $L(w_i)$
+as combinations of basis vectors.
+
+Two methods.
+Same result.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Deep WHY) Part 1}
+Suppose:
+
+\[
+A=
+\begin{pmatrix}
+3&0\\
+0&5
+\end{pmatrix}
+\]
+
+Diagonal matrix.
+
+Why is this nice?
+
+It stretches independently.
+
+Like scaling x and y separately.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Part 2)}
+Pick invertible
+
+\[
+S=
+\begin{pmatrix}
+1&1\\
+0&1
+\end{pmatrix}
+\]
+
+Compute:
+
+\[
+B=S^{-1}AS
+\]
+
+Result:
+
+Matrix no longer diagonal.
+
+But transformation
+still stretches in two directions.
+
+Similarity hides structure.
+Does not destroy it.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Final Takeaway}
+Similarity means:
+
+Same linear operator.
+
+Different coordinate system.
+
+Nothing mystical.
+
+Just camera angles.
+
+Translate → Transform → Translate Back.
+
+You are not bad at this.
+
+It was just presented without the story.
+\end{frame}
+
+\end{document}

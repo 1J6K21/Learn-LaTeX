@@ -1,0 +1,505 @@
+\documentclass[landscape]{beamer}
+\usetheme{default}
+\usepackage{amsmath, amssymb}
+
+\title{CSCE 222 --- Sets (But Actually Understandable)}
+\author{You Are Not Bad at Math}
+\date{}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+\titlepage
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{First: Breathe. This Is Not Hard.}
+You are not lost because this is hard.\\
+You are lost because it was presented without patterns.
+
+\vspace{0.5cm}
+
+Today we:
+\begin{itemize}
+\item Strip everything to its core idea
+\item Define every symbol like code
+\item Connect it to CS thinking
+\item Use basketball, games, and logic patterns
+\end{itemize}
+
+Sets are just:
+\[
+\textbf{Organized collections of distinct objects}
+\]
+
+That is it.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (1/4)}
+\begin{columns}
+
+\column{0.48\textwidth}
+\textbf{Set Definition}
+
+A set is a collection of distinct elements.
+
+Example:
+\[
+S = \{1,2,3,4,5\}
+\]
+
+$x \in S$ means:
+\begin{itemize}
+\item $x$ = element
+\item $\in$ = "is in"
+\item $S$ = the set
+\end{itemize}
+
+$x \notin S$ means $x$ is not in $S$.
+
+\column{0.48\textwidth}
+\textbf{Set Equality}
+
+\[
+A = B \iff \forall x (x \in A \leftrightarrow x \in B)
+\]
+
+Variables:
+\begin{itemize}
+\item $A,B$ = sets
+\item $x$ = element
+\item $\forall$ = for all
+\item $\leftrightarrow$ = if and only if
+\end{itemize}
+
+Translation:
+Every element in $A$ is in $B$ AND vice versa.
+Order does not matter.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (2/4)}
+\begin{columns}
+
+\column{0.48\textwidth}
+\textbf{Subset}
+
+\[
+A \subseteq B
+\]
+
+Definition:
+\[
+\forall x (x \in A \rightarrow x \in B)
+\]
+
+Means:
+If $x$ is in $A$, it must be in $B$.
+
+Proper subset:
+\[
+A \subset B
+\]
+Same as above AND $A \neq B$.
+
+\column{0.48\textwidth}
+\textbf{Empty Set}
+
+\[
+\emptyset = \{\}
+\]
+
+Cardinality:
+\[
+|\emptyset| = 0
+\]
+
+Be careful:
+\[
+\{\emptyset\}
+\]
+is a set with ONE element.
+
+Like:
+empty box vs box containing empty box.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (3/4)}
+\begin{columns}
+
+\column{0.48\textwidth}
+\textbf{Operations}
+
+Union:
+\[
+A \cup B
+\]
+Elements in A OR B.
+
+Intersection:
+\[
+A \cap B
+\]
+Elements in BOTH.
+
+Difference:
+\[
+B - A
+\]
+In B but NOT in A.
+
+\column{0.48\textwidth}
+\textbf{Complement}
+
+\[
+A^c
+\]
+
+All elements in universal set $U$
+that are NOT in $A$.
+
+Everything depends on $U$.
+
+No universal set = no complement.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{CHEAT SHEET (4/4)}
+\begin{columns}
+
+\column{0.48\textwidth}
+\textbf{Power Set}
+
+\[
+P(S) = \text{set of all subsets of } S
+\]
+
+If:
+\[
+|S| = n
+\]
+then:
+\[
+|P(S)| = 2^n
+\]
+
+Pattern:
+Each element has 2 choices:
+in or out.
+
+\column{0.48\textwidth}
+\textbf{Cartesian Product}
+
+\[
+A \times B
+\]
+
+All ordered pairs $(a,b)$:
+\[
+a \in A, \quad b \in B
+\]
+
+If:
+\[
+|A|=n, |B|=m
+\]
+
+Then:
+\[
+|A \times B| = nm
+\]
+
+Multiplication principle.
+\end{columns}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Set-Builder Notation (Slowly)}
+\[
+\{x \in S \mid P(x)\}
+\]
+
+Break it:
+
+\begin{itemize}
+\item $x$ = placeholder variable
+\item $S$ = big set we pull from
+\item $\mid$ = such that
+\item $P(x)$ = condition
+\end{itemize}
+
+Example:
+\[
+\{x \in \mathbb{Z} \mid 2 < x \le 5\}
+\]
+
+Step 1: $\mathbb{Z}$ = integers  
+Step 2: numbers greater than 2  
+Step 3: less or equal to 5  
+
+Result:
+\[
+\{3,4,5\}
+\]
+
+Like filtering a list in code.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Why Subset Definition Has $\forall x$}
+Definition:
+\[
+\forall x (x \in A \rightarrow x \in B)
+\]
+
+Why $\forall$?
+
+Without it, we only check one element.
+
+Why implication $\rightarrow$?
+
+Because we only care about elements in $A$.
+
+If $x \notin A$, rule is irrelevant.
+
+This prevents false failures.
+
+This is defensive programming logic.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Power Set Pattern (This Is Beautiful)}
+Let:
+\[
+S = \{a,b\}
+\]
+
+Subsets:
+
+\[
+\emptyset
+\]
+\[
+\{a\}
+\]
+\[
+\{b\}
+\]
+\[
+\{a,b\}
+\]
+
+Why $2^2 = 4$?
+
+Each element:
+\begin{itemize}
+\item include?
+\item exclude?
+\end{itemize}
+
+Binary thinking:
+00, 01, 10, 11
+
+Power set = bitmasking.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Cartesian Product (Video Game View)}
+Let:
+\[
+A = \{3,5,7\}
+\]
+\[
+B = \{2,4\}
+\]
+
+$A \times B$:
+
+Fix 3:
+\[
+(3,2),(3,4)
+\]
+
+Fix 5:
+\[
+(5,2),(5,4)
+\]
+
+Fix 7:
+\[
+(7,2),(7,4)
+\]
+
+This is nested loops.
+
+for a in A:
+\quad for b in B:
+
+Total = $3 \cdot 2 = 6$
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Relation = Subset of Product}
+Definition:
+\[
+R \subseteq A \times B
+\]
+
+Meaning:
+A relation picks SOME pairs.
+
+Example:
+
+If $(x,y) \in R$ means $x<y$
+
+Then we filter product pairs.
+
+Relation = filtered Cartesian product.
+
+Like matchmaking in 2K:
+Not everyone plays everyone.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Worked Example (Activity)}
+Universal set:
+\[
+U=\{1,2,3,4,5,6,7\}
+\]
+
+\[
+A=\{1,3,5,7\}
+\]
+\[
+B=\{4,5,6,7\}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Solution Part 1}
+Union:
+\[
+A \cup B
+\]
+
+Combine unique elements:
+\[
+\{1,3,4,5,6,7\}
+\]
+
+Intersection:
+\[
+A \cap B
+\]
+
+Common elements:
+\[
+\{5,7\}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Solution Part 2}
+Difference:
+\[
+B-A
+\]
+
+Elements in B not in A:
+\[
+\{4,6\}
+\]
+
+Complement:
+\[
+A^c
+\]
+
+Everything in $U$ not in $A$:
+\[
+\{2,4,6\}
+\]
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Homework Survival Mindset}
+Your professor writes symbols.
+
+You translate:
+
+\begin{itemize}
+\item $\cup$ = OR
+\item $\cap$ = AND
+\item $\subseteq$ = if in A then in B
+\item $P(S)$ = binary combinations
+\item $\times$ = nested loops
+\end{itemize}
+
+Everything reduces to:
+\begin{itemize}
+\item membership
+\item filtering
+\item combinations
+\end{itemize}
+
+You already do this in CS daily.
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Extra Example (Power Set)}
+Let:
+\[
+S=\{1,2,3\}
+\]
+
+How many subsets?
+
+\[
+|P(S)| = 2^3 = 8
+\]
+
+Why?
+
+Each element:
+include or exclude.
+
+Binary:
+000
+001
+010
+011
+100
+101
+110
+111
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}{Final Perspective}
+Sets are not scary.
+
+They are:
+
+\begin{itemize}
+\item Lists without duplicates
+\item Logical filters
+\item Nested loops
+\item Binary choices
+\end{itemize}
+
+This entire lecture is:
+organized thinking.
+
+If you understand patterns,
+you win.
+
+You are absolutely capable of this.
+\end{frame}
+
+\end{document}
