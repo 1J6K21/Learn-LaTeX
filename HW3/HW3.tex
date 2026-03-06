@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\author{Jonathan Kalsky}
+\date{March 5 2026}
+\title{\normalsize CSCE 222\\ \Large Homework 3}
+\linespread{1.5}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\vspace{1cm}
+\section{Section 2.3}
+\subsection{Question 12}
+Determine whether each of these functions from $\mathbb{Z}$ to $\mathbb{Z}$
+is one-to-one.
+\subsubsection{part a}
+$f(n) = n - 1$\\
+Let $a,b \in \mathbb{Z} \mid a \neq b$\\
+$(a \neq b) \Rightarrow (a-1 \neq b-1)$ under subtraction\\
+This concludes that 
+$(a \neq b) \iff f(a) \neq f(b)$\\
+$\therefore$ the function is one to one by definition
+
+\subsubsection{part b}
+$f(n) = n^2 + 1$\\
+Let $a \in \mathbb{Z}$\\
+$\exists b \in \mathbb{Z} | b = (-1)a \neq a$ | Integers are closed under scalar multiplication\\
+$f(a) = a^2 + 1 = (-a)^2 + 1 = b^2 + 1 = f(b)$ | Substituion\\
+$\exists a,b ((a \neq b) \land (f(a) = f(b)))$
+$\therefore$ the function is not one to one by definition
+
+\subsubsection{part c}
+$f(n) = n^3$\\
+Let $a,b \in \mathbb{Z} \mid a \neq b$\\
+$f(a) = a^3$ and $f(b) = b^3$ | Substitution\\
+$\sqrt[3]{a^3} = a \neq b = \sqrt[3]{b^3}$ | the cube root has a unique solution\\
+$\therefore \forall a,b \in \mathbb{Z}, (f(a) \neq f(b) \iff a \neq b)$  so $n^3$ is injective by definition
+
+\subsubsection{part d}
+$f(n) = \lceil n/2 \rceil $\\
+let a = 3, and b = 4\\
+$f(a) = f(3) = 2$ and $f(b) = f(4) = 2$\\
+$\exists a,b \in \mathbb{Z}, (a \neq b) \land (f(a) \neq f(b))$
+$\therefore$ the function is not one to one by definition
+
+\subsection{Question 14 Determine whether f : Z ×Z → Z is onto}
+\subsubsection{part a}
+$f(m,n) = 2m - n$\\
+Let m = 0\\
+f(0,n) = -n\\
+since $n \in \mathbb{Z}$, f(0,n) spans all $\mathbb{Z}$
+$\therefore$ The function is onto
+
+\subsubsection{part b}
+$f (m, n)= m^2 - n^2$\\
+$f (m, n)= (m-n)(m+n)$\\
+$b \in \mathbb{Z}$\\
+Let b = 2 = (a)(b) $\mid a,b \in \mathbb{Z}$\\
+2 = (2)(1) $\lor$ (1)(2)\\ 
+((m-n = 2) $\land$ (m+n = 1)) $\lor$ ((m+n = 2) $\land$ (m-n = 1))\\
+Assuming (m-n = 2), m = 2+n, 2n+2 = 1 $\to n \notin \mathbb{Z}$\\
+So (m-n = 2) $\land$ (m+n = 1) is False\\
+Assuming (m+n = 2), m = 2 - n, 2-2n = 1 $\to n \notin \mathbb{Z}$\\
+So (m+n = 2) $\land$ (m-n = 1) is False as well\\
+Since there is an integer, that does not have a preimage in the domain, this is not an onto function
+\subsubsection{part c}
+\subsubsection{part d}
+\subsubsection{part e}
+\subsection{Question 20 Give an example of a function from N to N that is}
+\subsubsection{part a. one-to-one but not onto.}
+$f(x) = x^2$
+\subsubsection{part b. onto but not one-to-one.}
+$f(x) = \lceil x/2 \rceil$
+\subsubsection{part c. one-to-one and onto, but not the identity.}
+$f(x) = x + (-1)^{x+1}$
+\subsubsection{part d. neither one-to-one nor onto}
+$f(x) = sin(x)$
+\subsection{Question 22 Determine whether each of these functions is a bijection
+from R to R}
+\subsubsection{part a. $f (x)= -3x +4$}
+Let y = -3x + 4\\
+$f^{-1}(y) = \frac{y-4}{-3}$\\
+Since we are able to determine a unique inverse the function is a bijection
+\subsubsection{part b. $f (x)= -3x^2 +7$}
+\subsubsection{part c. $f (x)= (x +1)/(x +2)$}
+Assuming f is bijective, $f^{-1}(y) = \frac{2y}{1-y}$\\
+This shows y is not defined in the range of f(x), causing division by 0.\\
+By contradiction, the range is not equal to the codomain, and thus by failing surjection, the function is not a bijection.
+\subsubsection{part d}
+\subsection{Question 60. How many bytes are required to encode n bits of data
+where n equals}
+\subsubsection{part a. n = 4}
+$4/8 = 0.5$, thus only 1 byte is required
+\subsubsection{part b. n = 10}
+$10/8 = 1.25$, thus 2 bytes are required
+\subsubsection{part c. n = 500}
+$500/8 = 62.5$, thus 63 bytes are required
+\subsubsection{part d. n = 3000}
+$3000/8 = 300+70+5 = 375$, thus 375 bytes are required
+
+
+\end{document}
