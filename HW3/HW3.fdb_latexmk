@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1772756825.41491 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/HW3/HW3.tex" "HW3.pdf" "HW3" 1772756825.69422 0
-  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/HW3/HW3.tex" 1772756825.24753 3817 efcf18dab4000256a8293498b64c9ef5 ""
+["pdflatex"] 1772788229.1511 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/HW3/HW3.tex" "HW3.pdf" "HW3" 1772788229.45408 0
+  "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/HW3/HW3.tex" 1772788228.95991 5292 4c4c49b7e745b956d3c147bcb7308b9a ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
@@ -56,9 +56,9 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768363960 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "HW3.aux" 1772756825.66152 3284 6a0c1613d955ffafff6e23dc9b54315a "pdflatex"
-  "HW3.tex" 1772756825.24753 3817 efcf18dab4000256a8293498b64c9ef5 ""
-  "HW3.toc" 1772756825.66198 2145 aa15b1490d5be82aa103ff8d4cabf811 "pdflatex"
+  "HW3.aux" 1772788229.41763 3302 b40b48130f1b7833fd620cc4bce674de "pdflatex"
+  "HW3.tex" 1772788228.95991 5292 4c4c49b7e745b956d3c147bcb7308b9a ""
+  "HW3.toc" 1772788229.41816 2163 3729c5a5bdbbbf98c2e3ad633d55ce26 "pdflatex"
   (generated)
   "HW3.aux"
   "HW3.log"

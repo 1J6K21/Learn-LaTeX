@@ -51,7 +51,7 @@ $\therefore$ the function is not one to one by definition
 $f(m,n) = 2m - n$\\
 Let m = 0\\
 f(0,n) = -n\\
-since $n \in \mathbb{Z}$, f(0,n) spans all $\mathbb{Z}$
+since $(-n) \in \mathbb{Z}$, f(0,n) spans all $\mathbb{Z}$ and can be mapped to any integer\\
 $\therefore$ The function is onto
 
 \subsubsection{part b}
@@ -66,9 +66,28 @@ So (m-n = 2) $\land$ (m+n = 1) is False\\
 Assuming (m+n = 2), m = 2 - n, 2-2n = 1 $\to n \notin \mathbb{Z}$\\
 So (m+n = 2) $\land$ (m-n = 1) is False as well\\
 Since there is an integer, that does not have a preimage in the domain, this is not an onto function
-\subsubsection{part c}
+\subsubsection{part c.}
+$f (m, n)= m +n +1$
+let m = 0\\
+f(0,n) = n + 1 Substituion\\
+Since $(n+1) \in \mathbb{Z}$, $\forall x \in Z, x = f(0,x-1) = (x-1)+1 =x$\\
+f(m,n) spans all $\mathbb{Z}$ and can be mapped to any integer\\
+Thus the function is onto
 \subsubsection{part d}
+$f (m, n)= |m|-|n|$\\
+Let $x \in Z$\\
+Case x $<$ 0: \\
+$\forall x (x = f(0,x) = 0 - |x| = x)$ Substituion\\
+Case x $>$ 0: \\
+$\forall x (x = f(x,0) = |x| - 0 = x)$ Substituion\\
+Since all integers in the codomain Z can be mapped to the domain ZxZ, the function is surjective. 
 \subsubsection{part e}
+$f (m, n)= m^2 - 4$\\
+$\forall m \in Z, m^2 \leq 0$ Exhaustion\\
+$\forall m \in Z, m^2 -4 \leq -4$ Subtraction\\
+$-5 < -4 <= m^2 -4$ Existential case\\
+Therefore since there exists an integer from the codomain that cannot be mapped to the domain ZxZ, the function is not surjective.
+
 \subsection{Question 20 Give an example of a function from N to N that is}
 \subsubsection{part a. one-to-one but not onto.}
 $f(x) = x^2$
@@ -85,11 +104,19 @@ Let y = -3x + 4\\
 $f^{-1}(y) = \frac{y-4}{-3}$\\
 Since we are able to determine a unique inverse the function is a bijection
 \subsubsection{part b. $f (x)= -3x^2 +7$}
+$\forall x \in R, -3x^2 + 7 \leq 7$ Exhaustion\\
+$8 > 7 \geq -3x^2 + 7$ Comparison\\ 
+Thus there exists a real number from the codomain that cannot be mapped to the domain the function, failing the surjective assertion to a bijection. 
 \subsubsection{part c. $f (x)= (x +1)/(x +2)$}
 Assuming f is bijective, $f^{-1}(y) = \frac{2y}{1-y}$\\
 This shows y is not defined in the range of f(x), causing division by 0.\\
 By contradiction, the range is not equal to the codomain, and thus by failing surjection, the function is not a bijection.
-\subsubsection{part d}
+\subsubsection{part d. $f (x)= x^5 +1$}
+Assume function is invertible due to bijection\\
+$\forall y \in R, \sqrt[5]{y-1} \in R$ Assumption of the inverse\\
+Let y = 2\\
+$\sqrt[5]{2-1} \notin R$\\ Therefore, the assumption is contradicted by a real number in the codomain that cannot be mapped to a real number in the domain. Since the function is not surjective it contradicts that it is bijective.\\
+The function is not a bijection.
 \subsection{Question 60. How many bytes are required to encode n bits of data
 where n equals}
 \subsubsection{part a. n = 4}

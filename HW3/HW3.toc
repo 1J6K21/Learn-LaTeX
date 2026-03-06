@@ -7,21 +7,21 @@
 \contentsline {subsection}{\numberline {1.2}Question 14 Determine whether f : Z ×Z → Z is onto}{3}{}%
 \contentsline {subsubsection}{\numberline {1.2.1}part a}{3}{}%
 \contentsline {subsubsection}{\numberline {1.2.2}part b}{3}{}%
-\contentsline {subsubsection}{\numberline {1.2.3}part c}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}part c.}{4}{}%
 \contentsline {subsubsection}{\numberline {1.2.4}part d}{4}{}%
 \contentsline {subsubsection}{\numberline {1.2.5}part e}{4}{}%
-\contentsline {subsection}{\numberline {1.3}Question 20 Give an example of a function from N to N that is}{4}{}%
-\contentsline {subsubsection}{\numberline {1.3.1}part a. one-to-one but not onto.}{4}{}%
-\contentsline {subsubsection}{\numberline {1.3.2}part b. onto but not one-to-one.}{4}{}%
-\contentsline {subsubsection}{\numberline {1.3.3}part c. one-to-one and onto, but not the identity.}{4}{}%
-\contentsline {subsubsection}{\numberline {1.3.4}part d. neither one-to-one nor onto}{4}{}%
+\contentsline {subsection}{\numberline {1.3}Question 20 Give an example of a function from N to N that is}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}part a. one-to-one but not onto.}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}part b. onto but not one-to-one.}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}part c. one-to-one and onto, but not the identity.}{5}{}%
+\contentsline {subsubsection}{\numberline {1.3.4}part d. neither one-to-one nor onto}{5}{}%
 \contentsline {subsection}{\numberline {1.4}Question 22 Determine whether each of these functions is a bijection from R to R}{5}{}%
 \contentsline {subsubsection}{\numberline {1.4.1}part a. $f (x)= -3x +4$}{5}{}%
 \contentsline {subsubsection}{\numberline {1.4.2}part b. $f (x)= -3x^2 +7$}{5}{}%
-\contentsline {subsubsection}{\numberline {1.4.3}part c. $f (x)= (x +1)/(x +2)$}{5}{}%
-\contentsline {subsubsection}{\numberline {1.4.4}part d}{5}{}%
-\contentsline {subsection}{\numberline {1.5}Question 60. How many bytes are required to encode n bits of data where n equals}{5}{}%
-\contentsline {subsubsection}{\numberline {1.5.1}part a. n = 4}{5}{}%
-\contentsline {subsubsection}{\numberline {1.5.2}part b. n = 10}{5}{}%
-\contentsline {subsubsection}{\numberline {1.5.3}part c. n = 500}{5}{}%
-\contentsline {subsubsection}{\numberline {1.5.4}part d. n = 3000}{5}{}%
+\contentsline {subsubsection}{\numberline {1.4.3}part c. $f (x)= (x +1)/(x +2)$}{6}{}%
+\contentsline {subsubsection}{\numberline {1.4.4}part d. $f (x)= x^5 +1$}{6}{}%
+\contentsline {subsection}{\numberline {1.5}Question 60. How many bytes are required to encode n bits of data where n equals}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.1}part a. n = 4}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.2}part b. n = 10}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.3}part c. n = 500}{6}{}%
+\contentsline {subsubsection}{\numberline {1.5.4}part d. n = 3000}{6}{}%
