@@ -1,0 +1,774 @@
+\documentclass[9pt]{article}
+
+\usepackage[margin=0.45in,landscape]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{array}
+\usepackage{enumitem}
+
+\setlist{noitemsep}
+
+\begin{document}
+
+\begin{center}
+\Large \textbf{CSCE 222 Exam 1 Cheat Sheet}
+\end{center}
+
+\begin{multicols}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logic}
+
+\textbf{Proposition}: statement with truth value.
+
+Variables:
+
+\[
+p,q,r
+\]
+
+Truth values:
+
+\[
+T,F
+\]
+
+Logical operators
+
+\begin{tabular}{c|c}
+Symbol & Meaning\\
+\hline
+$\neg p$ & NOT\\
+$p\land q$ & AND\\
+$p\lor q$ & OR\\
+$p\rightarrow q$ & implication\\
+$p\leftrightarrow q$ & biconditional
+\end{tabular}
+
+Implication equivalence
+
+\[
+p\rightarrow q \equiv \neg p \lor q
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logical Equivalences}
+
+\textbf{Identity}
+
+\[
+p\land T=p
+\]
+
+\[
+p\lor F=p
+\]
+
+\textbf{Domination}
+
+\[
+p\lor T=T
+\]
+
+\[
+p\land F=F
+\]
+
+\textbf{Idempotent}
+
+\[
+p\lor p=p
+\]
+
+\[
+p\land p=p
+\]
+
+\textbf{Double Negation}
+
+\[
+\neg(\neg p)=p
+\]
+
+\textbf{De Morgan}
+
+\[
+\neg(p\land q)=\neg p\lor\neg q
+\]
+
+\[
+\neg(p\lor q)=\neg p\land\neg q
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rules of Inference}
+
+\begin{tabular}{|c|c|}
+\hline
+Form & Name\\
+\hline
+$p, p\rightarrow q \Rightarrow q$ & Modus Ponens\\
+\hline
+$\neg q, p\rightarrow q \Rightarrow \neg p$ & Modus Tollens\\
+\hline
+$p\rightarrow q, q\rightarrow r \Rightarrow p\rightarrow r$ & Hypothetical Syllogism\\
+\hline
+$p\lor q, \neg p \Rightarrow q$ & Disjunctive Syllogism\\
+\hline
+$p \Rightarrow p\lor q$ & Addition\\
+\hline
+$p\land q \Rightarrow p$ & Simplification\\
+\hline
+$p,q \Rightarrow p\land q$ & Conjunction\\
+\hline
+$p\lor q,\neg p\lor r \Rightarrow q\lor r$ & Resolution\\
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logical Fallacies}
+
+\begin{tabular}{|c|c|}
+\hline
+Form & Error\\
+\hline
+$p\rightarrow q$
+
+$q$
+
+$\therefore p$
+& Affirming Consequent\\
+\hline
+
+$p\rightarrow q$
+
+$\neg p$
+
+$\therefore \neg q$
+& Denying Antecedent\\
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Predicate Logic}
+
+Predicate:
+
+\[
+P(x)
+\]
+
+Universal:
+
+\[
+\forall x P(x)
+\]
+
+Existential:
+
+\[
+\exists x P(x)
+\]
+
+Negation rules
+
+\[
+\neg(\forall xP(x))\equiv \exists x\neg P(x)
+\]
+
+\[
+\neg(\exists xP(x))\equiv \forall x\neg P(x)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Proof Techniques}
+
+\textbf{Direct}
+
+Assume premise
+
+derive conclusion.
+
+\textbf{Contrapositive}
+
+\[
+P\rightarrow Q
+\]
+
+prove
+
+\[
+\neg Q\rightarrow \neg P
+\]
+
+\textbf{Contradiction}
+
+assume opposite
+
+derive impossible statement.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Proof by Contradiction Example}
+
+Claim:
+
+\[
+\sqrt2\notin \mathbb Q
+\]
+
+Assume
+
+\[
+\sqrt2=\frac ab
+\]
+
+with $gcd(a,b)=1$
+
+Then
+
+\[
+2b^2=a^2
+\]
+
+$a$ even
+
+$a=2k$
+
+\[
+b^2=2k^2
+\]
+
+$b$ even
+
+contradiction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Proof by Cases Example}
+
+Prove
+
+\[
+n^2+n \text{ even}
+\]
+
+Case 1:
+
+\[
+n=2k
+\]
+
+Case 2:
+
+\[
+n=2k+1
+\]
+
+Both yield even result.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Even/Odd}
+
+Even
+
+\[
+n=2k
+\]
+
+Odd
+
+\[
+n=2k+1
+\]
+
+for
+
+\[
+k\in \mathbb Z
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rational/Irrational}
+
+Rational
+
+\[
+x=\frac ab
+\]
+
+\[
+a,b\in\mathbb Z
+\]
+
+Irrational
+
+cannot be expressed as ratio.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Sets}
+
+Subset
+
+\[
+A\subseteq B
+\]
+
+iff
+
+\[
+\forall x(x\in A\rightarrow x\in B)
+\]
+
+Union
+
+\[
+A\cup B
+\]
+
+Intersection
+
+\[
+A\cap B
+\]
+
+Difference
+
+\[
+A-B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Set Identities}
+
+\begin{tabular}{|c|c|}
+\hline
+Identity & Name\\
+\hline
+$A\cup \emptyset=A$ & Identity\\
+$A\cap U=A$ & Identity\\
+\hline
+$A\cup U=U$ & Domination\\
+$A\cap\emptyset=\emptyset$ & Domination\\
+\hline
+$A\cup A=A$ & Idempotent\\
+$A\cap A=A$ & Idempotent\\
+\hline
+$A\cup B=B\cup A$ & Commutative\\
+$A\cap B=B\cap A$ & Commutative\\
+\hline
+$A\cup(B\cup C)=(A\cup B)\cup C$ & Associative\\
+\hline
+$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$ & Distributive\\
+\hline
+$(A\cap B)^c=A^c\cup B^c$ & DeMorgan\\
+$(A\cup B)^c=A^c\cap B^c$ & DeMorgan\\
+\hline
+$A\cup A^c=U$ & Complement\\
+$A\cap A^c=\emptyset$ & Complement\\
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cardinality}
+
+Cardinality
+
+\[
+|A|
+\]
+
+Power set
+
+\[
+|P(A)|=2^{|A|}
+\]
+
+Cartesian product
+
+\[
+|A\times B|=|A||B|
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Functions}
+
+Function
+
+\[
+f:A\to B
+\]
+
+Domain = $A$
+
+Codomain = $B$
+
+Range
+
+\[
+\{f(x)|x\in A\}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Function Types (Logical Meaning)}
+
+Injective
+
+\[
+\forall x_1,x_2\in A
+\]
+
+\[
+f(x_1)=f(x_2)\Rightarrow x_1=x_2
+\]
+
+Surjective
+
+\[
+\forall y\in B,\exists x\in A
+\]
+
+\[
+f(x)=y
+\]
+
+Bijective
+
+injective AND surjective.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{How to Prove Function Properties}
+
+\textbf{Injective}
+
+1 Assume
+
+\[
+f(x_1)=f(x_2)
+\]
+
+2 substitute definition
+
+3 show
+
+\[
+x_1=x_2
+\]
+
+\textbf{Disprove Injective}
+
+Find
+
+\[
+x_1\ne x_2
+\]
+
+such that
+
+\[
+f(x_1)=f(x_2)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Surjective}
+
+1 Let
+
+\[
+y\in B
+\]
+
+2 solve
+
+\[
+y=f(x)
+\]
+
+3 show solution $x\in A$
+
+\textbf{Disprove Surjective}
+
+Find
+
+\[
+y\in B
+\]
+
+such that
+
+\[
+\not\exists x
+\]
+
+with
+
+\[
+f(x)=y
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Algorithms}
+
+Common complexities
+
+\begin{tabular}{c|c}
+Type & Order\\
+\hline
+Constant & $O(1)$\\
+Logarithmic & $O(\log n)$\\
+Linear & $O(n)$\\
+Quadratic & $O(n^2)$\\
+Exponential & $O(2^n)$
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Asymptotic Notation}
+
+Big O
+
+\[
+f(n)\le Cg(n)
+\]
+
+Big Omega
+
+\[
+f(n)\ge Cg(n)
+\]
+
+Big Theta
+
+\[
+Cg(n)\le f(n)\le C_2g(n)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Prime and Composite Numbers (Logical Definitions)}
+
+\textbf{Prime Number}
+
+An integer $n$ is \textbf{prime} if
+
+\[
+n \text{ is prime} \iff (n>1) \land 
+(\forall r,s \in \mathbb{Z}^+)
+\Big((n = rs) \rightarrow 
+\big((r = 1 \land s = n) \lor (s = 1 \land r = n)\big)\Big)
+\]
+
+Meaning:
+
+\begin{itemize}
+\item $n>1$
+\item whenever $n$ is written as a product $n = rs$ of positive integers,
+the only possibilities are
+\[
+1\cdot n \quad \text{or} \quad n\cdot 1
+\]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textbf{Composite Number}
+
+An integer $n$ is \textbf{composite} if
+
+\[
+n \text{ is composite} \iff (n>1) \land
+(\exists r,s \in \mathbb{Z}^+)
+\Big((n = rs) \land 
+\neg\big((r = 1 \land s = n) \lor (s = 1 \land r = n)\big)\Big)
+\]
+
+Equivalent useful form:
+
+\[
+n>1 \land (\exists r,s \in \mathbb{Z}^+)
+(n = rs \land 1<r<n \land 1<s<n)
+\]
+
+Meaning:
+
+$n$ can be written as a product of two smaller positive integers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Divisibility}
+
+$a$ divides $b$
+
+\[
+a \mid b
+\]
+
+means
+
+\[
+b = ak
+\]
+
+for some
+
+\[
+k \in \mathbb{Z}
+\]
+
+Example
+
+\[
+3 \mid 12
+\]
+
+since
+
+\[
+12 = 3\cdot4
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Fundamental Theorem of Arithmetic}
+
+Every integer
+
+\[
+n>1
+\]
+
+can be written as a product of primes:
+
+\[
+n = p_1^{e_1}p_2^{e_2}\cdots p_k^{e_k}
+\]
+
+and this factorization is \textbf{unique} (up to order).
+
+Example
+
+\[
+60 = 2^2 \cdot 3 \cdot 5
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Useful Proof Facts}
+
+If
+
+\[
+p \text{ prime and } p\mid ab
+\]
+
+then
+
+\[
+p\mid a \quad \text{or} \quad p\mid b
+\]
+
+This is often used in contradiction proofs.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Common Proof Pattern}
+
+To prove a number is composite:
+
+Show
+
+\[
+n = ab
+\]
+
+where
+
+\[
+1<a<n
+\]
+
+Example
+
+\[
+n^2-n = n(n-1)
+\]
+
+For
+
+\[
+n>2
+\]
+
+both factors are greater than 1
+
+so the number is composite.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Example Proof: $n^2 - n$ is Composite}
+
+Claim:
+
+For every integer $n>2$, the number $n^2-n$ is composite.
+
+Proof:
+
+Assume $n>2$ and let
+
+\[
+m = n^2-n
+\]
+
+Factor the expression:
+
+\[
+m = n^2-n = n(n-1)
+\]
+
+Let
+
+\[
+r = n-1, \quad s = n
+\]
+
+Then
+
+\[
+m = rs
+\]
+
+Since $n>2$, we have
+
+\[
+1 < n-1 < n^2-n
+\]
+
+and
+
+\[
+1 < n < n^2-n
+\]
+
+Thus
+
+\[
+1 < r < m \quad \text{and} \quad 1 < s < m
+\]
+
+Therefore
+
+\[
+(\exists r,s \in \mathbb{Z}^+)
+(m = rs \land 1 < r < m \land 1 < s < m)
+\]
+
+By the definition of composite numbers,
+
+\[
+n^2 - n \text{ is composite.}
+\]
+
+\[
+\blacksquare
+\]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
+
+\end{document}

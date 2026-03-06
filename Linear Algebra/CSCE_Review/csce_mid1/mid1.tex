@@ -1,0 +1,842 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=0.5in,landscape]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{CSCE 222 Exam 1 Cheatsheet}}
+\end{center}
+
+\begin{multicols}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{1. Propositional Logic}
+
+\textbf{Proposition}: A statement that is either TRUE or FALSE.
+
+\textbf{Logical Operators}
+
+\begin{tabular}{c|c}
+Symbol & Meaning \\
+\hline
+$\neg p$ & NOT p \\
+$p \land q$ & AND \\
+$p \lor q$ & OR \\
+$p \rightarrow q$ & Implication \\
+$p \leftrightarrow q$ & Biconditional
+\end{tabular}
+
+\subsection*{Implication Equivalence}
+
+\[
+p \rightarrow q \equiv \neg p \lor q
+\]
+
+\subsection*{Truth Table Essentials}
+
+\begin{tabular}{c c | c}
+p & q & $p \rightarrow q$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T
+\end{tabular}
+
+\subsection*{Logical Equivalences}
+
+\textbf{Identity}
+\[
+p \land T = p
+\]
+
+\[
+p \lor F = p
+\]
+
+\textbf{Domination}
+
+\[
+p \lor T = T
+\]
+
+\[
+p \land F = F
+\]
+
+\textbf{Idempotent}
+
+\[
+p \lor p = p
+\]
+
+\[
+p \land p = p
+\]
+
+\textbf{Double Negation}
+
+\[
+\neg(\neg p) = p
+\]
+
+\textbf{DeMorgan's Laws}
+
+\[
+\neg(p \land q) = \neg p \lor \neg q
+\]
+
+\[
+\neg(p \lor q) = \neg p \land \neg q
+\]
+
+\textbf{Commutative}
+
+\[
+p \land q = q \land p
+\]
+
+\[
+p \lor q = q \lor p
+\]
+
+\textbf{Associative}
+
+\[
+(p \land q) \land r = p \land (q \land r)
+\]
+
+\textbf{Distributive}
+
+\[
+p \land (q \lor r) = (p \land q) \lor (p \land r)
+\]
+
+\[
+p \lor (q \land r) = (p \lor q) \land (p \lor r)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{2. Predicate Logic}
+
+\textbf{Predicate}: A statement with variables. :contentReference[oaicite:0]{index=0}
+
+Example:
+
+\[
+P(x): x > 3
+\]
+
+\textbf{Quantifiers}
+
+\begin{tabular}{c|c}
+Symbol & Meaning \\
+\hline
+$\forall x$ & For all x (Universal) \\
+$\exists x$ & There exists x (Existential)
+\end{tabular}
+
+\[
+\forall x P(x)
+\]
+
+True if P(x) is true for every element in the domain. :contentReference[oaicite:1]{index=1}
+
+\[
+\exists x P(x)
+\]
+
+True if P(x) is true for at least one element.
+
+\subsection*{Negation of Quantifiers}
+
+\[
+\neg(\forall x P(x)) \equiv \exists x \neg P(x)
+\]
+
+\[
+\neg(\exists x P(x)) \equiv \forall x \neg P(x)
+\]
+
+\subsection*{Distribution Rules}
+
+\[
+\forall x (P(x) \land Q(x)) \equiv \forall x P(x) \land \forall x Q(x)
+\]
+
+\[
+\exists x (P(x) \lor Q(x)) \equiv \exists x P(x) \lor \exists x Q(x)
+\]
+
+\textbf{Not valid:}
+
+\[
+\forall x (P(x) \lor Q(x))
+\]
+
+\[
+\exists x (P(x) \land Q(x))
+\]
+
+\subsection*{Nested Quantifiers}
+
+Order matters:
+
+\[
+\forall x \exists y P(x,y) \neq \exists x \forall y P(x,y)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{3. Proof Techniques}
+
+\textbf{Direct Proof}
+
+Assume $p$ and prove $q$.
+
+\[
+p \rightarrow q
+\]
+
+\textbf{Contrapositive}
+
+\[
+p \rightarrow q \equiv \neg q \rightarrow \neg p
+\]
+
+\textbf{Proof by Contradiction}
+
+Assume the opposite and derive contradiction.
+
+\[
+p \land \neg p
+\]
+
+\textbf{Proof by Cases}
+
+Split problem into exhaustive cases.
+
+\textbf{Counterexample}
+
+To disprove:
+
+\[
+\forall x P(x)
+\]
+
+Find one x where P(x) is false.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{4. Sets}
+
+\textbf{Set Notation}
+
+Roster:
+
+\[
+A = \{1,2,3\}
+\]
+
+Set-builder:
+
+\[
+A = \{x \mid x > 0\}
+\]
+
+\textbf{Subset}
+
+\[
+A \subseteq B
+\]
+
+\[
+\forall x (x \in A \rightarrow x \in B)
+\]
+
+\textbf{Proper Subset}
+
+\[
+A \subset B
+\]
+
+A subset but not equal.
+
+\subsection*{Power Set}
+
+\[
+P(S) = \text{set of all subsets}
+\]
+
+If
+
+\[
+|S| = n
+\]
+
+then
+
+\[
+|P(S)| = 2^n
+\]
+
+:contentReference[oaicite:2]{index=2}
+
+\subsection*{Set Operations}
+
+\begin{tabular}{c|c}
+Operation & Meaning \\
+\hline
+$A \cup B$ & Union \\
+$A \cap B$ & Intersection \\
+$A-B$ & Difference \\
+$A^c$ & Complement
+\end{tabular}
+
+\subsection*{Formal Definitions}
+
+\[
+A \cup B = \{x \mid x \in A \lor x \in B\}
+\]
+
+\[
+A \cap B = \{x \mid x \in A \land x \in B\}
+\]
+
+\[
+B-A = \{x \mid x \in B \land x \notin A\}
+\]
+
+\subsection*{Cartesian Product}
+
+\[
+A \times B = \{(a,b) \mid a \in A, b \in B\}
+\]
+
+If
+
+\[
+|A| = n, |B| = m
+\]
+
+\[
+|A \times B| = nm
+\]
+
+\subsection*{Relation}
+
+\[
+R \subseteq A \times B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{5. Functions}
+
+\textbf{Function}
+
+\[
+f : A \rightarrow B
+\]
+
+Maps every element of A to exactly one element in B. :contentReference[oaicite:3]{index=3}
+
+\subsection*{Terminology}
+
+\begin{tabular}{c|c}
+Term & Meaning \\
+\hline
+Domain & Input set \\
+Codomain & Output set \\
+Range & Actual outputs \\
+Image & $f(x)$ \\
+Preimage & x such that $f(x)=y$
+\end{tabular}
+
+\subsection*{One-to-One (Injective)}
+
+\[
+f(x_1)=f(x_2) \Rightarrow x_1=x_2
+\]
+
+Each output has at most one input. :contentReference[oaicite:4]{index=4}
+
+\subsection*{Onto (Surjective)}
+
+\[
+\forall y \in Y, \exists x \in X: f(x)=y
+\]
+
+Every output is used.
+
+\subsection*{Bijection}
+
+Function is both:
+
+\begin{itemize}
+\item Injective
+\item Surjective
+\end{itemize}
+
+\subsection*{Inverse Function}
+
+Exists only if function is bijective.
+
+\[
+f^{-1}(f(x)) = x
+\]
+
+\subsection*{Floor and Ceiling}
+
+\[
+\lfloor x \rfloor
+\]
+
+Largest integer $\le x$.
+
+\[
+\lceil x \rceil
+\]
+
+Smallest integer $\ge x$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{6. Algorithms}
+
+\textbf{Algorithm}: Finite sequence of instructions solving a problem.
+
+\subsection*{Complexity Types}
+
+\begin{tabular}{c|c}
+Notation & Meaning \\
+\hline
+$O(1)$ & Constant \\
+$O(\log n)$ & Logarithmic \\
+$O(n)$ & Linear \\
+$O(n^2)$ & Quadratic \\
+$O(n^b)$ & Polynomial \\
+$O(b^n)$ & Exponential
+\end{tabular}
+
+:contentReference[oaicite:5]{index=5}
+
+\subsection*{Time Complexity}
+
+Number of operations executed.
+
+Simplifying assumption: all operations cost equal time. :contentReference[oaicite:6]{index=6}
+
+\subsection*{Common Algorithm Complexities}
+
+\begin{tabular}{c|c|c}
+Algorithm & Best & Worst \\
+\hline
+Linear Search & $\Omega(1)$ & $O(n)$ \\
+Binary Search & $\Omega(1)$ & $O(\log n)$ \\
+Selection Sort & $\Omega(n^2)$ & $O(n^2)$ \\
+Insertion Sort & $\Omega(n)$ & $O(n^2)$ \\
+Merge Sort & $\Omega(n\log n)$ & $O(n\log n)$
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{7. Asymptotic Notation}
+
+\subsection*{Big-O}
+
+Upper bound.
+
+\[
+f(n) \in O(g(n))
+\]
+
+if
+
+\[
+f(n) \le Cg(n)
+\]
+
+for large n.
+
+\subsection*{Big-Omega}
+
+Lower bound.
+
+\[
+f(n) \in \Omega(g(n))
+\]
+
+if
+
+\[
+f(n) \ge Cg(n)
+\]
+
+:contentReference[oaicite:7]{index=7}
+
+\subsection*{Big-Theta}
+
+Tight bound.
+
+\[
+f(n) \in \Theta(g(n))
+\]
+
+if
+
+\[
+f(n) \in O(g(n)) \text{ and } f(n) \in \Omega(g(n))
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{8. Common Proof Approaches (Exam Patterns)}
+
+\subsection*{How to Choose a Proof Technique}
+
+\begin{tabular}{l|l}
+Problem Form & Technique \\
+\hline
+$\forall x \; P(x) \rightarrow Q(x)$ & Direct proof or Contrapositive \\
+$\neg(\forall x P(x))$ & Find counterexample \\
+$\exists x P(x)$ & Construct example \\
+Set equality $A=B$ & Show $A\subseteq B$ and $B\subseteq A$ \\
+Function injective & Assume $f(x_1)=f(x_2)$ \\
+Function surjective & Solve $y=f(x)$ for $x$ \\
+Implication false & Counterexample
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Direct Proof Template}
+
+Used when proving implications.
+
+Goal:
+
+\[
+P \rightarrow Q
+\]
+
+Steps:
+
+\begin{enumerate}
+\item Assume $P$ is true
+\item Use definitions / algebra / known facts
+\item Derive $Q$
+\item Conclude $P \rightarrow Q$
+\end{enumerate}
+
+Example structure:
+
+\[
+\text{Assume } x \in A
+\]
+
+\[
+\text{Show } x \in B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Contrapositive Proof}
+
+Useful when $Q$ is easier to negate.
+
+\[
+P \rightarrow Q
+\]
+
+Equivalent statement:
+
+\[
+\neg Q \rightarrow \neg P
+\]
+
+Proof steps:
+
+\begin{enumerate}
+\item Assume $\neg Q$
+\item Show $\neg P$
+\end{enumerate}
+
+Example:
+
+\[
+\text{If } n^2 \text{ is even } \rightarrow n \text{ is even}
+\]
+
+Prove instead:
+
+\[
+n \text{ is odd } \rightarrow n^2 \text{ is odd}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proof by Contradiction}
+
+Used when direct proof is difficult.
+
+Steps:
+
+\begin{enumerate}
+\item Assume the statement is false
+\item Derive contradiction
+\item Conclude statement must be true
+\end{enumerate}
+
+Contradiction form:
+
+\[
+P \land \neg P
+\]
+
+Example:
+
+\[
+\sqrt{2} \text{ is irrational}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proof by Cases}
+
+Used when domain splits naturally.
+
+Example:
+
+\[
+n \text{ is even OR odd}
+\]
+
+Structure:
+
+Case 1: $n$ even
+
+\[
+n = 2k
+\]
+
+Case 2: $n$ odd
+
+\[
+n = 2k+1
+\]
+
+Show both cases satisfy the result.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Counterexample}
+
+Used to disprove universal statements.
+
+Statement:
+
+\[
+\forall x P(x)
+\]
+
+Find one element:
+
+\[
+x=a
+\]
+
+such that:
+
+\[
+P(a) \text{ is false}
+\]
+
+Example:
+
+\[
+\forall x (x^2 > x)
+\]
+
+Counterexample:
+
+\[
+x=0
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{9. Common Set Proof Patterns}
+
+\subsection*{Subset Proof}
+
+To prove:
+
+\[
+A \subseteq B
+\]
+
+Steps:
+
+\begin{enumerate}
+\item Let $x \in A$
+\item Use definitions
+\item Show $x \in B$
+\end{enumerate}
+
+Example structure:
+
+\[
+x \in A
+\]
+
+\[
+\Rightarrow x \text{ satisfies property of B}
+\]
+
+\[
+\Rightarrow x \in B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Set Equality}
+
+To prove:
+
+\[
+A = B
+\]
+
+Must prove two subsets:
+
+\[
+A \subseteq B
+\]
+
+\[
+B \subseteq A
+\]
+
+Structure:
+
+\[
+x \in A \Rightarrow x \in B
+\]
+
+\[
+x \in B \Rightarrow x \in A
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Disjoint Sets}
+
+Goal:
+
+\[
+A \cap B = \emptyset
+\]
+
+Method:
+
+Assume
+
+\[
+x \in A \cap B
+\]
+
+Show contradiction.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{10. Function Proof Patterns}
+
+\subsection*{Proving Injective (One-to-One)}
+
+Goal:
+
+\[
+f(x_1)=f(x_2) \Rightarrow x_1=x_2
+\]
+
+Steps:
+
+\begin{enumerate}
+\item Assume $f(x_1)=f(x_2)$
+\item Substitute definition of $f$
+\item Solve algebraically
+\item Show $x_1=x_2$
+\end{enumerate}
+
+Example:
+
+\[
+f(x)=3x+5
+\]
+
+\[
+3x_1+5 = 3x_2+5
+\]
+
+\[
+3x_1 = 3x_2
+\]
+
+\[
+x_1=x_2
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proving Surjective (Onto)}
+
+Goal:
+
+\[
+\forall y \in B, \exists x \in A
+\]
+
+such that
+
+\[
+f(x)=y
+\]
+
+Steps:
+
+\begin{enumerate}
+\item Let $y \in B$
+\item Solve $y=f(x)$ for $x$
+\item Show $x$ is in domain
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proving Function Equality}
+
+To prove:
+
+\[
+f = g
+\]
+
+Must show:
+
+\[
+f(x)=g(x) \quad \forall x
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{11. Logic Argument Proof Pattern}
+
+For validity proofs:
+
+\begin{enumerate}
+\item Write premises
+\item Apply rules of inference
+\item Derive conclusion
+\end{enumerate}
+
+Common inference rules:
+
+\begin{tabular}{l}
+Modus Ponens \\
+Modus Tollens \\
+Hypothetical Syllogism \\
+Disjunctive Syllogism \\
+Resolution
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{multicols}
+
+\end{document}

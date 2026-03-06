@@ -1,0 +1,700 @@
+\documentclass[9pt]{article}
+
+\usepackage[margin=0.5in,landscape]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{array}
+\usepackage{enumitem}
+\setlist{noitemsep}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{CSCE 222 Exam 1 Comprehensive Cheatsheet}}
+\end{center}
+
+\begin{multicols}{2}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logic}
+
+\textbf{Proposition}
+
+A declarative statement that is either true or false.
+
+Example variables:
+
+\[
+p,q,r
+\]
+
+Truth values:
+
+\[
+T, F
+\]
+
+\subsection*{Logical Operators}
+
+\begin{tabular}{c|c}
+Symbol & Meaning \\
+\hline
+$\neg p$ & NOT \\
+$p \land q$ & AND \\
+$p \lor q$ & OR \\
+$p \rightarrow q$ & Implication \\
+$p \leftrightarrow q$ & Biconditional \\
+$p \oplus q$ & XOR
+\end{tabular}
+
+\subsection*{Truth Tables}
+
+\textbf{Conjunction}
+
+\[
+p \land q
+\]
+
+\begin{tabular}{c c | c}
+p & q & p$\land$q\\
+\hline
+T&T&T\\
+T&F&F\\
+F&T&F\\
+F&F&F
+\end{tabular}
+
+\textbf{Disjunction}
+
+\[
+p \lor q
+\]
+
+\begin{tabular}{c c | c}
+p & q & p$\lor$q\\
+\hline
+T&T&T\\
+T&F&T\\
+F&T&T\\
+F&F&F
+\end{tabular}
+
+\textbf{Implication}
+
+\[
+p \rightarrow q
+\]
+
+False only when:
+
+\[
+p=T, q=F
+\]
+
+Equivalent form:
+
+\[
+p\rightarrow q \equiv \neg p \lor q
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logical Equivalences}
+
+Identity laws
+
+\[
+p \land T = p
+\]
+
+\[
+p \lor F = p
+\]
+
+Domination laws
+
+\[
+p \lor T = T
+\]
+
+\[
+p \land F = F
+\]
+
+Idempotent laws
+
+\[
+p \lor p = p
+\]
+
+\[
+p \land p = p
+\]
+
+Double negation
+
+\[
+\neg(\neg p)=p
+\]
+
+Commutative
+
+\[
+p\land q=q\land p
+\]
+
+Associative
+
+\[
+(p\land q)\land r=p\land(q\land r)
+\]
+
+Distributive
+
+\[
+p\land(q\lor r)=(p\land q)\lor(p\land r)
+\]
+
+DeMorgan
+
+\[
+\neg(p\land q)=\neg p\lor\neg q
+\]
+
+\[
+\neg(p\lor q)=\neg p\land\neg q
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rules of Inference}
+
+\begin{tabular}{|c|c|c|}
+\hline
+Rule & Tautology & Name\\
+\hline
+
+$\frac{p \quad p\rightarrow q}{\therefore q}$ &
+$(p\land(p\rightarrow q))\rightarrow q$
+& Modus Ponens \\
+
+\hline
+
+$\frac{\neg q \quad p\rightarrow q}{\therefore \neg p}$ &
+$(\neg q\land(p\rightarrow q))\rightarrow \neg p$
+& Modus Tollens \\
+
+\hline
+
+$\frac{p\rightarrow q \quad q\rightarrow r}{\therefore p\rightarrow r}$ &
+$((p\rightarrow q)\land(q\rightarrow r))\rightarrow(p\rightarrow r)$
+& Hypothetical syllogism \\
+
+\hline
+
+$\frac{p\lor q \quad \neg p}{\therefore q}$ &
+$((p\lor q)\land \neg p)\rightarrow q$
+& Disjunctive syllogism \\
+
+\hline
+
+$\frac{p}{\therefore p\lor q}$ &
+$p\rightarrow(p\lor q)$
+& Addition \\
+
+\hline
+
+$\frac{p\land q}{\therefore p}$ &
+$(p\land q)\rightarrow p$
+& Simplification \\
+
+\hline
+
+$\frac{p \quad q}{\therefore p\land q}$ &
+$(p\land q)\rightarrow(p\land q)$
+& Conjunction \\
+
+\hline
+
+$\frac{p\lor q \quad \neg p\lor r}{\therefore q\lor r}$ &
+$((p\lor q)\land(\neg p\lor r))\rightarrow(q\lor r)$
+& Resolution \\
+
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Logical Errors / Fallacies}
+
+\begin{tabular}{|c|c|c|}
+\hline
+Fallacy & Form & Why Wrong \\
+\hline
+
+Converse Error &
+$p\rightarrow q$
+
+$q$
+
+$\therefore p$
+&
+q may occur from other causes
+\\
+
+\hline
+
+Inverse Error &
+$p\rightarrow q$
+
+$\neg p$
+
+$\therefore \neg q$
+&
+q may still be true
+\\
+
+\hline
+
+Affirming the Consequent &
+$p\rightarrow q$
+
+$q$
+
+$\therefore p$
+&
+invalid inference
+\\
+
+\hline
+
+Denying the Antecedent &
+$p\rightarrow q$
+
+$\neg p$
+
+$\therefore \neg q$
+&
+invalid inference
+\\
+
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Predicate Logic}
+
+Predicate:
+
+\[
+P(x)
+\]
+
+Example
+
+\[
+P(x): x>3
+\]
+
+\subsection*{Quantifiers}
+
+Universal
+
+\[
+\forall x P(x)
+\]
+
+Existential
+
+\[
+\exists x P(x)
+\]
+
+\subsection*{Negating Quantifiers}
+
+\[
+\neg(\forall x P(x))\equiv \exists x \neg P(x)
+\]
+
+\[
+\neg(\exists x P(x))\equiv \forall x \neg P(x)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Proof Techniques}
+
+\subsection*{Direct Proof}
+
+Goal
+
+\[
+P\rightarrow Q
+\]
+
+Steps
+
+1 Assume $P$
+
+2 Derive $Q$
+
+\subsection*{Contrapositive}
+
+\[
+P\rightarrow Q
+\]
+
+prove
+
+\[
+\neg Q\rightarrow \neg P
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proof by Contradiction Example}
+
+Claim:
+
+\[
+\sqrt2 \text{ is irrational}
+\]
+
+Assume opposite
+
+\[
+\sqrt2=\frac ab
+\]
+
+where
+
+\[
+a,b\in \mathbb{Z},\ gcd(a,b)=1
+\]
+
+Then
+
+\[
+2b^2=a^2
+\]
+
+So $a$ is even
+
+Let
+
+\[
+a=2k
+\]
+
+Substitute
+
+\[
+2b^2=4k^2
+\]
+
+\[
+b^2=2k^2
+\]
+
+Thus $b$ even
+
+Contradiction since $a,b$ cannot both be even.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Proof by Cases Example}
+
+Prove
+
+\[
+n^2+n \text{ is even}
+\]
+
+Case 1
+
+\[
+n=2k
+\]
+
+\[
+n^2+n=4k^2+2k=2(2k^2+k)
+\]
+
+Case 2
+
+\[
+n=2k+1
+\]
+
+\[
+n^2+n=4k^2+6k+2=2(2k^2+3k+1)
+\]
+
+Both cases even.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Even / Odd Definitions}
+
+Even
+
+\[
+n=2k
+\]
+
+Odd
+
+\[
+n=2k+1
+\]
+
+for
+
+\[
+k\in\mathbb{Z}
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rational / Irrational}
+
+Rational
+
+\[
+x=\frac ab
+\]
+
+where
+
+\[
+a,b\in\mathbb Z,\ b\neq0
+\]
+
+Irrational
+
+cannot be expressed as ratio of integers.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Sets}
+
+Subset
+
+\[
+A\subseteq B
+\]
+
+iff
+
+\[
+\forall x(x\in A\rightarrow x\in B)
+\]
+
+Set operations
+
+Union
+
+\[
+A\cup B
+\]
+
+Intersection
+
+\[
+A\cap B
+\]
+
+Difference
+
+\[
+A-B
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Set Identities}
+
+\begin{tabular}{|c|c|}
+\hline
+Identity & Name\\
+\hline
+
+$A\cap U=A$
+
+$A\cup\emptyset=A$
+&
+Identity Laws
+\\
+
+\hline
+
+$A\cup U=U$
+
+$A\cap\emptyset=\emptyset$
+&
+Domination Laws
+\\
+
+\hline
+
+$A\cup A=A$
+
+$A\cap A=A$
+&
+Idempotent
+\\
+
+\hline
+
+$\overline{\overline A}=A$
+&
+Complementation
+\\
+
+\hline
+
+$A\cup B=B\cup A$
+
+$A\cap B=B\cap A$
+&
+Commutative
+\\
+
+\hline
+
+$A\cup(B\cup C)=(A\cup B)\cup C$
+
+$A\cap(B\cap C)=(A\cap B)\cap C$
+&
+Associative
+\\
+
+\hline
+
+$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$
+
+$A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$
+&
+Distributive
+\\
+
+\hline
+
+$\overline{A\cap B}=\overline A\cup\overline B$
+
+$\overline{A\cup B}=\overline A\cap\overline B$
+&
+DeMorgan
+\\
+
+\hline
+
+$A\cup(A\cap B)=A$
+
+$A\cap(A\cup B)=A$
+&
+Absorption
+\\
+
+\hline
+
+$A\cup\overline A=U$
+
+$A\cap\overline A=\emptyset$
+&
+Complement
+\\
+
+\hline
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cardinality}
+
+Cardinality
+
+\[
+|A|
+\]
+
+= number of elements.
+
+Power set
+
+\[
+P(A)
+\]
+
+Number of subsets
+
+\[
+|P(A)|=2^{|A|}
+\]
+
+Cartesian product
+
+\[
+A\times B
+\]
+
+\[
+|A\times B|=|A||B|
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Functions}
+
+Function
+
+\[
+f:A\rightarrow B
+\]
+
+Injective
+
+\[
+f(x_1)=f(x_2)\Rightarrow x_1=x_2
+\]
+
+Surjective
+
+\[
+\forall y\in B,\exists x\in A:f(x)=y
+\]
+
+Bijective
+
+injective + surjective
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Algorithms and Complexity}
+
+Common complexities
+
+\begin{tabular}{c|c}
+Type & Growth\\
+\hline
+Constant & $O(1)$\\
+Logarithmic & $O(\log n)$\\
+Linear & $O(n)$\\
+Quadratic & $O(n^2)$\\
+Polynomial & $O(n^k)$\\
+Exponential & $O(2^n)$
+\end{tabular}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Asymptotic Notation}
+
+Big-O
+
+\[
+f(n)\le Cg(n)
+\]
+
+Big-Omega
+
+\[
+f(n)\ge Cg(n)
+\]
+
+Big-Theta
+
+\[
+Cg(n)\le f(n)\le C_2g(n)
+\]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{multicols}
+
+\end{document}
