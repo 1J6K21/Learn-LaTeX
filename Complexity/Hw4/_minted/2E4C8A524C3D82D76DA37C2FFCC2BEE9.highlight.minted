@@ -1,0 +1,7 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+    i := 1
+    t := 0
+    while i \PYGZlt{}= n
+    t := t +i
+    i := 2i
+\end{MintedVerbatim}
