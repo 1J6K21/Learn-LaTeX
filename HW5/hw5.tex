@@ -4,8 +4,8 @@
 \usepackage{amsmath}
 
 \author{Jonathan Kalsky}
-\date{March 5 2026}
-\title{\normalsize CSCE 222\\ \Large Homework 3}
+\date{April 17 2026}
+\title{\normalsize CSCE 222\\ \Large Homework 5}
 \linespread{1.5}
 
 \begin{document}
@@ -142,9 +142,71 @@ $\sum_{j=0}^{8} (2^{j+1} - 2^j) $ = $\frac{1-2^9}{1-2} = 511$\\
 
 
 \section{Section 5.1}
-\subsection{Question 8}
-\subsection{Question 12}
-\subsection{Question 14}
-\subsection{Question 18}
+\subsection{Question 8 - Prove that $2 - 2 \cdot 7 + 2 \cdot 72 - \ldots  + 2(-7)^n = (1 -(-7)^{n+1})/4$ whenever n is a nonnegative integer.}
+P(n) = $2 - 2 \cdot 7 + 2 \cdot 72 - \ldots  + 2(-7)^n = (1 -(-7)^{n+1})/4$ for all n$\geq$0\\
+Basis step:
+$P(0) = a_0 = 2(-7)^0 = 2 = (1 -(-7)^{0+1})/4 = 2$ which holds\\
+Inductive step:
+$p(k) \to p(k+1)$\\
+Assume p(k) holds for k $\geq$ 0, $2 - 2 \cdot 7 + 2 \cdot 72 - \ldots  + 2(-7)^k = (1 -(-7)^{k+1})/4$\\
+RHS: $(1 -(-7)^{(k+1)+1})/4$\\
+LHS: $(1 -(-7)^{k+1})/4 + a_{k+1}$\\
+$(1 -(-7)^{k+1})/4 + 2(-7)^{k+1}$\\
+$(1 -(-7)^{k+1})/4 + (8(-7)^{k+1})/4$\\
+$(1 + (8-1)(-7)^{k+1})/4$\\
+$(1 + 7(-7)^{k+1})/4$\\
+$(1 - -7(-7)^{k+1})/4$\\
+$(1 - (-7)^{(k+1)+1})/4$\\
+LHS = RHS therefore $p(k) \to p(k+1)$ holds for all n $\geq$ 0 by induction.
 
+\subsection{Question 12 - Prove $\sum_{j=0}^{n} (-\frac{1}{2})^j = \frac{2^{n+1} + (-1)^n}{3 \cdot 2^n}$ for n $\geq$ 0}
+% $\sum_{j=0}^{n} (-\frac{1}{2})^j = \frac{2^{n+1} + (-1)^n}{3 \cdot 2^n}$ for n $\geq$ 0
+
+P(n) = $\sum_{j=0}^{n} (-\frac{1}{2})^j = \frac{2^{n+1} + (-1)^n}{3 \cdot 2^n}$ for all n $\geq$ 0\\
+Basis step:
+$P(0) = a_0 = \sum_{j=0}^{0} (-\frac{1}{2})^0 = 1 = \frac{2^{0+1} + (-1)^0}{3 \cdot 2^0} = \frac{3}{3} = 1$ which holds\\
+Inductive step:
+$p(k) \to p(k+1)$\\
+Assume p(k) holds for k $\geq$ 0, $\sum_{j=0}^{k} (-\frac{1}{2})^j = \frac{2^{k+1} + (-1)^k}{3 \cdot 2^k}$\\
+RHS: $\frac{2^{(k+1)+1} + (-1)^{k+1}}{3 \cdot 2^{k+1}}$\\
+LHS: $\sum_{j=0}^{k} (-\frac{1}{2})^j + (-\frac{1}{2})^{k+1}$\\
+$\frac{2^{k+1} + (-1)^k}{3 \cdot 2^k} + (-\frac{1}{2})^{k+1}$\\
+$\frac{2(2^{k+1} + (-1)^k)}{3 \cdot 2^{k+1}} + (\frac{3(-1)^{k+1}}{3\cdot2^{k+1}})$\\
+$\frac{(2(2^{k+1}) -(-1)^k)}{3 \cdot 2^{k+1}}$\\
+$\frac{(2^{(k+1)+1} + (-1)^{k+1})}{3 \cdot 2^{k+1}}$\\
+LHS = RHS therefore $p(k) \to p(k+1)$ holds for all n $\geq$ 0 by induction.
+
+\subsection{Question 14 - Prove that for every positive integer n, $\sum_{k = 1}^{n} (k2^k) = (n-1)2^{n+1} + 2$}
+P(n) = $\sum_{k = 1}^{n} (k2^k) = (n-1)2^{n+1} + 2$ for all n $\geq 1$\\
+Basis step:
+$P(1) = a_1 = \sum_{k = 1}^{n} (k2^k) = 2 = (n-1)2^{n+1} + 2 = 0 + 2 $ which holds\\
+Inductive step:
+$p(k) \to p(k+1)$\\
+Assume p(j) holds for j $\geq$ 1, $\sum_{k = 1}^{j} (k2^k) = (j-1)2^{j+1} + 2$\\
+RHS: $((j+1)-1)2^{(j+1)+1} + 2$\\
+$(j)2^{j+2} + 2$\\
+LHS: $\sum_{k = 1}^{j} (k2^k) + (j+1)2^{j+1}$\\
+$(j-1)2^{j+1} + 2 + (j+1)2^{j+1}$\\
+$(2j)2^{j+1} + 2$\\
+$(j)2^{j+2} + 2$\\
+LHS = RHS therefore $p(k) \to p(k+1)$ holds for all n $\geq$ 1 by induction.
+
+\subsection{Question 18 - Prove by mathematical induction: Let P(n) be the statement that $n! < n^n$, where n is an integer greater than 1}
+P(n) = $n! < n^n$ for all n $>$ 1\\
+a) Basis step: P(2) = $2! < 2^2$\\
+b) P(2) = $2! = 2 < 2^2 = 4$ which holds\\
+Inductive step:
+$p(k) \to p(k+1)$\\
+c) Assume p(k) holds for k $>$ 1, $k! < k^k$\\
+d) Need to prove that p(k) implies p(k+1) is true, meaning the LHS < RHS for p(k+1)\\
+e)
+RHS: $(k+1)^{k+1}$\\
+$(k+1)(k+1)^{k}$\\
+LHS:$(k+1)!$\\
+$(k+1)(k)!$\\
+$(k+1)(k)! < (k+1)(k^k)$ Application of the hypothesis\\
+$(k+1)(k)! < (k+1)(k^k)$\\
+Comparing LHS and RHS:\\
+$(k+1)(k)! < (k+1)(k)^k < (k+1)(k+1)^{k}$ because k $<$ k+1\\
+f) These steps show under mathematical induction that starting with the smallest possible integer value for n greater than 1, (that is 2), the inequality holds. For any integer greater than or equal to 2 the inequality will continue to hold, as one integer implies the next holds the inequality.
 \end{document}
