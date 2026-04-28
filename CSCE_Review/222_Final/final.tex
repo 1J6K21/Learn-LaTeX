@@ -93,18 +93,21 @@ $A \subseteq B \iff \forall x(x \in A \rightarrow x \in B)$ \\
 
 % =========================
 \section{Number Theory}
-\textbf{Divisibility:} $a \mid b \iff b = ak$ for some integer $k$. \\
-\textbf{Division Alg:} $a = dq + r$, $0 \le r < d$. \\
-\textbf{Primes:} $n > 1$, only factors are $1, n$. \\
-\textbf{Fund. Thm. Arithmetic:} $n > 1$ has unique prime factorization. \\
-\textbf{GCD/LCM:} $\gcd(a,b) \cdot \text{lcm}(a,b) = ab$.
+\textbf{Divisibility:} $a \mid b \iff b = ak$. \quad \textbf{Division Alg:} $a = dq + r, 0 \le r < d$. \\
+\textbf{GCD/LCM:} $\gcd(a,b) \cdot \text{lcm}(a,b) = ab$. \quad \textbf{Prime Thm:} $\pi(x) \approx x/\ln x$. \\
+\textbf{Fermat's Little Thm:} $a^{p-1} \equiv 1 \pmod p$ if $p \nmid a$. \\
+\textbf{Bézout's Thm:} $\gcd(a,b) = sa + tb$. \\
+\textbf{Euclidean Alg:} $\gcd(a,b) = \gcd(b, a \mod b)$. \\
+\textbf{Chinese Remainder:} $x \equiv a_i \pmod{m_i}$ has unique soln $\pmod M$. \\
+\textbf{Modular Inverse:} $ax \equiv 1 \pmod m$ exists iff $\gcd(a,m)=1$. \\
+\textbf{Wilson's Thm:} $(p-1)! \equiv -1 \pmod p$ iff $p$ is prime.
 
 % =========================
 \section{Algorithms \& Complexity}
-\textbf{Big-O:} $f(x) \le Cg(x)$ for $x > k$. \\
-\textbf{Growth:} $1 < \log n < n < n \log n < n^2 < 2^n < n! < n^n$. \\
-\textbf{Linear Search:} $O(n)$. \textbf{Binary Search:} $O(\log n)$. \\
-\textbf{Bubble Sort:} $\Theta(n^2)$. \textbf{Insertion Sort:} $O(n^2)$.
+\textbf{Big-O:} $f(n) \le Cg(n)$ for $n > k$. \quad \textbf{Growth:} $1 < \log n < n < n \log n < n^2 < 2^n < n!$. \\
+\textbf{Master Thm:} $T(n) = aT(n/b) + cn^d$: \\
+1. $a < b^d \Rightarrow O(n^d)$ \quad 2. $a = b^d \Rightarrow O(n^d \log n)$ \quad 3. $a > b^d \Rightarrow O(n^{\log_b a})$ \\
+\textbf{Search:} Linear $O(n)$, Binary $O(\log n)$. \quad \textbf{Sort:} Bubble/Inertion $O(n^2)$.
 
 % =========================
 \section{Sequences \& Sums}
@@ -114,19 +117,22 @@ $A \subseteq B \iff \forall x(x \in A \rightarrow x \in B)$ \\
 
 % =========================
 \section{Counting}
-\textbf{Product Rule:} $n_1 \cdot n_2$ ways for independent tasks. \\
-\textbf{Sum Rule:} $n_1 + n_2$ ways for disjoint tasks. \\
-\textbf{Pigeonhole:} $N$ objects, $k$ boxes $\Rightarrow$ at least one box has $\lceil N/k \rceil$. \\
-\textbf{\# Functions $A \to B$:} $|B|^{|A|}$. \\
-\textbf{\# Injective $A \to B$:} $P(|B|, |A|)$.
+\textbf{Product (AND):} $n_1 \cdot n_2$ \quad \textbf{Sum (OR):} $n_1 + n_2$ \\
+\textbf{Incl-Excl:} $|A \cup B| = |A| + |B| - |A \cap B|$ \\
+\textbf{Division Rule:} $n/d$ (Each item counted $d$ times) \\
+\textbf{Pigeonhole:} $N$ objects, $k$ boxes $\Rightarrow \lceil N/k \rceil$ in one. \\
+\textbf{\# Functions ($n^m$):} $|B|^{|A|}$ \quad \textbf{Injective ($P(n,r)$):} $P(|B|, |A|)$
 
 % =========================
 \section{Perms \& Combs}
-\textbf{Permutations:} $P(n,r) = \frac{n!}{(n-r)!}$. \\
-\textbf{Combinations:} $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$. \\
+\textbf{Perms ($P(n,r)$):} $\frac{n!}{(n-r)!}$ \quad \textbf{Combs ($\binom{n}{r}$):} $\frac{n!}{r!(n-r)!}$ \\
+\textbf{w/ Repetition:} $n^r$ (Ordered) \quad $\binom{n+r-1}{r}$ (Unordered) \\
+\textbf{Anagrams/Dist Boxes:} $\frac{n!}{n_1!n_2!\dots n_k!}$. \\
+\textbf{Indist Objs $\to$ Dist Boxes:} $\binom{n+r-1}{r}$ (Stars \& Bars). \\
+\textbf{Identities:} $\sum \binom{n}{k} = 2^n$; $\sum (-1)^k \binom{n}{k} = 0$; $\sum 2^k \binom{n}{k} = 3^n$. \\
+\textbf{Hockey-Stick:} $\sum_{i=r}^n \binom{i}{r} = \binom{n+1}{r+1}$. \quad \textbf{Derangements:} $D_n = n!\sum \frac{(-1)^k}{k!}$. \\
 \textbf{Binomial Thm:} $(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$. \\
-\textbf{Pascal's Identity:} $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$. \\
-\textbf{Vandermonde's:} $\binom{m+n}{r} = \sum \binom{m}{r-k}\binom{n}{k}$.
+\textbf{Pascal's:} $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$ \quad \textbf{Vandermonde's:} $\binom{m+n}{r} = \sum \binom{m}{r-k}\binom{n}{k}$.
 
 % =========================
 \section{Relations}
@@ -150,28 +156,23 @@ $R \subseteq A \times A$:
 \textbf{Solving:} 1. Find char eq. 2. Find roots. 3. Use IC to solve $\alpha_i$.
 
 % =========================
-\section{Induction Template (Exact)}
-\textbf{Goal:} $\forall n \ge a, P(n)$ \\
-\textbf{Basis:} Show $P(a)$ holds. \\
-\textbf{Inductive:} 
-1. Assume $P(k)$ holds for $k \ge a$ (\textbf{I.H.}). \\
-2. Show $P(k+1)$ holds. \\
-3. Use $P(k)$ to transform LH expression $\to$ RH. \\
-\textbf{Conclusion:} By induction, $P(n)$ is true $\forall n \ge a$.
+\section{Induction \& Probability}
+\textbf{Goal:} $\forall n \ge a, P(n)$ \quad \textbf{Basis:} Show $P(a)$. \\
+\textbf{Inductive:} Assume $P(k)$ (\textbf{I.H.}), show $P(k+1)$. \\
+\textbf{Strong:} Assume $P(a) \land \dots \land P(k)$, show $P(k+1)$. \\
+\textbf{Bayes' Thm:} $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$. \\
+\textbf{Exp. Value:} $E(X) = \sum x_i P(X=x_i)$. \quad \textbf{Linearity:} $E(X+Y) = E(X)+E(Y)$. \\
+\textbf{Bernoulli ($k$ success):} $C(n,k) p^k q^{n-k}$ ($q=1-p$).
 
 % =========================
-\section{Strong Induction}
-\textbf{Basis:} Prove $P(a), \dots, P(a+j)$ as needed. \\
-\textbf{Assume:} $P(a) \land P(a+1) \land \dots \land P(k)$ holds. \\
-\textbf{Show:} $P(k+1)$ holds using any/all previous values.
-
-% =========================
-\section{Quick Strategy}
-\textbf{Equality:} LHS $\to$ RHS using IH. \\
-\textbf{Inequality:} Use IH + monotonic bounds ($k+1 > k$). \\
-\textbf{Divisibility:} Rewrite as $d \cdot (\dots)$ using IH multiple. \\
-\textbf{Counting:} Product (sequential) vs Sum (choice). \\
-\textbf{Binomial:} $\binom{n}{k} = \binom{n}{n-k}$.
+\section{Graph Theory}
+\textbf{Handshaking:} $\sum_{v \in V} \deg(v) = 2e$. \\
+\textbf{Euler's Formula:} $n - e + f = 2$ (Connected Planar). \\
+\textbf{Planar Bound:} $e \le 3n - 6$ (if $n \ge 3$); $e \le 2n - 4$ (No $K_3$). \\
+\textbf{Complete Graph $K_n$:} Edges $e = \frac{n(n-1)}{2}$, Deg $(n-1)$. \\
+\textbf{Cycles $C_n$:} Edges $e=n$, Deg $2$. \quad \textbf{Trees:} $e = n - 1$. \\
+\textbf{Dirac's Thm:} $\deg(v) \ge n/2 \Rightarrow$ Hamilton Circuit. \\
+\textbf{Ore's Thm:} $\deg(u)+\deg(v) \ge n \Rightarrow$ Hamilton Circuit.
 
 \end{multicols}
 \end{document}

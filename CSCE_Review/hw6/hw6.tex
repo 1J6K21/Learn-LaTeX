@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\author{Jonathan Kalsky}
+\date{April 27 2026}
+\title{\normalsize CSCE 222\\ \Large Homework 6}
+\linespread{1.5}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\vspace{1cm}
+
+\subsection{6.1}
+\subsubsection*{26 - How many strings of four decimal digits}
+\subsubsection[26a]{do not contain the same digit twice?}
+There are 10 possible digits, and every spot has 1 less possible digit than its previous, or P(10,4).\\
+There are 10x9x8x7 = 5040 possible strings according to the product rule to combine these tasks
+\subsubsection[26b]{end with an even digit?}
+There are 10 possible digits for the first three places, and 5 possible digits for the last place\\
+According to the product rule, there are 10x10x10x5 possible ways for these independent tasks to occur\\
+Therefore there are 5000 ways to end with an even digit.
+\subsubsection[26c]{have exactly three digits that are 9s?}
+Like in the stars and bars problem, the non-9 digit is the partition\\
+There are 4 spots the unique digit can take place, or C(4,1), and 9 possible digits to fill that spot\\
+All other spots are constant (filled with 9's)\\
+Therefore there are 4x9, or 36 ways to have exactly three digits that are 9.
+\subsubsection*{34 - How many different functions are there from a set with 10 elements to sets with the following numbers of elements?}
+\subsubsection[34a]{2 elements}
+Each element from the domain has the possibility to map to 2 choices from the codomain. That is the product rule of 2 choices 10 times, or $2^{10}$\\$\therefore 1024$ different functions.
+\subsubsection[34b]{3 elements}
+Each element from the domain has the possibility to map to 3 choices from the codomain. That is the product rule of 3 choices 10 times, or $3^{10}$\\$\therefore 59049$ different functions.
+
+\subsubsection*{50 - How many bit strings of length seven either begin with
+two 0s or end with three 1s?}
+\subsubsection{50}
+Using the sum rule, we can break this down to 2 problems:\\
+\underbar{bit strings of length 7, beggining with two 0's}\\
+the two 0's are constant, there is 1 way to fill those two spots, remaining are 5 spots. For each remaining spot there is either a 1 or a 0 (2 choices), so according to the product rule there are $1 \times 2^5$ bit strings.\\
+\underbar{bit strings of length 7, ending with three 1's}\\
+the three 1's are constant, there is 1 way to fill those three spots, remaining are 4 spots. For each remaining spot, there is either a 1 or a 0 (2 choices), so according to the product rule, there are $1 \times 2^4$ bit strings.\\
+\underbar{either}\\
+For either of those string formats, we can use the sum rule such that the total number of possible bit strings is $2^5 + 2^4 - 2^2 = 44$. Where $2^2$ (subtraction rule) excludes the double counted strings containing both leading 00 and trailing 111, leaving 2 remaining spots, and 4 possible strings (that are double counted).
+
+\subsection{6.3}
+\subsubsection*{20 - How many bit strings of length 10 have}
+\subsubsection[20a]{exactly three 0s}
+Finding the amount of strings with three 0's and 7 1's, is the same as 10 choose 3 or 7. This is because you only need to find the amount of spots that will be 0's the rest will be (have no choice but being) filled with 1s. C(10,3)=120.
+\subsubsection[20b]{more 0s than 1s}
+For more 0s than 1s, we would use the sum rule for all strings with more 0 choices than 1: C(10,6) + C(10,7) + C(10,8) + C(10,9) + C(10,10) = 386 strings
+\subsubsection[20c]{at least seven 1s}
+Similarly, for more than 6 1s chosen, we will use the sum rule: C(10,7) + C(10,8) + C(10,9) + C(10,10) = 176 strings
+\subsubsection[20d]{at least three 1s}
+Similarly we can add all combinations of 10 choosing more than 2 1s, or subtract less than three 1s from the total string combinations.\\
+Total = 2 choices 10 times by the product rule, or $2^{10} = 1024$\\
+1024 - C(10,0) - C(10,1) - C(10,2) = 1024-56=968 strings
+\subsubsection*{28 - Thirteen people on a softball team show up for a game.}
+\subsubsection[28a]{How many ways are there to choose 10 players to take the field?}
+Given, 13 and wanting to choose 10 the total combinations = $C(13,10) = \frac{13!}{10!(3)!}=\frac{13\times 12 \times 11}{3\times2} = 286$ ways
+\subsubsection[28b]{How many ways are there to assign the 10 positions by selecting players from the 13 people who show up?}
+To assign 13 people to 10 spots, there are P(13,10) permutations = $\frac{13!}{3!} = 13\times12\times11\times10\times9\times8\times7\times6\times5\times4=1,037,836,800$ ways
+\subsubsection[28c]{Of the 13 people who show up, three are left-handed. How many ways are there to choose 10 players to take the field if at least one of these players must be left-handed?}
+From part a we know there are 286 ways to choose 10 players of the 13. To choose at least 1 left handed is the opposite of choosing no lefties (subtraction rule).\\
+Thus 286 - C(10,10) = 286-1 = 285 ways.
+\subsubsection*{32 - Seven women and nine men are on the faculty in the
+mathematics department at a school.}
+\subsubsection[32a]{How many ways are there to select a committee of five members of the department if at least one woman must be on the committee?}
+Using the subtraction rule:\\
+there are a total of C(7+9,5) = 4368 ways to choose 5 members.\\
+To choose all 5 as men C(9,5) = 126 ways to not have any woman be on the committee\\
+4368-126 = 4242 ways of having at least one woman on board.
+\subsubsection[32b]{How many ways are there to select a committee of five members of the department if at least one woman and at least one man must be on the committee?}
+For the committee to also have at least one man, we need to continue the subtraction rule from part b.\\
+4242 - C(7,5) discounts all the cases of a committee full of women. Since there are no duplicates between a committee of all men and all women, we dont need to subtract duplicate ways.\\
+Total = 4242 - 21 = 4221 ways.
+
+
+
+\end{document}
