@@ -1,0 +1,177 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{titlesec}
+
+% Minimal spacing for "fast lookup" but readable
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\pagestyle{empty}
+\setlist{nosep, leftmargin=*}
+
+% Custom Section Styling
+\titleformat{\section}{\small\bfseries\uppercase}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+
+\begin{document}
+\scriptsize
+
+\begin{center}
+    \textbf{CSCE 222: Discrete Structures - Final Exam Reference Guide (Rosen 9th Ed.)}
+\end{center}
+
+\begin{multicols}{3}
+
+% =========================
+\section{Logic \& Equivalences}
+\textbf{Operators:} $\neg$ (not), $\land$ (and), $\lor$ (or), $\oplus$ (xor), $\rightarrow$ (if), $\leftrightarrow$ (iff). \\
+\textbf{Order:} $\neg, \land, \lor, \rightarrow, \leftrightarrow$ (High to Low). \\
+\textbf{Equivalences:}
+\begin{itemize}
+    \item $p \rightarrow q \equiv \neg p \lor q$
+    \item $\neg(p \land q) \equiv \neg p \lor \neg q$ (De Morgan)
+    \item $p \leftrightarrow q \equiv (\neg p \lor q) \land (\neg q \lor p)$
+    \item \textbf{Identity:} $p \land T \equiv p$; $p \lor F \equiv p$
+    \item \textbf{Domination:} $p \lor T \equiv T$; $p \land F \equiv F$
+    \item \textbf{Absorption:} $p \lor (p \land q) \equiv p$; $p \land (p \lor q) \equiv p$
+\end{itemize}
+
+\textbf{Fallacies:}
+\begin{itemize}
+    \item \textbf{Affirming Consequent:} $(p \rightarrow q) \land q \therefore p$ (Error)
+    \item \textbf{Denying Antecedent:} $(p \rightarrow q) \land \neg p \therefore \neg q$ (Error)
+\end{itemize}
+
+% =========================
+\section{Rules of Inference}
+\begin{tabular}{ll}
+    $p, p \rightarrow q \therefore q$ & Modus Ponens \\
+    $\neg q, p \rightarrow q \therefore \neg p$ & Modus Tollens \\
+    $p \rightarrow q, q \rightarrow r \therefore p \rightarrow r$ & Hypo. Syllogism \\
+    $p \lor q, \neg p \therefore q$ & Disj. Syllogism \\
+    $p \therefore p \lor q$ & Addition \\
+    $p \land q \therefore p$ & Simplification \\
+    $p, q \therefore p \land q$ & Conjunction \\
+    $p \lor q, \neg p \lor r \therefore q \lor r$ & Resolution
+\end{tabular}
+
+% =========================
+\section{Predicate Logic}
+\textbf{Universal:} $\forall x P(x)$ (True for all $x$ in domain) \\
+\textbf{Existential:} $\exists x P(x)$ (True for at least one $x$) \\
+\textbf{Negation:} \\
+$\neg \forall x P(x) \equiv \exists x \neg P(x)$ \\
+$\neg \exists x P(x) \equiv \forall x \neg P(x)$
+
+% =========================
+\section{Proof Techniques}
+\textbf{Direct:} Assume $p$, show $q$. \\
+\textbf{Contrapositive:} Assume $\neg q$, show $\neg p$. \\
+\textbf{Contradiction:} Assume $p \land \neg q$, derive $F$. \\
+\textbf{Cases:} Prove $(p_1 \lor p_2 \lor \dots \lor p_n) \rightarrow q$ by proving $p_i \rightarrow q$ for each $i$.
+
+% =========================
+\section{Sets \& Cardinality}
+$A \subseteq B \iff \forall x(x \in A \rightarrow x \in B)$ \\
+\textbf{Operations:} $A \cup B$ (or), $A \cap B$ (and), $A - B$ ($A$ not in $B$). \\
+\textbf{Complement:} $\overline{A} = U - A$. \\
+\textbf{Power Set:} $P(A) = \{S \mid S \subseteq A\}$, $|P(A)| = 2^{|A|}$. \\
+\textbf{Cartesian:} $A \times B = \{(a,b) \mid a \in A, b \in B\}$, $|A \times B| = |A||B|$. \\
+\textbf{Inclusion-Exclusion:} $|A \cup B| = |A| + |B| - |A \cap B|$.
+
+% =========================
+\section{Functions}
+\textbf{Function:} $f: A \to B$. $A$ is domain, $B$ is codomain. \\
+\textbf{Injective (1-1):} $f(a) = f(b) \Rightarrow a = b$. \\
+\textbf{Surjective (Onto):} $\forall y \in B, \exists x \in A, f(x) = y$. \\
+\textbf{Bijective:} Both injective and surjective. \\
+\textbf{Inverse:} $f^{-1}$ exists iff $f$ is a bijection. \\
+\textbf{Composition:} $(f \circ g)(x) = f(g(x))$.
+
+% =========================
+\section{Number Theory}
+\textbf{Divisibility:} $a \mid b \iff b = ak$ for some integer $k$. \\
+\textbf{Division Alg:} $a = dq + r$, $0 \le r < d$. \\
+\textbf{Primes:} $n > 1$, only factors are $1, n$. \\
+\textbf{Fund. Thm. Arithmetic:} $n > 1$ has unique prime factorization. \\
+\textbf{GCD/LCM:} $\gcd(a,b) \cdot \text{lcm}(a,b) = ab$.
+
+% =========================
+\section{Algorithms \& Complexity}
+\textbf{Big-O:} $f(x) \le Cg(x)$ for $x > k$. \\
+\textbf{Growth:} $1 < \log n < n < n \log n < n^2 < 2^n < n! < n^n$. \\
+\textbf{Linear Search:} $O(n)$. \textbf{Binary Search:} $O(\log n)$. \\
+\textbf{Bubble Sort:} $\Theta(n^2)$. \textbf{Insertion Sort:} $O(n^2)$.
+
+% =========================
+\section{Sequences \& Sums}
+\textbf{Arithmetic:} $a_n = a + (n-1)d$. \textbf{Sum:} $S_n = \frac{n(2a+(n-1)d)}{2}$. \\
+\textbf{Geometric:} $a_n = ar^{n-1}$. \textbf{Sum:} $S_n = \frac{a(r^n-1)}{r-1}$ ($r \neq 1$). \\
+\textbf{Series:} $\sum_{i=1}^n i = \frac{n(n+1)}{2}$, $\sum i^2 = \frac{n(n+1)(2n+1)}{6}$.
+
+% =========================
+\section{Counting}
+\textbf{Product Rule:} $n_1 \cdot n_2$ ways for independent tasks. \\
+\textbf{Sum Rule:} $n_1 + n_2$ ways for disjoint tasks. \\
+\textbf{Pigeonhole:} $N$ objects, $k$ boxes $\Rightarrow$ at least one box has $\lceil N/k \rceil$. \\
+\textbf{\# Functions $A \to B$:} $|B|^{|A|}$. \\
+\textbf{\# Injective $A \to B$:} $P(|B|, |A|)$.
+
+% =========================
+\section{Perms \& Combs}
+\textbf{Permutations:} $P(n,r) = \frac{n!}{(n-r)!}$. \\
+\textbf{Combinations:} $C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$. \\
+\textbf{Binomial Thm:} $(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$. \\
+\textbf{Pascal's Identity:} $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$. \\
+\textbf{Vandermonde's:} $\binom{m+n}{r} = \sum \binom{m}{r-k}\binom{n}{k}$.
+
+% =========================
+\section{Relations}
+$R \subseteq A \times A$:
+\begin{itemize}
+    \item \textbf{Reflexive:} $\forall a, (a,a) \in R$
+    \item \textbf{Symmetric:} $(a,b) \in R \Rightarrow (b,a) \in R$
+    \item \textbf{Antisymmetric:} $(a,b),(b,a) \in R \Rightarrow a=b$
+    \item \textbf{Transitive:} $(a,b),(b,c) \in R \Rightarrow (a,c) \in R$
+\end{itemize}
+\textbf{Equiv. Relation:} Refl, Symm, Trans. \\
+\textbf{Partial Order (Poset):} Refl, Antisymm, Trans. \\
+\textbf{\# Relations on $n$ elements:} $2^{n^2}$. \textbf{Reflexive:} $2^{n(n-1)}$.
+
+% =========================
+\section{Recurrence Relations}
+\textbf{Lin. Homog. order $k$:} $a_n = c_1 a_{n-1} + \dots + c_k a_{n-k}$. \\
+\textbf{Char. Eq:} $r^k - c_1 r^{k-1} - \dots - c_k = 0$. \\
+1. \textbf{Distinct roots $r_1, r_2$:} $a_n = \alpha_1 r_1^n + \alpha_2 r_2^n$. \\
+2. \textbf{Repeated root $r_1$:} $a_n = (\alpha_1 + \alpha_2 n) r_1^n$. \\
+\textbf{Solving:} 1. Find char eq. 2. Find roots. 3. Use IC to solve $\alpha_i$.
+
+% =========================
+\section{Induction Template (Exact)}
+\textbf{Goal:} $\forall n \ge a, P(n)$ \\
+\textbf{Basis:} Show $P(a)$ holds. \\
+\textbf{Inductive:} 
+1. Assume $P(k)$ holds for $k \ge a$ (\textbf{I.H.}). \\
+2. Show $P(k+1)$ holds. \\
+3. Use $P(k)$ to transform LH expression $\to$ RH. \\
+\textbf{Conclusion:} By induction, $P(n)$ is true $\forall n \ge a$.
+
+% =========================
+\section{Strong Induction}
+\textbf{Basis:} Prove $P(a), \dots, P(a+j)$ as needed. \\
+\textbf{Assume:} $P(a) \land P(a+1) \land \dots \land P(k)$ holds. \\
+\textbf{Show:} $P(k+1)$ holds using any/all previous values.
+
+% =========================
+\section{Quick Strategy}
+\textbf{Equality:} LHS $\to$ RHS using IH. \\
+\textbf{Inequality:} Use IH + monotonic bounds ($k+1 > k$). \\
+\textbf{Divisibility:} Rewrite as $d \cdot (\dots)$ using IH multiple. \\
+\textbf{Counting:} Product (sequential) vs Sum (choice). \\
+\textbf{Binomial:} $\binom{n}{k} = \binom{n}{n-k}$.
+
+\end{multicols}
+\end{document}
