@@ -1,0 +1,229 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.25in]{geometry}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{titlesec}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage[export]{adjustbox}
+% Minimal spacing for "fast lookup" but readable
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1pt}
+\pagestyle{empty}
+\setlist{nosep, leftmargin=*}
+
+% Custom Section Styling
+\titleformat{\section}{\small\bfseries\uppercase}{}{0pt}{}[\titlerule]
+\titlespacing{\section}{0pt}{4pt}{2pt}
+
+\begin{document}
+\scriptsize
+
+\begin{center}
+    \textbf{CSCE 222: Discrete Structures - Final Exam Reference Guide (Rosen 9th Ed.)}
+\end{center}
+
+\begin{multicols*}{2}
+
+% =========================
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Functions \& Relations}
+\textbf{diff:}a relation maps any domain element to codomain, a function has 1 output per input\\
+\textbf{imags vs range vs codomain} Image is the mapping of a set, range is like the image, codomain is a set of possible values. preimage could be a set\\
+\textbf{axioms} all inputs specified in domain must map to exactly one element of the codomain\\
+\textbf{F=G} $\iff F(x) = G(x) \forall x \in X$\\
+\textbf{1:1}$\iff \forall x1, x2 \in X, (F(x_1) = F(x_2))\to (x_1 = x_2)$\\
+\textbf{$\lnot$injective}:$\exists x_1,x_2 \in X, (F(x_1)=F(x_2))\land(x_1\neq x_2)$\\
+\textbf{onto}$\iff \forall y \in Y, \exists x \in X | F(x)=y$\\
+\textbf{$\lnot$surjective}$\exists y \in Y | \forall x \in X, F(x)\neq y$\\
+Given bijective y=F(x), there exists $x=F^{-1}(y)$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Algorithms \& Complexity}
+\textbf{Input:} Input values are of a specified set(type)\\
+\textbf{Output:} Outputs are the solution(of a return type)\\
+\textbf{Definitness:} Must define steps for the algorithm\\
+\textbf{Correctness:} correct output for input set values\\
+\textbf{Finiteness:} Finite steps return output for any input\\
+\textbf{Effectiveness:} Each steps takes finite \underbar{time}\\
+\textbf{Generality:} Works for all problems of desired form\\
+
+
+
+\textbf{Upper bounds} $O(n!)> O(2^n) > O(n^2) > O(nlogn) > O(n) > O(logn) > O(1)$
+\noindent
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{ll | ll}
+    $O(1)$ &  Array Access & $O(n^2)$ &  Insertion Sort \\
+    $O(\log n)$ &  Binary Search & $O(b^n)$ &  Power Set \\
+    $O(n)$ &  Linear Search & $O(n!)$ &  Permutations \\
+\end{tabular}\\
+\textbf{f(x) = O(g(x))}$|f(x)| \leq C|g(x)|$whenever $x>k$\\
+find $C|g(x)|$: add $|c_i|$ terms to the largest term\\
+$f_1(x) is O(g(x)) and f_2(x) is O(g_2(x))$:\\
+$(f_1+f_2)(x)$ is $O(max(|g_1(x)|,|g_2(x)|))$\\
+$(f_1\cdot f_2)(x)$ is $O(g_1(x)\cdot g_2(x))$\\
+Measure the time complexity as the number of \textbf{operations} executed: while $i < n \land x \neq a_i \Rightarrow 3(n+1)$\\
+\textbf{Lower Bounds:}\\
+$f(x) = \Omega(g(x)) \iff f(x) \geq C\cdot g(x)$ for all x $>$ k\\
+find $C|g(x)|$ : add $c_i < 0$ terms to the largest term\\
+\textbf{Tight Bounds:}\\
+$f(x) = \Theta(g(x)) \iff f(x)$ is O(g(x)) and $\Omega(g(x))$ for all x $>$ k\\
+find $C|g(x)|$ : add $c_i < 0$ terms to the largest term\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Sequences \& Sums}
+A sequence is either $\{a_i, \cdots, a_j\}$ or $\{a_n\}_{n\geq k}$\\
+\textbf{Arithmetic Progression} a, a+d, a+ 2d, ..., a+nd\\
+\textbf{Geometric Progression} $a, ar, ar^2, ..., ar^n$\\
+$S_n = \sum_{n=0}^{n}ar^n = \frac{a(r^n - 1)}{r-1}$\\
+\textbf{Reccurrent Relation} $a_n$ in terms of previous terms\\
+Plug in k-i to $a_n$ and solve for $a_n$ in terms of $a_{k-i}$\\
+$a_n = n!$ is a \textbf{solution} to the recurrent relation $a\cdot n_{n-1}$\\
+($a_n$ is in terms of n)\\
+$\sum_{k=m}^{n}a_k + \sum_{k=m}^{n}b_k = \sum_{k=m}^{n}(a_k + b_k)$\\
+$\prod_{k=m}^{n}a_k \cdot \prod_{k=m}^{n}b_k = \prod_{k=m}^{n}(a_k \cdot b_k)$\\
+\textbf{Change of Variables} $\sum_{k=1}^{3}(k-1) = \sum_{j=0}^{2}j$\\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Induction \& Recursion}
+Recursions needs a stopping case(s), and to get closer to the stopping case.\\
+(Weak, Strong, Inequality, Divisibility, Structural) Induction, check the proofs.\\
+Set A = B $\iff (A \subseteq B) \land (B \subseteq A)$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Counting}
+$T_1 = n_1, T_2 = n_2$\\
+\textbf{{Product Rule:}} $T_1 \land T_2 = n_1 \times n_2 \Rightarrow 7(T_i) = n_i^7$\\
+\textbf{For Sets:}$|A_1 \times A_2 \times \ldots \times A_m | = |A_1| \times |A_2| \times \ldots \times |A_m|$\\
+\textbf{Sum Rule:} $T_1 \lor T_2 = n_1 + n_2$\\
+\textbf{Disjoint S:}$|A_1 \cup A_2 \cup ... \cup A_m | = |A_1| + |A_2| + ... + |A_m|$\\
+\textbf{Subtraction Rule:} $T_1 \lor T_2 = n_1 + n_2 - (T_1 \cap T_2)$\\
+\textbf{Non disjoint sets:} $A_1 \cup A_2 = |A_1| + |A_2| - |A_1 \cap A_2|$\\
+\textbf{Division Rule:} $\text{Unique Ways} = \frac{n}{d}$\\
+\textbf{For Sets:} $\text{If a set } A \text{ is split into } n \text{ equal groups of size } d,\\
+n = \frac{|A|}{d}$\\
+\textbf{Ex:} n seats at round table, Circular Ways = $\frac{n!}{n}$\\
+\textbf{r-Permutations:} set of r ordered arrangements\\
+\textbf{r-Combinations:} set of r unordered arrangements\\
+P(n,r) = $\frac{n!}{(n-r)!}$\hspace{1cm} C(n,r) = $\binom{n}{r}= \frac{n!}{r!(n-r)!}$\\
+P(n,r) with repetitions allowed = $n^r$\\
+C(n,r) with repetitions (bins) allowed = $C(n-1+r,r)$\\
+C order doesnt matter, therefore $C(n, r) = C(n, n-r)$\\
+Binomial Theorem: $(x+y)^n = \sum_{j=0}^{n}\binom{n}{j}x^{n-j}y^j$\\
+$\sum_{k=0}^{n}\binom{n}{k} = (1+1)^n = 2^n$\\
+$\sum_{k=0}^{n}(-1)^k\binom{n}{k}= (-1+1)^n=0$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Solving Recurrences}
+Solve using preceeding elements\\
+\textbf{Linear Homogenous recurrence relation:} $a_n = c_1a_{n-1} + c_2a_{n-2}+...+c_ka_{n-k}$\\
+\textbf{Linear:} RHS is a \underbar{sum} of previous terms$^1$ multiplied by some coeficient\\
+\textbf{Homogeneous:} all RHS terms are multiples of previous terms$_{n-i}$\\
+\textbf{Constant Coefficients:} all coefficients are constant, $\neq 0$\\
+\textbf{Degree:} The number of previous terms in sequence\\
+Degree determines NO. initial conditions $(a_0 = C_0),...,(a_{k-1}=C_{k-1})$\\
+\textbf{Characteristic Equations and Roots:}\\
+$a_n = c_1a_{n-1} + c_2a_{n-2}+...+c_ka_{n-k}$\hspace{0.2cm} , \hspace{0.2cm}$a_n = r^n$\hspace{0.2cm}$\Rightarrow$\hspace{0.2cm}\\
+Where the solutions are the roots: $r^k - c_1r^{k-1}-...-c_{k-1}r-c_k=0$\\
+Solution = $(r_1,...,r_k)^T \to a_n = \alpha_1r_1^n + \alpha_2r_2^n$, $\alpha$ solved using initial condition\\
+\textbf{Divide\&Conquer Alg.time cmplx:}$f(n) = a \cdot f(\frac{n}{b}) + g(n)$, g(n) not constant?:\\
+\textbf{Master Theorem Shorthand:}
+\begin{equation*}
+f(n) = a \cdot f(n/b) + c \cdot n^d \implies 
+\begin{cases} 
+O(n^d) & a < b^d \\ 
+O(n^d \log n) & a = b^d \\ 
+O(n^{\log_b a}) & a > b^d 
+\end{cases}
+\quad 
+\begin{aligned}
+    a &= \text{number of subproblems} \\
+    n/b &= \text{size of each subproblem} \\
+    c &= \text{constant factor} \\
+    n &= \text{input size} \\
+    d &= \text{exponent of overhead} \\
+    n^d &= \text{extra work (calls)}
+\end{aligned}
+\end{equation*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Relations}
+$R \subseteq A \times B \implies (aRb \iff (a, b) \in R)$, not all (a,b) are in R\\
+\begin{itemize}
+    \item \textbf{Reflexive:} $\forall a \in A, aRa$
+    \item \textbf{Symmetric:} $aRb \implies bRa$
+    \item \textbf{Antisymmetric:} $(aRb \land bRa) \implies a = b$\hspace{0.3cm} \textit{if both R work, must be reflexive}
+    \item \textbf{Transitive:} $(aRb \land bRc) \implies aRc$
+    \item {Vacuously True:} $P \implies Q$ is true if $P$ is always false. \textit{(premise never met)}
+\end{itemize}
+you may use substitution to prove a=b or contradict\\
+\textbf{Composition ($S \circ R$):} $\{(a, c) \mid \exists b \in B, (a, b) \in R \land (b, c) \in S \}$\\
+Using $S \circ R$ if a is parent of b, b is parent of c $\to$ a is grandparent of c in $S \circ R$\\
+R on set A is an \textbf{equivalence} (like row equiv) if reflexive, symmetric, transitive:\\
+$(a,b) \in R \to a\sim b$\\
+\begin{itemize}
+    \item \textbf{Powers ($R^n$):} $R^1 = R, R^{n+1} = R^n \circ R$ \hfill \textit{(path of length $n$)}
+    \item \textbf{Equivalence Relation ($\sim$):} A relation that is Refl. + Symm. + Trans.
+    \item \textbf{Equivalence Class $[x]$:} $\{y \in S \mid x \sim y\}$ \hfill \textit{(The set that act like x)}
+    \item \textbf{Row Equivalence ($A \sim B$):} An equivalence relation where $A, B$ share the same RREF.
+\end{itemize}
+\textbf{Directed Graph:} $G = (V, E)$ where $E \subseteq V \times V$ \hfill \textit{($V$=nodes/verticies, $E$=edges)}\\
+\textbf{Loop:} $(a, a) \in E$ for some $a \in V$
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Proofs}
+\textbf{Contradiction:} $P \to Q$ \\
+\textbf{Proof:} 
+Assume that the hypothesis $P$ is true and that the conclusion $Q$ is false. 
+[Insert logical steps here to derive a contradiction, such as $r \land \neg r$].
+This is a contradiction. 
+Therefore, our assumption that $Q$ is false must be incorrect, and $Q$ must be true.
+
+\textbf{\underbar{Induction:}} $P(n)$ is true for all integers $n \geq a$. \\
+\textbf{Proof:} 
+Let $P(n)$ be the proposition [State P(n)].
+\begin{itemize}
+    \item \textbf{Basis Step:} We show that $P(a)$ holds. 
+    [Verify the statement for $n=a$].
+    \item \textbf{Inductive Step:} Assume the inductive hypothesis that $P(k)$ is true for an arbitrary integer $k\geq a$. That is, [State $P(k)$].\\
+    We must show that $P(k+1)$ is true [State $P(k+1)$]. 
+    \begin{align*}
+    \text{RHS}(k+1) &= \underbrace{\text{General Terms up to } k}_{RHS(k)} + \text{Term}(k+1) \\
+    &= \text{RHS}(k) + \text{Term}(k+1) \\
+    &= \dots \text{ [Algebraic Simplification] } \dots \\
+    &\Rightarrow \text{RHS}(k+1) = LHS(k) + (k+1)
+\end{align*}
+$\therefore P(k) \to P(k+1) holds$\\
+$\therefore$ [State $P(n)$] holds for all $n\geq a$ by mat. indu.
+\end{itemize}
+\textbf{\underbar{Induction Inequality}}:
+\textbf{Theorem:} Let $P(n)$ be the statement that $[LHS(n)] < [RHS(n)]$ for $n \geq [n_0]$.
+\textbf{Proof:}
+\begin{itemize}
+    \item \textbf{Basis Step:} For $n = [n_0]$, we have:
+    \[ [LHS(n_0)] = [\text{value}] \quad \text{and} \quad [RHS(n_0)] = [\text{value}] \]
+    Since $[\text{value}] < [\text{value}]$, $P([n_0])$ is true.
+
+    \item \textbf{Inductive Step:} Assume $P(k)$ is true for an arbitrary integer $k \geq [n_0]$. 
+    That is, assume:
+    \[ [LHS(k)] < [RHS(k)] \quad \text{(Inductive Hypothesis)} \]
+    
+    We must show that $P(k+1)$ is true: $[LHS(k+1)] < [RHS(k+1)]$.
+    
+    Starting with the left-hand side:
+    \begin{align*}
+        [LHS(k+1)] &= [\text{Manipulate to find } LHS(k)] \\
+        &< [\text{Substitute } RHS(k) \text{ using Hypothesis}] \\
+        &< [\text{Logical "Bridge" Step like 2$<$(k+1)}] \\
+        &= [RHS(k+1)]
+    \end{align*}
+\end{itemize}
+$P(n)$ is true for all $n \geq [n_0]$ by mat. induction
+
+\textbf{\underbar{Strong Induction:}} Multiple basis\&more hypotheses 1. to prove hold 2. to use in inductive step\\
+
+
+
+
+
+
+\end{multicols*}
+\end{document}

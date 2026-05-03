@@ -93,14 +93,14 @@ $A \subseteq B \iff \forall x(x \in A \rightarrow x \in B)$ \\
 
 % =========================
 \section{Number Theory}
-\textbf{Divisibility:} $a \mid b \iff b = ak$. \quad \textbf{Division Alg:} $a = dq + r, 0 \le r < d$. \\
-\textbf{GCD/LCM:} $\gcd(a,b) \cdot \text{lcm}(a,b) = ab$. \quad \textbf{Prime Thm:} $\pi(x) \approx x/\ln x$. \\
-\textbf{Fermat's Little Thm:} $a^{p-1} \equiv 1 \pmod p$ if $p \nmid a$. \\
-\textbf{Bézout's Thm:} $\gcd(a,b) = sa + tb$. \\
-\textbf{Euclidean Alg:} $\gcd(a,b) = \gcd(b, a \mod b)$. \\
-\textbf{Chinese Remainder:} $x \equiv a_i \pmod{m_i}$ has unique soln $\pmod M$. \\
-\textbf{Modular Inverse:} $ax \equiv 1 \pmod m$ exists iff $\gcd(a,m)=1$. \\
-\textbf{Wilson's Thm:} $(p-1)! \equiv -1 \pmod p$ iff $p$ is prime.
+\textbf{Divisibility:} "Does $a$ divide $b$?" $\Rightarrow b=ak$. \\
+\textbf{GCD/LCM:} "Find $\gcd$ and $\text{lcm}$" $\Rightarrow \gcd(a,b) \cdot \text{lcm}(a,b) = ab$. \\
+\textbf{Modular Powers:} "Find $a^{X} \mod p$ (prime $p$)" $\Rightarrow a^{p-1} \equiv 1$ (\textbf{FLT}). \\
+\textbf{Linear Combo:} "Write $\gcd$ as $sa+tb$" $\Rightarrow$ \textbf{B\'ezout's Thm}. \\
+\textbf{Modular Inverse:} "Solve $ax \equiv 1 \pmod m$" $\Rightarrow$ Exists if $\gcd(a,m)=1$. \\
+\textbf{Simult. Congruence:} "Find $x \equiv a \pmod m, x \equiv b \pmod n$" $\Rightarrow$ \textbf{CRT}. \\
+\textbf{Primality Test:} "Is $p$ prime?" $\Rightarrow (p-1)! \equiv -1 \pmod p$ (\textbf{Wilson's}). \\
+\textbf{Primes $\le x$:} "How many primes?" $\Rightarrow \pi(x) \approx x/\ln x$.
 
 % =========================
 \section{Algorithms \& Complexity}
@@ -117,22 +117,25 @@ $A \subseteq B \iff \forall x(x \in A \rightarrow x \in B)$ \\
 
 % =========================
 \section{Counting}
-\textbf{Product (AND):} $n_1 \cdot n_2$ \quad \textbf{Sum (OR):} $n_1 + n_2$ \\
-\textbf{Incl-Excl:} $|A \cup B| = |A| + |B| - |A \cap B|$ \\
-\textbf{Division Rule:} $n/d$ (Each item counted $d$ times) \\
-\textbf{Pigeonhole:} $N$ objects, $k$ boxes $\Rightarrow \lceil N/k \rceil$ in one. \\
-\textbf{\# Functions ($n^m$):} $|B|^{|A|}$ \quad \textbf{Injective ($P(n,r)$):} $P(|B|, |A|)$
+\textbf{Sequential Tasks:} "Step 1 \underline{and} Step 2" $\Rightarrow n_1 \cdot n_2$ (\textbf{Product}). \\
+\textbf{Disjoint Choices:} "Option 1 \underline{or} Option 2" $\Rightarrow n_1 + n_2$ (\textbf{Sum}). \\
+\textbf{Overlapping Sets:} "Count $|A \cup B|$" $\Rightarrow |A|+|B|-|A \cap B|$ (\textbf{Subtract}). \\
+\textbf{Overcounting:} "Ways if order doesn't matter yet" $\Rightarrow n/d$ (\textbf{Division}). \\
+\textbf{Guaranteed Match:} "Min objects to ensure $k$ in bin" $\Rightarrow \lceil N/k \rceil$ (\textbf{PHP}). \\
+\textbf{Mappings:} "Functions $A \to B$" $\Rightarrow |B|^{|A|}$; "Injective" $\Rightarrow P(|B|, |A|)$.
 
 % =========================
 \section{Perms \& Combs}
-\textbf{Perms ($P(n,r)$):} $\frac{n!}{(n-r)!}$ \quad \textbf{Combs ($\binom{n}{r}$):} $\frac{n!}{r!(n-r)!}$ \\
-\textbf{w/ Repetition:} $n^r$ (Ordered) \quad $\binom{n+r-1}{r}$ (Unordered) \\
-\textbf{Anagrams/Dist Boxes:} $\frac{n!}{n_1!n_2!\dots n_k!}$. \\
-\textbf{Indist Objs $\to$ Dist Boxes:} $\binom{n+r-1}{r}$ (Stars \& Bars). \\
-\textbf{Identities:} $\sum \binom{n}{k} = 2^n$; $\sum (-1)^k \binom{n}{k} = 0$; $\sum 2^k \binom{n}{k} = 3^n$. \\
-\textbf{Hockey-Stick:} $\sum_{i=r}^n \binom{i}{r} = \binom{n+1}{r+1}$. \quad \textbf{Derangements:} $D_n = n!\sum \frac{(-1)^k}{k!}$. \\
-\textbf{Binomial Thm:} $(x+y)^n = \sum_{k=0}^n \binom{n}{k} x^{n-k} y^k$. \\
-\textbf{Pascal's:} $\binom{n+1}{k} = \binom{n}{k} + \binom{n}{k-1}$ \quad \textbf{Vandermonde's:} $\binom{m+n}{r} = \sum \binom{m}{r-k}\binom{n}{k}$.
+\textbf{Arrangements:} "Order matters, no rep" $\Rightarrow P(n,r) = \frac{n!}{(n-r)!}$. \\
+\textbf{Committees/Sets:} "Order ign, no rep" $\Rightarrow \binom{n}{r} = \frac{n!}{r!(n-r)!}$. \\
+\textbf{Passwords:} "Order matters, w/ rep" $\Rightarrow n^r$. \\
+\textbf{Donut/Soda choice:} "Order ign, w/ rep" $\Rightarrow \binom{n+r-1}{r}$ (\textbf{Stars/Bars}). \\
+\textbf{Anagrams:} "Permute word with $n_i$ repeats" $\Rightarrow \frac{n!}{n_1!n_2!\dots n_k!}$. \\
+\textbf{Dist. Objs $\to$ Dist. Boxes:} "Put $n$ items into $k$ boxes" $\Rightarrow \frac{n!}{n_1!n_2!\dots n_k!}$. \\
+\textbf{Hockey-Stick:} "Sum $\binom{i}{r}$ for $i=r \to n$" $\Rightarrow \binom{n+1}{r+1}$. \\
+\textbf{Vandermonde's:} "Pick $r$ from two groups ($m, n$)" $\Rightarrow \binom{m+n}{r} = \sum \binom{m}{r-k}\binom{n}{k}$. \\
+\textbf{Derangement:} "Ways to fix 0 items in original spot" $\Rightarrow D_n$. \\
+\textbf{Identities:} Total subsets $\Rightarrow 2^n$; Alternating sum $\Rightarrow 0$.
 
 % =========================
 \section{Relations}
@@ -160,19 +163,20 @@ $R \subseteq A \times A$:
 \textbf{Goal:} $\forall n \ge a, P(n)$ \quad \textbf{Basis:} Show $P(a)$. \\
 \textbf{Inductive:} Assume $P(k)$ (\textbf{I.H.}), show $P(k+1)$. \\
 \textbf{Strong:} Assume $P(a) \land \dots \land P(k)$, show $P(k+1)$. \\
-\textbf{Bayes' Thm:} $P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}$. \\
-\textbf{Exp. Value:} $E(X) = \sum x_i P(X=x_i)$. \quad \textbf{Linearity:} $E(X+Y) = E(X)+E(Y)$. \\
-\textbf{Bernoulli ($k$ success):} $C(n,k) p^k q^{n-k}$ ($q=1-p$).
+\textbf{Prob(Cause | Effect):} "Given result $B$, prob of origin $A$?" $\Rightarrow$ \textbf{Bayes}. \\
+\textbf{Linearity of $E$:} "Average sum of indep events" $\Rightarrow E(X)+E(Y)$. \\
+\textbf{Multiple Trials:} "Prob of $k$ successes in $n$ tries" $\Rightarrow$ \textbf{Bernoulli}. \\
+\textbf{Average Search:} "Find avg steps for $n$ items" $\Rightarrow$ \textbf{Exp. Value}.
 
 % =========================
 \section{Graph Theory}
-\textbf{Handshaking:} $\sum_{v \in V} \deg(v) = 2e$. \\
-\textbf{Euler's Formula:} $n - e + f = 2$ (Connected Planar). \\
-\textbf{Planar Bound:} $e \le 3n - 6$ (if $n \ge 3$); $e \le 2n - 4$ (No $K_3$). \\
-\textbf{Complete Graph $K_n$:} Edges $e = \frac{n(n-1)}{2}$, Deg $(n-1)$. \\
-\textbf{Cycles $C_n$:} Edges $e=n$, Deg $2$. \quad \textbf{Trees:} $e = n - 1$. \\
-\textbf{Dirac's Thm:} $\deg(v) \ge n/2 \Rightarrow$ Hamilton Circuit. \\
-\textbf{Ore's Thm:} $\deg(u)+\deg(v) \ge n \Rightarrow$ Hamilton Circuit.
+\textbf{Handshaking:} "Find edges or degrees" $\Rightarrow \sum \deg(v) = 2e$. \\
+\textbf{Planarity:} "Is it planar? $V, E, F$?" $\Rightarrow V-E+F=2$ (\textbf{Euler}). \\
+\textbf{Bound:} "Is $K_{n,m}$ planar?" $\Rightarrow E \le 3V-6$ or $2V-4$. \\
+\textbf{Connectivity:} "Is graph connected?" $\Rightarrow$ Exists path $\forall u,v$. \\
+\textbf{Trees:} "Properties of trees?" $\Rightarrow E=V-1$, No cycles. \\
+\textbf{Hamilton:} "Circuit using every \underline{vertex}?" $\Rightarrow$ Dirac/Ore. \\
+\textbf{Eulerian:} "Circuit using every \underline{edge}?" $\Rightarrow$ All degrees even.
 
 \end{multicols}
 \end{document}
