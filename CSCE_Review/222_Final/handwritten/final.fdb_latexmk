@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1777772637.42811 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/CSCE_Review/222_Final/handwritten/final.tex" "final.pdf" "final" 1777772637.80494 0
+["pdflatex"] 1777837356.46247 "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/CSCE_Review/222_Final/handwritten/final.tex" "final.pdf" "final" 1777837356.87789 0
   "/Users/jonathankalsky/Documents/GitHub/Learn-LaTeX/CSCE_Review/222_Final/handwritten/final.tex" 1777772637.26103 11698 285fa7f82105b698a067588618990387 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -70,7 +70,7 @@
   "/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1768363960 5467155 19efa205003f9ecad95fbbaa6ff24da1 ""
   "/usr/local/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1741450574 3345740 46b66fdb0378f7bf5921b5eabf1762b8 ""
   "/usr/local/texlive/2025/texmf.cnf" 1741450484 577 418a7058ec8e006d8704f60ecd22c938 ""
-  "final.aux" 1777772637.75061 900 b49287ec9a636a83d00f56dd1d06b093 "pdflatex"
+  "final.aux" 1777837356.83415 900 b49287ec9a636a83d00f56dd1d06b093 "pdflatex"
   "final.tex" 1777772637.26103 11698 285fa7f82105b698a067588618990387 ""
   (generated)
   "final.aux"
